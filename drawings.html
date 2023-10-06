@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script>
+      function drawItems(){
+        lineSize = 8;        
+        
+        const canva = document.getElementById("basicanva");
+        context = canva.getContext("2d");
+        context.lineWidth = lineSize;
+        context.beginPath();
+
+        // Square made with strokeRect
+        context.rect(100, 75, 400, 400);
+
+        // Line
+        context.moveTo(100, 600); context.lineTo(500, 600);
+
+        // Circle
+        circleSize = 250;
+        context.moveTo(900 + circleSize, 350);
+        context.arc(900, 350, circleSize, 0, 2 * Math.PI);
+
+        context.stroke();
+      }
+    </script>
+
+  </head>
+  <body onload="drawItems()">
+    <canvas id="basicanva" width="1280" height="720" style="border-style: solid; border-color: goldenrod; border-width: 5px;"> </canvas>
+  </body>
+</html>
