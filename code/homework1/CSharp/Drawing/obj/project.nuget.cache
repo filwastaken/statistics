@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "2pWEJSkl2naEHT9IX4Fet3VCj3eiZJtugnPhsYLr3ZuAoLJKhg0a2uoaOlMG/HFilZaXaGYmzwXAQ9N5fTCMWQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\filip\\CSharp\\Drawing\\Drawing.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\filip\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.29\\microsoft.windows.sdk.net.ref.10.0.22621.29.nupkg.sha512"
+  ],
+  "logs": []
+}
