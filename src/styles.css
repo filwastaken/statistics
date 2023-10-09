@@ -1,0 +1,49 @@
+a, p {
+  font-family: "Times New Roman", sans-serif;
+  font-size: large;
+}
+
+h1, h2 { text-align: center; font-size: x-large}
+
+hr { margin: 30px }
+
+.gitbtn {
+  width: 60px;
+  height: 60px;
+  align-self: center;
+}
+
+.bibl {
+  font-size: medium;
+}
+
+.framecontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottomRight {
+  position: relative;
+  float: right;
+
+  margin-bottom: 10px;
+  
+  color: blue;
+}
+
+.bottomLeft {
+  position: relative;
+  float: left;
+
+  margin-bottom: 10px;
+  
+  color: blue;
+}
+
+.code {
+  background-color: black;
+  color: white;
+  font-family: Consolas;
+
+  padding-top: 20px;
+}

@@ -33,21 +33,23 @@
             // 
             // panel1
             // 
-            panel1.Location = new Point(0, 1);
+            panel1.Location = new Point(0, -2);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1264, 680);
+            panel1.Size = new Size(1080, 720);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1264, 681);
+            ClientSize = new Size(1074, 719);
             Controls.Add(panel1);
+            Margin = new Padding(6);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
         }
 
