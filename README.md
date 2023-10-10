@@ -8,7 +8,7 @@ The webpage for this homework's theory questions is:
 * [homework1](/docs/homework1.html)
 
 The code files for this homework are contained in /code/homework1:
-* [Homework introduction](/code/homework1/introduction.html)
+* [Homework applications](/code/homework1/application.html)
 
 It's possible to look at the source code on github
 * [drawings.html](https://github.com/bluecheese-fil/bluecheese-fil.github.io/blob/main/code/homework1/drawings.html)
