@@ -1,5 +1,8 @@
 # Trying different themes
-theme: merlot
+remote_theme: pages-themes/merlot@v0.2.0
 
 # Another theme that is interesting is minimal
 # theme: minimal
+
+title: [Filippo Guerra Statistic's website]
+description: [A website to answer statistic's homeworks]
