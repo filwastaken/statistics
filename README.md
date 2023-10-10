@@ -1,7 +1,7 @@
 ## Homeworks
-This webpage will follow the following scheme:\
-Any webpage will be found in the /docs folder.\
-Any written homework, both in Javascript and C#, will be places in the /code folder.
+This webpage will contain a list of statistics homeworks index:\
+Any theory webpages are contained in the github /docs folder\
+Any written homework, both Javascript and C#, will be contained in the github /code folder.\
 
 # Statistic's homework n.1
 The webpage for this homework's theory questions is:

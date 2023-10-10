@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="/src/styles.css">
+    <link rel="stylesheet" href="/src/code.css">
 
     <style>
       iframe {
@@ -23,34 +24,34 @@
     <div class="framecontainer">
       <h1> C# code </h1>
       <a> This is the main file that handles the graphics rendering: </a>
-      <pre class="code">
-        namespace Drawing
-        {
-          public partial class Form1 : Form <br>
-          {
-            public Form1()
-            {
-              InitializeComponent();
-            }
-            
-            private void panel1_Paint(object sender, PaintEventArgs e)
-            {
-              Graphics g = e.Graphics;
-              Pen pen = new Pen(Color.Black, 8);
+      
+<pre class="cscode"><code><span class="key">namespace</span> Drawing
+  {
+    <span class="key">public</span> <span class="key">partial</span> <span class="key">class</span> <span class="com">Form1</span> : <span class="com">Form</span>
+    {
+      <span class="key">public</span> <span class="com">Form1</span>()
+      {
+        <span class="fun">InitializeComponent</span>();
+      }
+        
+      <span class="key">private</span> <span class="key">void</span> <span class="fun">panel1_Paint</span>(<span class="key">object</span> <span class="var">sender</span>, <span class="com">PaintEventArgs</span> <span class="var">e</span>)
+      {
+        <span class="com">Graphics</span> <span class="var">g</span> = <span class="var">e</span>.Graphics;
+        <span class="com">Pen</span> <span class="var">pen</span> = <span class="key">new</span> <span class="com">Pen</span>(<span class="com">Color</span>.Black, 8);
+        
+        <span class="var">g</span>.<span class="fun">DrawLine</span>(<span class="var">pen</span>, 100, 600, 500, 600);
+        <span class="var">g</span>.<span class="fun">DrawRectangle</span>(<span class="var">pen</span>, 100, 75, 400, 400);
+        <span class="var">g</span>.<span class="fun">DrawArc</span>(<span class="var">pen</span>, 600, 125, 450, 450, 0, 360);
+        <span class="var">pen</span>.<span class="fun">Dispose</span>();
+      }
+  
+      <span class="key">private</span> <span class="key">void</span> <span class="fun">Form1_Load</span>(<span class="key">object</span> <span class="var">sender</span>, <span class="com">EventArgs</span> <span class="var">e</span>)
+      {
 
-              g.DrawLine(pen, 100, 600, 500, 600);
-              g.DrawRectangle(pen, 100, 75, 400, 400);
-              g.DrawArc(pen, 600, 125, 450, 450, 0, 360);
-              
-              pen.Dispose();
-            }
-            
-            private void Form1_Load(object sender, EventArgs e)
-            {
-
-            }
-          }
-        }
+      }
+    }
+  }
+        </code>
       </pre>
       <input type="image" class="gitbtn" src="/src/github-mark.png" onclick="location.href='https://github.com/bluecheese-fil/bluecheese-fil.github.io/tree/main/code/homework1/CSharp/Drawing'">
     </div>
