@@ -1,7 +1,5 @@
-pre.cscode {margin:0em; overflow:auto; background-color:#ffffff; margin-left: 80px; margin-top: 25px}
-.cscode code {font-family:Consolas,"Courier New",Courier,Monospace; font-size:10pt; color:#000000;}
-.cscode .key {color:hsl(240, 100%, 50%);}
-.cscode .com {color:#06b406;}
-.cscode .str {color:#a31515;}
-.cscode .fun {color:#dabb0c;}
-.cscode .var {color:#4784a5;}
+img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-self: center;
+}

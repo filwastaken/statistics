@@ -28,33 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            picBox = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)picBox).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // picBox
             // 
-            panel1.Location = new Point(0, -2);
-            panel1.Margin = new Padding(0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1080, 720);
-            panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
+            picBox.BorderStyle = BorderStyle.FixedSingle;
+            picBox.Location = new Point(0, 0);
+            picBox.Margin = new Padding(1);
+            picBox.Name = "picBox";
+            picBox.Size = new Size(1080, 720);
+            picBox.TabIndex = 0;
+            picBox.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1074, 719);
-            Controls.Add(panel1);
+            Controls.Add(picBox);
             Margin = new Padding(6);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)picBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
+        private PictureBox picBox;
     }
 }
