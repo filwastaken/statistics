@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function graph(n, k){
+        "use strict";
+
+        n = n.value;
+        k = k.value;
+
+        // Basic checking, there must be at least 2 groups and there must be at least 1 random extraction
+        if(n < 1) {
+          document.getElementById("randompicks").value = 1;
+          alert("The nuber of picks should be at least 1!");
+          return ;
+        } else if(k < 2){
+          document.getElementById("groups").value = 2;
+          alert("The number of groups should be at least 2!");
+          return ;
+        }
+
+        const canva = document.getElementById("canva");
+        let context = canva.getContext("2d");
+        context.lineWidth = 8;
+        
+        let heights = [];
+        for(let i = 0; i < k; i++) heights[i] = 0;
+        
+        // Using different columns colors
+        let stkstyles = ['red', 'green', 'blue', 'black', 'pink', 'orange', 'grey']
+        
+        // Change the columns size dynamically to adjust for the canvas fixed size
+        let vr_size = parseInt(canva.height);
+        let hr_size = parseInt(parseInt(canva.width) / k);
+        
+        // Clear the canvas
+        context.beginPath();
+        context.clearRect(0, 0, canva.width, canva.height);
+        context.stroke();
+        context.closePath();
+
+        /*
+         * Unlike C#, Javascript is single threaded.
+         * This means that I cannot do any animations like the growing of the columns
+         * The size is precalculated (this loop) and the drawn on screen on the last loop
+        */
+        for(let i = 0; i < n; i++){
+          let randNum = Math.floor(Math.random() * 100);
+          let group = randNum % k;
+          heights[group]++;
+        }
+
+
+        // This is used to resize the columns in case they're higher than the canvas.
+        let resize = 0;
+        for(let i = 0; i < heights.length; ){
+          if(heights[i] - resize > canva.height) resize += 50;
+          else i++;
+        }
+
+        for(let i = 0; i < heights.length; i++) heights[i] = heights[i] - resize;
+
+        for(let i = 0; i < heights.length; i++){
+          context.beginPath();
+          context.fillStyle = stkstyles[i % stkstyles.length];
+          context.fillRect(hr_size * i, vr_size - heights[i], hr_size, heights[i]);
+          context.stroke();
+          context.closePath();
+        }
+      }
+    </script>
+
+    <style>
+      .caller {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 15px;
+      }
+
+      .inpt {
+        height: 18px;
+      }
+
+      .btn {
+        border-style: solid;
+        border-radius: 20px;
+        border-color: grey;
+        border-width: 2px;
+      }
+
+      .canv {
+        border: 8px;
+        border-color: blue;
+        border-style: solid;
+        margin-top: 20px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="caller">
+      <p> Please, choose n:</p>
+      <input class="inpt" type="number" id="randompicks" min="1" max="99999" value="1" />
+      <p> Please, choose k:</p>
+      <input class="inpt" type="number" id="groups" min="2" max="99999" value="2" />
+      <button class="btn" onclick="graph(document.getElementById('randompicks'), document.getElementById('groups'))"> Graph </button>
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <canvas class="canv" id="canva" width="1920" height="1080"> </canvas>
+    </div>
+  </body>
+</html>

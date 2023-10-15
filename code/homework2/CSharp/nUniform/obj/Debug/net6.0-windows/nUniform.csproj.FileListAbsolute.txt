@@ -1,0 +1,17 @@
+C:\Users\filip\CSharp\nUniform\bin\Debug\net6.0-windows\nUniform.exe
+C:\Users\filip\CSharp\nUniform\bin\Debug\net6.0-windows\nUniform.deps.json
+C:\Users\filip\CSharp\nUniform\bin\Debug\net6.0-windows\nUniform.runtimeconfig.json
+C:\Users\filip\CSharp\nUniform\bin\Debug\net6.0-windows\nUniform.dll
+C:\Users\filip\CSharp\nUniform\bin\Debug\net6.0-windows\nUniform.pdb
+C:\Users\filip\CSharp\nUniform\obj\Debug\net6.0-windows\nUniform.nUniform.resources
+C:\Users\filip\CSharp\nUniform\obj\Debug\net6.0-windows\nUniform.csproj.GenerateResource.cache
+C:\Users\filip\CSharp\nUniform\obj\Debug\net6.0-windows\nUniform.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\filip\CSharp\nUniform\obj\Debug\net6.0-windows\nUniform.AssemblyInfoInputs.cache
+C:\Users\filip\CSharp\nUniform\obj\Debug\net6.0-windows\nUniform.AssemblyInfo.cs
+C:\Users\filip\CSharp\nUniform\obj\Debug\net6.0-windows\nUniform.csproj.CoreCompileInputs.cache
+C:\Users\filip\CSharp\nUniform\obj\Debug\net6.0-windows\nUniform.dll
+C:\Users\filip\CSharp\nUniform\obj\Debug\net6.0-windows\refint\nUniform.dll
+C:\Users\filip\CSharp\nUniform\obj\Debug\net6.0-windows\nUniform.pdb
+C:\Users\filip\CSharp\nUniform\obj\Debug\net6.0-windows\nUniform.genruntimeconfig.cache
+C:\Users\filip\CSharp\nUniform\obj\Debug\net6.0-windows\ref\nUniform.dll
+C:\Users\filip\CSharp\nUniform\obj\Debug\net6.0-windows\nUniform.Properties.Resources.resources
