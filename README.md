@@ -17,3 +17,7 @@ It's possible to look at the entire source code on Github:
 * [C# folder](https://github.com/bluecheese-fil/bluecheese-fil.github.io/tree/main/code/homework1/CSharp/Drawing), containing the C# entire project and the .exe build
 
 **(13/10 note ): The C# project has been fixed, using a Bitmap as instructed. The code is now visible in the application webpage too. Screenshots have been used for this purpose.
+
+# Statistic's homework n.2
+ The webpages for this homework are:
+ 
