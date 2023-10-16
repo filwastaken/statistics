@@ -45,11 +45,9 @@
          * The size is precalculated (this loop) and the drawn on screen on the last loop
         */
         for(let i = 0; i < n; i++){
-          let randNum = Math.floor(Math.random() * 100);
-          let group = randNum % k;
-          heights[group]++;
+          let randNum = Math.floor(Math.random() * k);
+          heights[randNum]++;
         }
-
 
         // This is used to resize the columns in case they're higher than the canvas.
         let resize = 0;
@@ -58,9 +56,12 @@
           else i++;
         }
 
-        for(let i = 0; i < heights.length; i++) heights[i] = heights[i] - resize;
-
         for(let i = 0; i < heights.length; i++){
+          // Resizing
+          heights[i] = heights[i] - resize;
+          console.log(heights[i]);
+
+          // Drawing
           context.beginPath();
           context.fillStyle = stkstyles[i % stkstyles.length];
           context.fillRect(hr_size * i, vr_size - heights[i], hr_size, heights[i]);
