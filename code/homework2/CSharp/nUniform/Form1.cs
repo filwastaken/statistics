@@ -31,7 +31,7 @@ namespace nUniform
 
         private void startbt_Click(object sender, EventArgs e)
         {
-            this.rdpick.StartPick((int)this.nchooser.Value, (int)this.kchooser.Value);
+            this.rdpick.StartPick((int)this.nchooser.Value, (int)this.kchooser.Value, this.animationCheckbox.Checked);
         }
     }
 }

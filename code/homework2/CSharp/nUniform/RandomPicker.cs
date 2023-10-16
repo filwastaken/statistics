@@ -18,6 +18,7 @@ namespace nUniform
         private Thread thread;
         private int nPicks;
         private int kGroups;
+        private bool animated;
 
         private readonly nUniform winForm;
 
@@ -37,10 +38,11 @@ namespace nUniform
             this.heights = new List<int>();
         }
 
-        public void StartPick(int n, int k)
+        public void StartPick(int n, int k, bool animated)
         {
             this.nPicks = n;
             this.kGroups = k;
+            this.animated = animated;
 
             this.thread = new Thread(new ThreadStart(startThreadPick));
             this.heights = Enumerable.Repeat(0, this.kGroups).ToList();
@@ -54,10 +56,11 @@ namespace nUniform
         {
             // Disabling nUniform UI items (Thread safe)
             this.winForm.BeginInvoke((Action) delegate () {
-                this.winForm.startbt.Enabled = false;
-                this.winForm.stopbt.Enabled = true;
                 this.winForm.nchooser.Enabled = false;
                 this.winForm.kchooser.Enabled = false;
+                this.winForm.animationCheckbox.Enabled = false;
+                this.winForm.startbt.Enabled = false;
+                this.winForm.stopbt.Enabled = true;
             });
 
             this.winForm.grph.Clear(Color.White);
@@ -65,50 +68,76 @@ namespace nUniform
             int hr_size = this.winForm.bitmap.Width / this.kGroups;
 
             decimal index = 0;
-            while(this.allowed && index < this.nPicks)
+            while (this.allowed && index < this.nPicks)
             {
-                sw.Start();
 
-                int randNumber = rand.Next(0, 100);
-                int group = randNumber % this.kGroups;
-                this.heights[group]++;
-                this.displayedHeight[group]++;
+                int randNumber = rand.Next(0, this.kGroups);
+                this.heights[randNumber]++;
+                this.displayedHeight[randNumber]++;
 
-                this.winForm.Invoke(new MethodInvoker(delegate ()
+                // In case the animation is required I can do all the following calculations
+                // Otherwile I can do all the drawings outside of this while loop, to make that amount go from n to k
+                if (this.animated)
                 {
-                    int clmHeight = this.winForm.bitmap.Height - this.displayedHeight[group];
-                    
-                    // In case the columns go over the amount of space defined for the PictureBox, I can move them all down by 50px
-                    if (clmHeight <= 0)
+                    sw.Start();
+
+                    this.winForm.Invoke(new MethodInvoker(delegate ()
                     {
-                        this.winForm.grph.Clear(Color.White);
-                        for(int i = 0; i<this.displayedHeight.Count(); i++)
+                        int clmHeight = this.winForm.bitmap.Height - this.displayedHeight[randNumber];
+
+                        // In case the columns go over the amount of space defined for the PictureBox, I can move them all down by 250px
+                        if (clmHeight <= 0)
                         {
-                            this.displayedHeight[i] -= 250;
-                            this.winForm.grph.FillRectangle(this.brsh[i % brsh.Count()], hr_size * i, this.winForm.bitmap.Height - this.displayedHeight[i], hr_size, this.winForm.bitmap.Height);
+                            this.winForm.grph.Clear(Color.White);
+                            for (int i = 0; i < this.displayedHeight.Count(); i++)
+                            {
+                                this.displayedHeight[i] -= 250;
+                                this.winForm.grph.FillRectangle(this.brsh[i % brsh.Count()], hr_size * i, this.winForm.bitmap.Height - this.displayedHeight[i], hr_size, this.winForm.bitmap.Height);
+                            }
                         }
-                    } else
-                    // Else I can just draw the rectangle a little higher
-                    {
-                        this.winForm.grph.FillRectangle(this.brsh[group % brsh.Count()], hr_size * group, this.winForm.bitmap.Height - this.displayedHeight[group], hr_size, this.winForm.bitmap.Height);
-                        this.winForm.bmContainer.Refresh();
-                    }
-                }));
+                        else
+                        // Else I can just draw the rectangle as is
+                        {
+                            this.winForm.grph.FillRectangle(this.brsh[randNumber % brsh.Count()], hr_size * randNumber, this.winForm.bitmap.Height - this.displayedHeight[randNumber], hr_size, this.winForm.bitmap.Height);
+                            this.winForm.bmContainer.Refresh();
+                        }
+                    }));
 
-                /*
-                 * this.winForm.BeginInvoke((Action) delegate () {
-                 * });
-                 */
+                    sw.Stop();
+                    // Max ~55fps (delta time calculation)
+                    double sleeptime = 18.20 - sw.ElapsedMilliseconds;
+                    if (sleeptime > 0) Thread.Sleep(sw.Elapsed);
+                    sw.Reset();
 
-                sw.Stop();
-                // Max ~55fps (delta time calculation)
-                double sleeptime = 18.20 - sw.ElapsedMilliseconds;
-                if (sleeptime > 0) Thread.Sleep(sw.Elapsed);
-
-                sw.Reset();
-
+                }
                 index++;
             }
+
+            if(!this.animated)
+            {
+                // Resizing loop
+                int diffHeight = 1;
+                for (int i = 0; i < this.displayedHeight.Count(); )
+                {
+                    if ((int) this.displayedHeight[i]/diffHeight > this.winForm.bitmap.Height) diffHeight++;
+                    else i++;
+                }
+
+                // Unanimented loop
+                for (int i = 0; i < this.displayedHeight.Count(); i++)
+                {
+                    // Resizing all heigths. If none are higher than the screen, diffHeight should be 1
+                    this.displayedHeight[i] = (int)this.displayedHeight[i] / diffHeight;
+
+                    this.winForm.Invoke(new MethodInvoker(delegate () {
+                        // I can now draw the rectangle
+                        this.winForm.grph.FillRectangle(this.brsh[i % brsh.Count()], hr_size * i, this.winForm.bitmap.Height - this.displayedHeight[i], hr_size, this.displayedHeight[i]);
+                    }));
+                }
+
+                this.winForm.Invoke(new MethodInvoker(delegate () { this.winForm.bmContainer.Refresh(); }));
+            }
+
 
             // Reset UI to default values (Thread  safe)
             this.allowed = true;
@@ -117,6 +146,7 @@ namespace nUniform
                 this.winForm.startbt.Enabled = true;
                 this.winForm.nchooser.Enabled = true;
                 this.winForm.kchooser.Enabled = true;
+                this.winForm.animationCheckbox.Enabled = true;
             });
 
             return;

@@ -35,6 +35,7 @@
             startbt = new Button();
             ktext = new Label();
             ntext = new Label();
+            animationCheckbox = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)nchooser).BeginInit();
             ((System.ComponentModel.ISupportInitialize)kchooser).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bmContainer).BeginInit();
@@ -43,7 +44,7 @@
             // nchooser
             // 
             nchooser.Location = new Point(137, 12);
-            nchooser.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
+            nchooser.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
             nchooser.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nchooser.Name = "nchooser";
             nchooser.Size = new Size(64, 23);
@@ -53,7 +54,7 @@
             // kchooser
             // 
             kchooser.Location = new Point(501, 10);
-            kchooser.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
+            kchooser.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
             kchooser.Minimum = new decimal(new int[] { 2, 0, 0, 0 });
             kchooser.Name = "kchooser";
             kchooser.Size = new Size(64, 23);
@@ -108,12 +109,23 @@
             ntext.TabIndex = 9;
             ntext.Text = "Please, choose n:";
             // 
+            // animationCheckbox
+            // 
+            animationCheckbox.AutoSize = true;
+            animationCheckbox.Location = new Point(776, 14);
+            animationCheckbox.Name = "animationCheckbox";
+            animationCheckbox.Size = new Size(82, 19);
+            animationCheckbox.TabIndex = 10;
+            animationCheckbox.Text = "Animation";
+            animationCheckbox.UseVisualStyleBackColor = true;
+            // 
             // nUniform
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1064, 681);
+            Controls.Add(animationCheckbox);
             Controls.Add(ntext);
             Controls.Add(ktext);
             Controls.Add(startbt);
@@ -136,6 +148,7 @@
         public PictureBox bmContainer;
         public NumericUpDown nchooser;
         public NumericUpDown kchooser;
+        public CheckBox animationCheckbox;
         public Button stopbt;
         public Button startbt;
         private Label ktext;

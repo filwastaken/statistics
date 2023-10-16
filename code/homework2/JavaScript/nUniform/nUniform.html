@@ -50,16 +50,15 @@
         }
 
         // This is used to resize the columns in case they're higher than the canvas.
-        let resize = 0;
+        let resize = 1;
         for(let i = 0; i < heights.length; ){
-          if(heights[i] - resize > canva.height) resize += 50;
+          if(heights[i] / resize > canva.height) resize += 1;
           else i++;
         }
 
         for(let i = 0; i < heights.length; i++){
           // Resizing
-          heights[i] = heights[i] - resize;
-          console.log(heights[i]);
+          heights[i] = heights[i] / resize;
 
           // Drawing
           context.beginPath();
