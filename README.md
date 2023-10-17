@@ -19,5 +19,10 @@ It's possible to look at the entire source code on Github:
 **(13/10 note ): The C# project has been fixed, using a Bitmap as instructed. The code is now visible in the application webpage too. Screenshots have been used for this purpose.
 
 # Statistic's homework n.2
- The webpages for this homework are:
- 
+The webpages for this homework are:
+
+* [task1](/code/homework2/task1.html)
+* [task2](/code/homework2/task2.html)
+* [task3](/code/homework2/task3.html)
+
+The task 2 is divided in the [Javascript section](/code/homework2/task2.html#javascript) and the [C# section](/code/homework2/task2.html#csharp)
