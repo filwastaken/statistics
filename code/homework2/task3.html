@@ -22,26 +22,76 @@
 
     <p>
       This task required to generate N random numbers following a uniform distribution.
-      With the Random class, I've created a unfirom variable between 0 and 100. After dividing in intervals, I've graphed the groups.
+      With the Random class, I've created a unfirom variable in the range [0, 1).
+      I can then find in which interval it falls in by following this simple logic flow:
+      <br>
+      <a>
+        Given a random number rn and the k groups, rn falls into group
+        parseInt(rn * k) - 1, if the decimal part of rn*k is bigger than 0
+        otherwise it falls into parseInt(rn * k).
+      </a>
+      <br>
       The following image is the Javascript code that has been written to do so:
     </p>
 
-    <image> </image> <!-- Javascript iamge -->
+    <div class="outerclass">
+      <image src="/src/hw2/nUniform/js_code.png" width="100%"> </image> <!-- Javascript iamge -->
+    </div>
+
+    <p style="margin-top: 40px; margin-bottom: 50px;"> Here is the <a href="/code/homework2/JavaScript/nUniform/nUniform.html">interactive webpage</a> that shows the result of the javascript code above </p>
+
     <div class="outerclass">
       <iframe id="javascriptsim" src="./JavaScript/nUniform/nUniform.html" scrolling="no"> </iframe>
     </div>
 
-    <p> Here is a sample graph resulted from the JavaScript code: </p>
+    <p style="margin-top: 40px"> Here is a sample graph resulted from the JavaScript code: </p>
 
-    <image> </image> <!-- Graph image -->
+    <!-- Graphs images -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-around">
+        <image src="/src/hw2/nUniform/50000_10_1.png" width="600px"> </image>
+        <image src="/src/hw2/nUniform/50000_10_2.png" width="600px"> </image>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-around">
+        <image src="/src/hw2/nUniform/50000_75_1.png" width="600px"> </image>
+        <image src="/src/hw2/nUniform/50000_75_2.png" width="600px"> </image>
+        <image src="/src/hw2/nUniform/50000_75_3.png" width="600px"> </image>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-around">
+        <image src="/src/hw2/nUniform/950_5_1.png" width="600px"> </image>
+        <image src="/src/hw2/nUniform/950_5_2.png" width="600px"> </image>
+        <image src="/src/hw2/nUniform/950_5_3.png" width="600px"> </image>
+      </div>
+    </div>
 
     <p> 
-      The resulting graph shows how random generation has equal likeliness to fall into one of the 'k' groups. This means that, on avarage, each group will have the same number of items.
-      This is mostly notable when we choose a large n. In those cases, the graphs will get compress by division to make them fit the canvaas. As we can see, the difference between the columns
+      The graphs shown above show how the random extraction has equal likeliness to fall into one of the 'k' groups. This means that, on avarage, each group will have the same heights.
+      This is mostly notable when we choose a large n. In those cases, the graphs will get compress by division to make them fit the canvas. As we can see, the difference between the columns
       shrinks. 
     </p>
 
-    <p> The following is the C# code that is responsible for the </p>
+    <p>
+      The following is the C# code version of the code shown above. This also implements an animation that shows the
+      growing of the columns based on the random extracton.
+    </p>
+    <image src="/src/hw2/nUniform/csharp_code.png" style="width: 100%;"> </image>
 
+    <p>
+      Here's a preview of the C# code:
+    </p>
+
+    <image src="/src/hw2/nUniform/csharp_preview.png" width="100%"> </image>
+
+    <p> <a href="https://github.com/bluecheese-fil/bluecheese-fil.github.io/blob/main/code/homework2/JavaScript/nUniform/nUniform.html">JavaScript</a> and <a href="https://github.com/bluecheese-fil/bluecheese-fil.github.io/tree/main/code/homework2/CSharp/nUniform">C#</a> github webpages </p>
+
+    <p>
+      <a class="bottomLeft" href="/code/homework2/task2.html">
+        Previous Task
+      </a>
+
+      <a class="bottomRight" href="/">
+        Home
+      </a>
+    </p>
   </body>
 </html>
