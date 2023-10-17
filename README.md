@@ -8,8 +8,8 @@ Any written homework, both JavaScript and C#, will be contained in the Github /c
 
 The webpages for this homework are: 
 
-* [theory](/docs/homework1.html)
-* [applications](/code/homework1/application.html)
+* [theory](/docs/homework1)
+* [applications](/code/homework1/application)
 The files that contain this homework applications are located in: /code/homework1.
 
 It's possible to look at the entire source code on Github:
@@ -21,8 +21,8 @@ It's possible to look at the entire source code on Github:
 # Statistic's homework n.2
 The webpages for this homework are:
 
-* [task1](/code/homework2/task1.html)
-* [task2](/code/homework2/task2.html)
-* [task3](/code/homework2/task3.html)
+* [task1](/code/homework2/task1)
+* [task2](/code/homework2/task2)
+* [task3](/code/homework2/task3)
 
 The task 2 is divided in the [Javascript section](/code/homework2/task2.html#javascript) and the [C# section](/code/homework2/task2.html#csharp)
