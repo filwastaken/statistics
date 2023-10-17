@@ -2,6 +2,16 @@
 <html>
   <head>
     <script>
+      // This function finds where the n number falls into the k divided groups
+      function interval(n, k){
+        "use strict";
+
+        let num = n * k;
+        let num_integer = parseInt(num);
+        if(num - num_integer > 0) return num_integer;
+        else return num_integer - 1;
+      }
+
       function graph(n, k){
         "use strict";
 
@@ -45,8 +55,8 @@
          * The size is precalculated (this loop) and the drawn on screen on the last loop
         */
         for(let i = 0; i < n; i++){
-          let randNum = Math.floor(Math.random() * k);
-          heights[randNum]++;
+          let randNum = Math.random();
+          heights[interval(randNum, k)]++;
         }
 
         // This is used to resize the columns in case they're higher than the canvas.

@@ -14,3 +14,4 @@ C:\Users\filip\CSharp\nUniform\obj\Release\net6.0-windows\refint\nUniform.dll
 C:\Users\filip\CSharp\nUniform\obj\Release\net6.0-windows\nUniform.pdb
 C:\Users\filip\CSharp\nUniform\obj\Release\net6.0-windows\nUniform.genruntimeconfig.cache
 C:\Users\filip\CSharp\nUniform\obj\Release\net6.0-windows\ref\nUniform.dll
+C:\Users\filip\CSharp\nUniform\obj\Release\net6.0-windows\nUniform.Properties.Resources.resources
