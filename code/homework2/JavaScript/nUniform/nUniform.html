@@ -102,13 +102,13 @@
   <body>
     <div class="caller">
       <p> Please, choose n:</p>
-      <input class="inpt" type="number" id="randompicks" min="1" max="99999" value="1" />
+      <input class="inpt" type="number" id="randompicks" min="1" max="999999" value="1" />
       <p> Please, choose k:</p>
-      <input class="inpt" type="number" id="groups" min="2" max="99999" value="2" />
+      <input class="inpt" type="number" id="groups" min="2" max="3000" value="2" />
       <button class="btn" onclick="graph(document.getElementById('randompicks'), document.getElementById('groups'))"> Graph </button>
     </div>
     <div style="display: flex; justify-content: center;">
-      <canvas class="canv" id="canva" width="1920" height="1080"> </canvas>
+      <canvas class="canv" id="canva" width="750" height="600"> </canvas>
     </div>
   </body>
 </html>

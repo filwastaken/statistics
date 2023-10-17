@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/src/styles.css">
+    <link rel="stylesheet" href="/src/code.css">
+
+    <style>
+      
+      .divs {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .img { width: 1000px }
+
+    </style>
+  </head>
+  <body>
+    <h2> Task 2 - Data Structures </h2>
+
+    <a> This task required to create different data structures and use this both in Javascript and C#. </a>
+    <h2> JavaScript </h2>
+    <a> This is the Javascript version, in particular we have: </a>
+
+    <div class="divs" id="javascript">
+      <a> Here are the Javascript function to use with a list: </a>
+      <image class="img" src="/src/hw2/js_list.png"> </image>
+      <a> Here are the Javascript function usable for a dictionary</a>
+      <image class="img" src="/src/hw2/js_dict.png"> </image>
+      <a>
+        Here is the custom class that implements a Queue. This is done by creating a list of elements. The only allowed
+        operations are adding an element, which is added last to the list, and removing an element, which is the first
+        item of the list, following the <b> FIFO </b> rules. I've also implemented an "<b> include </b>" function, which checks for the items existance
+      </a>
+      <image class="img" src="/src/hw2/js_queue.png"> </image>
+      <a>
+        Here is the set class. With the functions in the pictures it's possible to add, remove and check an element's existance.
+        Note that an Hashset is just a particular implementation of a Set. There are in fact different ways to create a Set, such as with a
+        TreeSet, HashSet or a list, as I've done in the OrdereSet below.
+      </a>
+      <image class="img" src="/src/hw2/js_set.png"> </image>
+      <a>
+        This is the my class that implements an ordered set. It is simply done by using a list and sorting the items once they are added. Note that
+        I only add an element if it's not already present in the list. This is because a set, by definition, is a collection of unique elements.
+      </a>
+      <image class="img" src="/src/hw2/js_orderedset.png"> </image>
+      <a>
+        Down here is a sorted list class I've created. This simply creates a list and calls the <b> sort </b> function on the list. Note that whenever I remove
+        an element, the list is still sorted and the <b> sort </b> function doesn't need to be called again.
+      </a>
+      <image class="img" src="/src/hw2/js_sortedlist.png"> </image>
+      <a>
+        In the following image there is my class which implements a stack. This follows the <b> LIFO </b> rules,
+        where the first item to be removed from the auxiliary list is the last element added.
+      </a>
+
+      <image class="img" src="/src/hw2/js_stack.png"> </image>
+    </div>
+
+    <a> Here is the <a href="https://github.com/bluecheese-fil/bluecheese-fil.github.io/"> file </a> that contains each created collection of data in JS</a>
+
+    <h2> C# </h2>
+    <a>
+      Down here are the images that implements the same classes and functions in C#. Note that all classes were already
+      precreated in C# and I didn't need to write any new class.
+    </a>
+
+    <div class="divs" id="csharp">
+      <image class="img" src="/src/hw2/cs_dict.png"> </image>
+      <image class="img" src="/src/hw2/cs_list.png"> </image>
+      <image class="img" src="/src/hw2/cs_queue.png"> </image>
+      <image class="img" src="/src/hw2/cs_set.png"> </image>
+      <image class="img" src="/src/hw2/cs_sortedset.png"> </image>
+      <image class="img" src="/src/hw2/cs_sortedlist.png"> </image>
+      <image class="img" src="/src/hw2/cs_stack.png"> </image>
+    </div>
+
+    <a> Here is the <a href="https://github.com/bluecheese-fil/bluecheese-fil.github.io/">github webpage</a> that contains each created collection of data in C#</a>
+
+    <p>
+      <a class="bottomLeft" href="/code/homework2/task1.html">
+        Previous Task
+      </a>
+
+      <a class="bottomRight" href="/code/homework2/task3.html">
+        Next Task
+      </a>
+    </p>
+  </body>
+</html>

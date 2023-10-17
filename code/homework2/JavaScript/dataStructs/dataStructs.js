@@ -53,14 +53,30 @@ class SortedList {
   includes(elem) { array.includes(elem); }
 }
 
-
 // Set ( or hashset )
 let cars_set = new Set();
 cars_set.add('Volvo');
 cars_set.has('Volvo');
 cars_set.remove('Volvo');
 
-// An ordinated set doesn't exists since a Set is an unordinated group of data
+class OrderedSet {
+  constructor(){
+    let array = [];
+    for(let i = 0; i < arguments.length; i++){
+      // I can add an element as long as it's not duplicate
+      if(!array.includes(arguments[i])) array.push(arguments[i]);
+    }
+    array.sort();
+  }
+
+  add(elem){
+    if(!array.includes(elem)) array.push(elem);
+    array.sort();
+  }
+
+  remove(elem){ array.remove(elem); }
+  has(elem) { array.includes(elem); }
+}
 
 // Queue
 class Queue {
