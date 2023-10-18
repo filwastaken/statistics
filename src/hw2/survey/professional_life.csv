@@ -1,4 +1,4 @@
-(Anonymous) Stat Unit ID,Hard Worker (0-5),Ambitious (0-5),Age,weight,height,Main hobbies
+Stat Unit ID,Hard Worker,Ambitious,Age,Weight,Height,Main hobbies
 1933541,5,4,22,80,1.76,Roller skating
 1933529,5,5,22,78,1.69,Gaming
 31337,5,5,22,66,1.73,CTFs
@@ -58,6 +58,3 @@ The Duck,5,5,23,88,1.91,Cooking
 2126556,3,5,27,78,1.82,Surfing
 4242564,4,5,24,79,1.8,Gaming
 21124334,4,4,22,90,1.9,Gaming
-,,,,,,
-,,,,,,
-,,,,,,

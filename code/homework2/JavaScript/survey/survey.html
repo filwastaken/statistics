@@ -5,11 +5,29 @@
       function distribution(){
         "user strict";
 
+        const csvUrl = 'https://bluecheese-fil.github.io/src/hw2/survey/professional_life.csv'
+
+        fetch(csvUrl).then(response => response.text()).then(data => {
+          const lines = data.split('\n');
+          const header = lines[0].split(',');
+
+          console.log(lines);
+
+          let table = [];
+          for(let i = 0; i < lines.length - 1; i++) table.push([]);
+          for(let i = 0; i < lines.length - 1; i++) {
+            let row = lines[i+1].split(',');
+            for(let j = 0; j < header.length; j++) table[i].push(row[j]);
+          }
+
+          console.log(table);
+        }).catch(error => console.error("Errore durante il recupero del file CSV. Errore: ", error));
+
         
       }
     </script>
   </head>
-  <body>
+  <body onload="distribution()">
 
   </body>
 </html>
