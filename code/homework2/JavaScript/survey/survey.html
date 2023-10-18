@@ -5,29 +5,144 @@
       function distribution(){
         "user strict";
 
+        sessionStorage.clear();
         const csvUrl = 'https://bluecheese-fil.github.io/src/hw2/survey/professional_life.csv'
 
         fetch(csvUrl).then(response => response.text()).then(data => {
           const lines = data.split('\n');
-          const header = lines[0].split(',');
+          const badkeys = lines[0].split(',');
 
-          console.log(lines);
+          let keys = [];
+          for(let i = 0; i < badkeys.length; i++) keys.push(badkeys[i].trim());
 
           let table = [];
           for(let i = 0; i < lines.length - 1; i++) table.push([]);
           for(let i = 0; i < lines.length - 1; i++) {
             let row = lines[i+1].split(',');
-            for(let j = 0; j < header.length; j++) table[i].push(row[j]);
+            for(let j = 0; j < keys.length; j++) table[i].push(row[j].trim());
           }
 
-          console.log(table);
-        }).catch(error => console.error("Errore durante il recupero del file CSV. Errore: ", error));
+          document.getElementById("rightselect").innerHTML += 
+          `
+          <option value="None"> None </option>
+          `;
+          
+          for(let i = 1; i < keys.length; i++){
+            document.getElementById("leftselect").innerHTML += 
+            `
+            <option value="${keys[i]}"> ${keys[i]} </option>
+            `;
 
-        
+            if(i == 1) continue;
+
+            document.getElementById("rightselect").innerHTML += 
+            `
+            <option value="${keys[i]}"> ${keys[i]} </option>
+            `;
+          }
+
+          sessionStorage.setItem('keys', JSON.stringify(keys));
+          sessionStorage.setItem('table', JSON.stringify(table));
+
+          document.getElementById("calculatepercentage").removeAttribute('disabled');
+
+
+        }).catch(error => console.error("Errore durante il recupero del file CSV. Errore: ", error));
       }
+
+      function calculateDistribution(key1, key2){
+        "use strict";
+
+        let table = JSON.parse(sessionStorage.getItem('table'));
+        let keys = JSON.parse(sessionStorage.getItem('keys'));
+
+        document.getElementById("table").innerHTML = 
+        `
+          <tr>
+            <th> Item </th>
+            <th> Absolute frequency </th>
+            <th> Relative frequency </th>
+            <th> Percentage frequency </th>
+          </tr>
+          <tr>
+            <td colspan="4"> <hr> </td>
+            </tr>
+        `;
+
+        // Items is the absolute frequency
+        let items = {};
+        
+        let index1 = keys.indexOf(key1);
+        if(key2 == key1 || key2 == "None") {
+
+          for(let i = 0; i < table.length; i++){
+            let answer = table[i][index1];
+            if(items[answer] === undefined) items[answer] = 1;
+            else items[answer] += 1;
+          }
+
+        } else {
+
+          let index2 = keys.indexOf(key2);
+
+          for(let i = 0; i < table.length; i++) {
+            // TODO: Here
+          }
+
+        }
+
+
+        // Relative frequency and Percentage frequency
+        let relFreq = {};
+        let perFreq = {};
+
+        for(const [key, value] of Object.entries(items)){
+          let percentage_freq = value / table.length;
+          relFreq[key] = (percentage_freq).toFixed(5);
+          perFreq[key] = (percentage_freq * 100).toFixed(2);
+        }
+
+        for(const [key, value] of Object.entries(items)){
+          document.getElementById("table").innerHTML +=
+            `
+            <tr>
+              <th> ${key} </th>
+              <th> ${items[key]} </th>
+              <th> ${relFreq[key]} </th>
+              <th> ${perFreq[key]}% </th>
+            </tr>
+            `;
+        }
+      }
+
     </script>
   </head>
   <body onload="distribution()">
+
+    <div style="display: flex; justify-content: space-evenly; margin-top: 25px;">
+      <select id="leftselect">
+      </select>
+      Joint with
+      <select id="rightselect">
+      </select>
+      <button id="calculatepercentage" onclick="calculateDistribution(document.getElementById('leftselect').value, document.getElementById('rightselect').value)" disabled> Calculate </button>
+    </div>
+
+    <div style="display: flex; justify-content: center; margin-top: 10px;">
+
+      <table id="table" style="width: 85%;">
+        <tr>
+          <th> Item </th>
+          <th> Absolute frequency </th>
+          <th> Relative frequency </th>
+          <th> Percentage frequency </th>
+        </tr>
+        <tr>
+          <td colspan="4"> <hr> </td>
+        </tr>
+      </table>
+
+    </div>
 
   </body>
 </html>
