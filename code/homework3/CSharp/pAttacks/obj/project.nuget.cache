@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "XVojU3Mc0grNe02BnC2HL6xBWDkdkdk41FgHLsChhgXLHCIbJ18FnGSV5KfRKFqVM4PhWVZp6024uvbktkgDLA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\filip\\CSharp\\pAttacks\\pAttacks.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\filip\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.24\\microsoft.windowsdesktop.app.ref.6.0.24.nupkg.sha512",
+    "C:\\Users\\filip\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.24\\microsoft.netcore.app.ref.6.0.24.nupkg.sha512",
+    "C:\\Users\\filip\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.24\\microsoft.aspnetcore.app.ref.6.0.24.nupkg.sha512",
+    "C:\\Users\\filip\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.24\\microsoft.netcore.app.host.win-x64.6.0.24.nupkg.sha512"
+  ],
+  "logs": []
+}

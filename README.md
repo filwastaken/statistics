@@ -26,3 +26,11 @@ The webpages for this homework are:
 * [task3](/code/homework2/task3)
 
 The task 2 is divided in the [Javascript section](/code/homework2/task2.html#javascript) and the [C# section](/code/homework2/task2.html#csharp)
+
+# Statistic's homework n.3
+The webpages code for this homework are:
+
+* [CSharp pAttacks](https://github.com/bluecheese-fil/bluecheese-fil.github.io/tree/main/code/homework3/CSharp/pAttacks)
+* [JavaScript pAttacls](/code/homework3/JavaScript/js_pAttacks)
+
+The theoretical part, on the other hand, can be found in the following [theory webpage](/docs/homework3)
