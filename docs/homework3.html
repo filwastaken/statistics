@@ -1,26 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <link rel="stylesheet" href="/src/styles.css">
+  </head>
   <body>
     <p style="width: 20vw">
-      <h3> First exercise </h3>
+      <h1> First question </h1>
+      <a>
+        <b> 
+          Is what you see what you expected? What about the averages of the distributions and the shapes of the histograms: do you see regularities,
+          differences and can you attempt to explain what you see or guessing what are the "theoretical" limit distribution, when as N increases, and you can make the
+          distribution simulation "more detailed" by increasing M ?
+        </b>
+      </a>
+
+      <br>
+      <br>
+      
       <a>
         The shape of the distributions will depend on the values chosen for N, M and P. When both M and N are large, but P is small, the distribution will tend to resemble a normal distribution.
+        This is true since, when we posses a larger sample, the sampling distribution of the mean is normally distributed, even if your original variable is not normally distributed. This aproximation is based on the Central Limit Theorem.
         The histograms will look like a normal distribution when M is large. If N is increased, the histograms will contain more details for a given point, showing different variations on the graph.
         If M is small, the histogram graph will tend to look more uniform, so that each columns size is described by the same charateristics.
         Below are some images that show this behaviour.
       </a>
 
-      <img src="/src/hw3/graph1.png">
+    </p>
+    <p style="margin: 20px 0px 20px 0px;">
+      Here are two drawn graphs as an example. The bottom one has had both N and M increased, while P stayed the same at 0.8
+      <div style="display: flex; flex-direction: row; justify-content: space-around;">
+        <img src="/src/hw3/js_graph1.png" width="800px">
+        <img src="/src/hw3/js_graph2.png" width="800px">
+      </div>
+    </p>
 
+    <hr>
+    <p>
+      <h1> Second question </h1>
+      <a>
+        <b>
+          Recall briefly the definition and math notions relevant to "probability space" and make some simple examples, indicating among the triple of the space the meaning of each element in your particular example.
+          If you wanted to model probabilistically the homework Exercise 1, explain what are the 3 sets of your probability space and their elements, in this case.
+        </b>
+      </a>
 
-      <!-- TODO: Finish this -->
-      <h3> Second exercise </h3>
-      Recall briefly the definition and math notions relevant to "probability space" and make some simple examples, indicating among the triple of the space the meaning of each element in your particular example.
-      If you wanted to model probabilistically the homework Exercise 1, explain what are the 3 sets of your probability space and their elements, in this case.
-      <a> </a>
+      <br>
+      <br>
 
-      <!-- TODO: Add images for C# and Javascript code -->
+      <a>
+        In porbability theory, a probability space is a mathematical construct that formalizes an experiment or a random process with a model. This is written as a triple (Ω, F, P). A probability space consists of three elements:
+        <ol>
+          <li> Ω is the sample space. This rapresents the set of all possible outcomes of an experiment. An event is an element that must be contained in Ω. </li>
+          <li> F is the event space. This corresponds to a subset of the sample space and classifies some events as "measurable" or "events of interest". </li>
+          <li> P is a probability function. In particular it associates a number between 0 and 1 to each event, where 0 means that the chosen event will never realize, where 1 means that the event will always occur. </li>
+        </ol>
+
+        We could construct an example based on two coin tosses. All the possible outcomes are:
+        <div style="text-align: center; margin-top: 10px; margin-bottom: 10px;"> Ω = { HH, HT, TH, TT }. </div>
+        A possible event of interest could be all the events where tail happend at least once:
+        <div style="text-align: center; margin-top: 10px; margin-bottom: 10px;"> F = { HT, TH, TT }. </div>
+        If the coins are fair, than all the outcomes must have the same probability:
+        <div style="text-align: center; margin-top: 10px; margin-bottom: 10px;"> P(HH) = P(HT) = P(TH) = P(TT) = 1/4. </div>
+        The chance that an event will fall into our events of interest is 3/4.
+      
+        <br>
+        To create a model it would be possible to chose:
+        <ul>
+          <li> Ω is a set that contains all the possible result graphs given N and M. </li>
+          <li> F would be a subset of Ω that we have interest to study. </li>
+          <li> P is a probability function that each graph will occur. Note that this is strictly related with P. </li>
+        </ul>
+      </a>
+    </p>
+
+    <p>
+      <a class="bottomLeft" href="/">
+        Home
+      </a>
+
+      <a class="bottomRight" href="/code/homework3/application.html">
+        Application
+      </a>
     </p>
   </body>
 </html>

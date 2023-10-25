@@ -246,7 +246,6 @@
         }
     }
 
-///////////////////////////////////////////////////////////////////
 
     function histogramData(pos){
         count={};
@@ -254,9 +253,6 @@
         count4={};
         var errore = 0;
         for(var m = 0; m < M; m++){
-            //for(var c=0; c<intervalsNumber; c++){
-                //var inizio = ((c/intervalsNumber)*10).toFixed(1);
-                //var fine = (((c+1)/intervalsNumber)*10).toFixed(1);
             for(var c=0; c<(N); c++){
                 var inizio = (c).toFixed(1);
                 var fine = (c+1).toFixed(1);
@@ -390,8 +386,6 @@
         drawRectangles();
     }
 
-////////////////////
-
     function drawHistogram(rect, pos){
         factorX = (rect.gridXfin - rect.gridXini)/N;
         factorY = ((rect.gridYfin - rect.gridYini)/2)/N;
@@ -518,8 +512,6 @@
             }
         })
     }
-
-///////////////////////////////////////////////////////////////////
 
     canvas.addEventListener("mousedown", (e) => {
         const mouseX = e.clientX - canvas.getBoundingClientRect().left;

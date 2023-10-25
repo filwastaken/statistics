@@ -324,10 +324,5 @@ namespace pAttacks
             else if (Math.Pow(rect.Left - p.X, 2) <= Math.Pow(this.edgeprecision, 2)) return 7;
             return 8;
         }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
