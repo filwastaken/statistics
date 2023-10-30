@@ -36,3 +36,8 @@ a, p {
   
   color: blue;
 }
+
+.latex {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

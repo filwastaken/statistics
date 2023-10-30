@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/src/styles.css">
+
+    <!-- LaTeX -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src="http://dreasgrech.com/upload/jslatex/jquery.jslatex.packed.js"></script>
+    <script> $(function () {$(".latex").latex();}); </script>
+
+  </head>
+  <body>
+
+    <p style="width: 20vw">
+      <h1> First question </h1>
+      <a> <b> Law of Large Numbers (LLN) </b> </a>
+      <br>
+      <a>
+        The Law of Large Numbers states that, as the number of indipendent and identically distributed random variables increases, the average will converge to the expected value
+        of the underlying distribution. This means that, by repeating an exeperiment a large amount of times, the average of the results is equals to the expected value.
+        This means that <br>
+        <div class="latex"> \lim_{n\to+\infty}\sum{\frac{X_{i}}{n}} = \overline{X} </div>
+        <br>
+        Considering our simulation, LLN applied and most curves converged at the mean. It is possible to see this behaviour in the following image:
+      </a>
+
+      <div style="display: flex; justify-content: center; margin: 20px 0px 20px 0px;"> <img src="/src/hw4/LLM.png"> </div>
+
+      <a> In particular, we can consider the weak and strong law of large numbers: </a>
+      
+      <div style="display: flex; justify-content: space-evenly; margin-top: 25px; margin-bottom: 25px;">
+        <a>
+          The <b> weak law </b> states that the sample average converse in probability towards the expected value. This means that, for any positive number ε,
+          <div class="latex"> \lim_{n\to+\infty}Pr(|\overline{X_{n}} - \mu < \varepsilon|) = 1 </div>
+          <div style="display: flex; justify-content: center;">
+            <img src="http://upload.wikimedia.org/wikipedia/commons/4/49/Lawoflargenumbersanimation2.gif"> 
+          </div>
+        </a>
+        <a>
+          The <b> strong law </b> states that the sample average converges almost surely to the expected value. That is
+          <div class="latex"> Pr(\lim_{n\to+\infty}\overline{X_{n}} = \mu) = 1 </div>
+        </a>
+      </div>
+
+      <a>
+        <ul>
+          <li class="bibl"> Orloff J., Bloom J. (n. d.). Central Limit Theorem and Law of Large Numbers. Retrieved from MIT, <a class="bibl" href="https://math.mit.edu/~dav/05.dir/class6-prep.pdf"> https://math.mit.edu/~dav/05.dir/class6-prep.pdf </a> </li>
+          <li class="bibl"> Law of large numbers (n. d.). Retrieved from Wikipedia, <a class="bibl" href="https://en.wikipedia.org/wiki/Law_of_large_numbers"> https://en.wikipedia.org/wiki/Law_of_large_numbers </a> </li>
+        </ul>
+      </a>
+
+    </p>
+
+    <hr>
+    <p>
+      <h1> Second question </h1>
+      <a> <b> Central Limit Theorem (CLT) </b> </a>
+      <br>
+      <a>
+        The central limit theorem states that, if you take sufficiently large samples from a population, the samples mean will be normally distributed, even if the population isn't normally distributed (1).
+        This relates to our exercise considering that, increasing the number of attackers and systems, the distribution resembled a normal distribution. The drawn histograms looked like the bell graph associated with the Gaussian distribution.
+        This behaviour can be observed in the following image:
+      </a>
+
+      <div style="display: flex; justify-content: center; margin: 20px 0px 20px 0px;">
+        <img src="/src/hw4/CTL.png"> 
+      </div>
+      
+      <a>
+        <ol>
+          <li class="bibl"> Scribbr (2022). Central Limit Theorem, retrieved from <a class="bibl" href="https://www.scribbr.com/statistics/central-limit-theorem/"> https://www.scribbr.com/statistics/central-limit-theorem/ </a> </li>
+        </ol>
+      </a>
+    </p>
+
+    <p>
+      <a class="bottomLeft" href="/">
+        Home
+      </a>
+
+      <a class="bottomRight" href="/code/homework4/application.html">
+        Application
+      </a>
+    </p>
+  </body>
+</html>
