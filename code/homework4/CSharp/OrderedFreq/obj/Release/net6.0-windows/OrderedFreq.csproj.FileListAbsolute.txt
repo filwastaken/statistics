@@ -1,0 +1,16 @@
+C:\Users\filip\CSharp\OrderedFreq\obj\Release\net6.0-windows\OrderedFreq.Form1.resources
+C:\Users\filip\CSharp\OrderedFreq\obj\Release\net6.0-windows\OrderedFreq.csproj.GenerateResource.cache
+C:\Users\filip\CSharp\OrderedFreq\obj\Release\net6.0-windows\OrderedFreq.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\filip\CSharp\OrderedFreq\obj\Release\net6.0-windows\OrderedFreq.AssemblyInfoInputs.cache
+C:\Users\filip\CSharp\OrderedFreq\obj\Release\net6.0-windows\OrderedFreq.AssemblyInfo.cs
+C:\Users\filip\CSharp\OrderedFreq\obj\Release\net6.0-windows\OrderedFreq.csproj.CoreCompileInputs.cache
+C:\Users\filip\CSharp\OrderedFreq\bin\Release\net6.0-windows\OrderedFreq.exe
+C:\Users\filip\CSharp\OrderedFreq\bin\Release\net6.0-windows\OrderedFreq.deps.json
+C:\Users\filip\CSharp\OrderedFreq\bin\Release\net6.0-windows\OrderedFreq.runtimeconfig.json
+C:\Users\filip\CSharp\OrderedFreq\bin\Release\net6.0-windows\OrderedFreq.dll
+C:\Users\filip\CSharp\OrderedFreq\bin\Release\net6.0-windows\OrderedFreq.pdb
+C:\Users\filip\CSharp\OrderedFreq\obj\Release\net6.0-windows\OrderedFreq.dll
+C:\Users\filip\CSharp\OrderedFreq\obj\Release\net6.0-windows\refint\OrderedFreq.dll
+C:\Users\filip\CSharp\OrderedFreq\obj\Release\net6.0-windows\OrderedFreq.pdb
+C:\Users\filip\CSharp\OrderedFreq\obj\Release\net6.0-windows\OrderedFreq.genruntimeconfig.cache
+C:\Users\filip\CSharp\OrderedFreq\obj\Release\net6.0-windows\ref\OrderedFreq.dll
