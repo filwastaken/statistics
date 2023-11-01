@@ -52,6 +52,6 @@ Revisioning homework2, with ordering
 * [JavaScript OrderedFrequencies](https://github.com/bluecheese-fil/bluecheese-fil.github.io/blob/main/code/homework3/JavaScript/OrderedFreq/orderedfreq.html)
 
 Here is the end result, embedded with the important parts of the project code:
-[application] (/code/homework4/application.html)
+[application](/code/homework4/application.html)
 
 The theoretical part can be found at the following link [theory webpage](/docs/homework4)
