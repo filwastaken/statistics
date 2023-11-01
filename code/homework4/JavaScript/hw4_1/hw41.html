@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head> <title>Random Number Generator</title> </head>
+
+  <script>
+
+    var randoms;
+    var extractions;
+    var divisions;
+    var extractionsDict = {};
+
+    function addVariables(){
+      "use strict";
+
+      let numVariables = parseInt(document.getElementById("variables_num").value);
+
+      if(numVariables > 6) {
+        numVariables = 6;
+        document.getElementById("variables_num").value = 6;
+      } else if(numVariables < 2){
+        numVariables = 2;
+        document.getElementById("variables_num").value = 2;
+      }
+
+      randoms = Array(numVariables).fill().map(() => Math.random());
+      extractions = Array(numVariables).fill(0);
+      divisions = Array(numVariables);
+
+      for (let i = 0; i < numVariables; i++) {
+        const label = document.createElement('label');
+        label.textContent = `Var ${i + 1} divisions`;
+
+        const numericInput = document.createElement('input');
+        numericInput.type = 'number';
+        numericInput.min = 1;
+        numericInput.step = 1;
+        numericInput.value = 1;
+        numericInput.max = 20;
+        numericInput.style = "margin: 0px 10px 0px 10px;";
+
+        inputContainer.appendChild(label);
+        inputContainer.appendChild(numericInput);
+        
+        divisions[i] = numericInput;
+        document.getElementById("calculate_bt").style.display = 'block';
+        document.getElementById("startbt").disabled = true;
+      }
+    }
+
+    function calculate(){
+      "use strict";
+
+      let key;
+      const extractionsNum = parseInt(document.getElementById("extraction_num").value);
+      let resultsContainer = document.getElementById("result_table");
+
+      for (let j = 0; j < extractionsNum; j++) {
+        key = '';
+          
+        for (let i = 0; i < randoms.length; i++) {
+          extractions[i] = Math.random();
+          key += Math.floor(extractions[i] * (parseInt(divisions[i].value) + 1));
+        }
+          
+        extractionsDict[key] = (extractionsDict[key] || 0) + 1;
+      }
+
+      resultsContainer.innerHTML = '';
+      let abs = 0;
+      let relative = 0;
+      let per = 0;
+      let group = "";
+
+      for (const dictKey in extractionsDict) {
+        abs = extractionsDict[dictKey];
+        relative = abs / extractionsNum;
+        per = relative * 100;
+        group = dictKey.split('').map(chr => `Group ${chr}`).join(', ');
+
+        resultsContainer.innerHTML += 
+        `
+          <tr>
+            <td> ${group} </td>
+            <td> ${abs} </td>
+            <td> ${relative.toFixed(3)} </td>
+            <td> ${per.toFixed(3)}% </td>
+          </tr>
+        `
+      }
+
+      resultsContainer.border = 1;
+      document.getElementById("calculate_bt").disabled = true;
+    }
+
+  </script>
+  <body>
+    <div>
+      <label for="variables_num"> Number of Variables:</label>
+      <input type="number" id="variables_num" value="2" min="2" max="6">
+      <label for="extraction_num"> Number of extractions:</label>
+      <input type="number" id="extraction_num" value="2" min="2" max="1000">
+      <button id="startbt" onclick="addVariables()">Start</button>
+    </div>
+
+    <div id="inputContainer"></div>
+    <button id="calculate_bt" style="display: none;" onclick="calculate()"> Calculate </button>
+    <div id="results">
+      <table id="result_table" style="margin-top: 50px; width: 80%; margin-left: 80px">
+      </table>
+    </div>
+  </body>
+</html>
