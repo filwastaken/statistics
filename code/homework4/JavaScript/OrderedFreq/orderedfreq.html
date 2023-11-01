@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ordered Frequency Analysis</title>
+    
+    <script>
+      "use strict";
+
+      const hobbieshash = {};
+      const agehash = {};
+      const weighthash = {};
+      var lines = 0;
+      var ageTable, hobbiesTable, weightTable;
+
+      function calculateFreq(){
+        "use strict";
+
+        ageTable = document.getElementById("age_table");
+        hobbiesTable = document.getElementById("hobbies_table");
+        weightTable = document.getElementById("weight_table");
+
+        // Getting the intervals first:
+        var ageIntervals = parseInt(document.getElementById('discrete_intervals').value);
+        var weightIntervals = parseInt(document.getElementById('continuous_intervals').value);
+
+        // I can clean the table before doing any calculations on the csv file
+        if(ageTable.rows != null) for (let i = ageTable.rows.length - 1; i > 0; i--) ageTable.deleteRow(i);
+        if(hobbiesTable.rows != null) for (let i = hobbiesTable.rows.length - 1; i > 0; i--) hobbiesTable.deleteRow(i);
+        if(weightTable.rows != null) for (var i = weightTable.rows.length - 1; i > 0; i--) weightTable.deleteRow(i);
+
+        // I can now get the csv file and do the calculations. I'll save those in the hashes defined above
+        fetch("https://bluecheese-fil.github.io/src/hw2/survey/professional_life.csv").then(response => response.text()).then(data => {
+          lines = data.split('\n');
+          const header = lines[0].split(',');
+          
+          const agelist = [];
+          const weigthlist = [];
+          const hobbielist = [];
+
+          let currentLine;
+          for (let i = 1; i < lines.length; i++) {
+            currentLine = lines[i].split(',');
+            agelist.push(currentLine[header.indexOf("Age")]);
+            weigthlist.push(currentLine[header.indexOf("Weigth")]);
+            hobbielist.push(currentLine[header.indexOf("Main Hobbies")]);
+          }
+
+          // I can now get the max and min values for the weigth and the age:
+          let ageMax = (Math.max(...agelist));
+          let ageMin = (Math.min(...agelist));
+          let weigthMax = (Math.max(...weigthlist));
+          let weigthMin = (Math.min(...weigthlist));
+
+          // Next, the dimension
+          let ageDim = (ageMax - ageMin) / ageIntervals;
+          let weightDim = (weigthMax - weigthMin) / weightIntervals;
+
+          // I'll start to count the weights (keeping in mind this is continuous)
+          let start, end;
+          for (let i = 0; i < weigthlist.length; i++) {
+            for (let j = weigthMin; j < weigthMax; j += weightDim) {
+              start = j;
+              end = (start + weightDim).toFixed(2);
+              start = start.toFixed(2);
+
+              if (weigthlist[i] >= start && weigthlist[i] < end) {
+                if(weighthash.hasOwnProperty(start+"-"+end)) weighthash[start+"-"+end]++;
+                else weighthash[start+"-"+end] = 1;
+              }
+              if(end == maxH && heights[i]==end){
+                if(weighthash.hasOwnProperty(start+"-"+end)) weighthash[start+"-"+end]++;
+                else weighthash[start+"-"+end] = 1;
+              }
+            }
+          }
+
+          // Next the ages
+          for (let i = 0; i < agelist.length; i++) {
+            for (let j = ageMin; j < ageMax; j += ageDim ) {
+              start = j;
+              end = start + ageDim;
+
+              if (agelist[i] >= start && agelist[i] < end) {
+                if(agehash.hasOwnProperty(start+"-"+end)) agehash[start+"-"+end]++;
+                else agehash[start+"-"+end] = 1;
+              }
+
+              if(end == ageMax && agelist[i]==end){
+                if(agehash.hasOwnProperty(start+"-"+end)) agehash[start+"-"+end]++;
+                else agehash[start+"-"+end] = 1;
+              }
+            }
+          }
+
+          // I can now insert the data inside the tables
+          for (var key in agehash) {
+            ageTable.innerHTML += 
+            `
+            <td>
+              <th> ${key} </th>
+              <th> ${agehash[key]} </th>
+              <th> ${(agehash[key]/lines.length).toFixed(4)} </th>
+              <th> ${(agehash[key]/lines.length*100).toFixed(2)}% </th>
+            </td>                
+            `;
+          }
+
+          for (var key in weighthash) {
+            weightTable.innerHTML += 
+            `
+            <td>
+              <th> ${key} </th>
+              <th> ${weighthash[key]} </th>
+              <th> ${(weighthash[key]/lines.length).toFixed(4)} </th>
+              <th> ${(weighthash[key]/lines.length*100).toFixed(2)}% </th>
+            </td>                
+            `;
+          }
+
+          for (var key in hobbieshash) {
+            hobbiesTable.innerHTML += 
+            `
+            <td>
+              <th> ${key} </th>
+              <th> ${hobbieshash[key]} </th>
+              <th> ${(hobbieshash[key]/lines.length).toFixed(4)} </th>
+              <th> ${(hobbieshash[key]/lines.length*100).toFixed(2)}% </th>
+            </td>                
+            `;
+          }
+
+        })/*.catch(error => console.log("Errore nel recuperare il file CSV!"));*/
+      }
+
+      function replaceTable(originalhash, newhash){
+        "use strict";
+
+        // I need to check what hash I'm reordering
+        switch (originalhash) {
+          case hobbieshash:
+            // delete hobbies table
+            for (let i = hobbiesTable.rows.length - 1; i > 0; i--) hobbiesTable.deleteRow(i);
+
+            // Refilling it with new data
+            for (var key in newhash) {
+              hobbiesTable.innerHTML += 
+              `
+              <td>
+                <th> ${key} </th>
+                <th> ${newhash[key]} </th>
+                <th> ${(newhash[key]/lines.length).toFixed(4)} </th>
+                <th> ${(newhash[key]/lines.length*100).toFixed(2)}% </th>
+              </td>                
+              `;
+            }
+            break;
+
+            case weighthash:
+            // delete hobbies table
+            for (let i = weightTable.rows.length - 1; i > 0; i--) weightTable.deleteRow(i);
+
+            // Refilling it with new data
+            for (var key in newhash) {
+              weightTable.innerHTML += 
+              `
+              <td>
+                <th> ${key} </th>
+                <th> ${newhash[key]} </th>
+                <th> ${(newhash[key]/lines.length).toFixed(4)} </th>
+                <th> ${(newhash[key]/lines.length*100).toFixed(2)}% </th>
+              </td>                
+              `;
+            }
+            break;
+
+            case agehash:
+            // delete hobbies table
+            for (let i = ageTable.rows.length - 1; i > 0; i--) ageTable.deleteRow(i);
+
+            // Refilling it with new data
+            for (var key in newhash) {
+              ageTable.innerHTML += 
+              `
+              <td>
+                <th> ${key} </th>
+                <th> ${newhash[key]} </th>
+                <th> ${(newhash[key]/lines.length).toFixed(4)} </th>
+                <th> ${(newhash[key]/lines.length*100).toFixed(2)}% </th>
+              </td>                
+              `;
+            }
+            break;
+
+          default:
+            break;
+        }
+      }
+      
+      function alphaOrder(hash){
+        "use strict";
+
+        const keys = Object.keys(hash); keys.sort();
+        const output_hash = {};
+
+        // coping the values from one hash to the other
+        for (const k of keys) output_hash[k] = hash[k];
+
+        replaceTable(hash, output_hash);
+      }
+
+      function ascOrder(hash){
+        "use strict";
+
+        const sortedEntries = Object.entries(hash).sort((a, b) => a[1] - b[1]);
+        const output_hash = Object.fromEntries(sortedEntries);
+
+        replaceTable(hash, output_hash);
+      }
+
+      function descOrder(hash){
+        "use strict";
+
+        const sortedEntries = Object.entries(hash).sort((a, b) => b[1] - a[1]);
+        const output_hash = Object.fromEntries(sortedEntries);
+
+        replaceTable(hash, output_hash);
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <label for="discrete_intervals">Number of Intervals for the discrete variable:</label>
+      <input type="number" id="discrete_intervals" value="1" min="1" max="20">
+      <br>
+      <br>
+      <label for="continuous_intervals">Number of Intervals for the continuous variable:</label>
+      <input type="number" id="continuous_intervals" value="1" min="1" max="20">
+      <br>
+      <br>
+      <button id="calculate_btn" onclick="calculateFreq()">Calculate</button>
+    </div>
+
+    <div id="qualitative">
+      <h2>Hobbies -> Qualitative Data</h2>
+      <button onclick="ascOrder(hobbieshash)">Ascending Order</button>
+      <button onclick="descOrder(hobbieshash)">Descending Order</button>
+      <button onclick="alphaOrder(hobbieshash)"> Alphabetical Order </button>
+    </div>
+
+    <div id="quantitative_discrete">
+      <h2>Age -> Quantitative Discrete Data</h2>
+      <button onclick="ascOrder(agehash)">Ascending Order</button>
+      <button onclick="descOrder(agehash)">Descending Order</button>
+      <button onclick="alphaOrder(agehash)">Key order</button>
+    </div>
+
+    <div id="quantitative_continuous">
+      <h2>Weight -> Quantitative Continuous Data</h2>
+      <button onclick="ascOrder(weighthash)">Ascending Order</button>
+      <button onclick="descOrder(weighthash)">Descending Order</button>
+      <button onclick="alphaOrder(weighthash)">Key Order</button>
+    </div>
+
+    <table id="hobbies_table" style="margin-top: 50px; width: 80%; margin-left: 80px;"></table>
+    <table id="age_table" style="margin-top: 50px; width: 80%; margin-left: 80px;"></table>
+    <table id="weight_table" style="margin-top: 50px; width: 80%; margin-left: 80px;"></table>
+  </body>
+</html>

@@ -43,15 +43,15 @@ The webpages for this homework's code are:
 
 ## Task 1
 Dividing continuos random variables with intervals defined by the user
-* [CSharp pAttacks](https://github.com/bluecheese-fil/bluecheese-fil.github.io/tree/main/code/homework4/JavaScript/hw4_1/hw1.html)
-* [JavaScript pAttacls](https://github.com/bluecheese-fil/bluecheese-fil.github.io/tree/main/code/homework4/JavaScript/hw4_1/hw1.html)
+* [CSharp task1](https://github.com/bluecheese-fil/bluecheese-fil.github.io/tree/main/code/homework4/CSharp/hw4_1)
+* [JavaScript task2](https://github.com/bluecheese-fil/bluecheese-fil.github.io/blob/main/code/homework4/JavaScript/hw4_1/hw41.html)
 
 ## Task 2
 Revisioning homework2, with ordering
-* [CSharp pAttacks]()
-* [JavaScript pAttacls]()
+* [CSharp OrderedFrequencies](https://github.com/bluecheese-fil/bluecheese-fil.github.io/tree/main/code/homework4/CSharp/OrderedFreq)
+* [JavaScript OrderedFrequencies](https://github.com/bluecheese-fil/bluecheese-fil.github.io/blob/main/code/homework3/JavaScript/OrderedFreq/orderedfreq.html)
 
-There is an explaination here, with images and videos:
+Here is the end result, embedded with the important parts of the project code:
 [application] (/code/homework4/application.html)
 
 The theoretical part can be found at the following link [theory webpage](/docs/homework4)

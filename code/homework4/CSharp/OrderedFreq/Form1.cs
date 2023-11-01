@@ -29,18 +29,18 @@ namespace OrderedFreq
         }
 
         // Qualitive ordering
-        private void quali_asc_click(object sender, EventArgs e) { Ascending(this.qual_cnt, this.qual_grid); }
+        private void quali_asc_click(object sender, EventArgs e) { AscOrder(this.qual_cnt, this.qual_grid); }
         private void quali_alpha_click(object sender, EventArgs e) { AlphaOrder(this.qual_cnt, this.qual_grid); }
-        private void quali_desc_click(object sender, EventArgs e) { Descending(this.qual_cnt, this.qual_grid); }
+        private void quali_desc_click(object sender, EventArgs e) { DescOrder(this.qual_cnt, this.qual_grid); }
 
         // Quantitive discrete ordering
-        private void quantd_asc_click(object sender, EventArgs e) { Ascending(this.quantd_cnt, this.quantd_grid); }
-        private void quantd_desc_click(object sender, EventArgs e) { Descending(this.quantd_cnt, this.quantd_grid); }
+        private void quantd_asc_click(object sender, EventArgs e) { AscOrder(this.quantd_cnt, this.quantd_grid); }
+        private void quantd_desc_click(object sender, EventArgs e) { DescOrder(this.quantd_cnt, this.quantd_grid); }
         private void quantd_key_click(object sender, EventArgs e) { AlphaOrder(this.quantd_cnt, this.quantd_grid); }
 
         // Quantitive continuous ordering
-        private void quantc_asc_click(object sender, EventArgs e) { Ascending(this.quantc_cnt, this.quantc_grid); }
-        private void quantc_desc_click(object sender, EventArgs e) { Descending(this.quantc_cnt, this.quantc_grid); }
+        private void quantc_asc_click(object sender, EventArgs e) { AscOrder(this.quantc_cnt, this.quantc_grid); }
+        private void quantc_desc_click(object sender, EventArgs e) { DescOrder(this.quantc_cnt, this.quantc_grid); }
         private void quantc_key_click(object sender, EventArgs e) { AlphaOrder(this.quantc_cnt, this.quantc_grid); }
 
         private void calc_bt_Click(object sender, EventArgs e)
@@ -201,7 +201,7 @@ namespace OrderedFreq
             }
         }
 
-        private void Ascending(Dictionary<String, int> dict, DataGridView grid)
+        private void AscOrder(Dictionary<String, int> dict, DataGridView grid)
         {
             double relFreq, percFreq;
 
@@ -217,7 +217,7 @@ namespace OrderedFreq
             }
         }
 
-        private void Descending(Dictionary<String, int> dict, DataGridView grid)
+        private void DescOrder(Dictionary<String, int> dict, DataGridView grid)
         {
             double relFreq, percFreq;
 
