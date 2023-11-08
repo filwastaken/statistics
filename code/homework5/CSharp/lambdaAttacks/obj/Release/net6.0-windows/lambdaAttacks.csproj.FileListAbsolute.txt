@@ -1,0 +1,16 @@
+C:\Users\filip\CSharp\lambdaAttacks\bin\Release\net6.0-windows\lambdaAttacks.exe
+C:\Users\filip\CSharp\lambdaAttacks\bin\Release\net6.0-windows\lambdaAttacks.deps.json
+C:\Users\filip\CSharp\lambdaAttacks\bin\Release\net6.0-windows\lambdaAttacks.runtimeconfig.json
+C:\Users\filip\CSharp\lambdaAttacks\bin\Release\net6.0-windows\lambdaAttacks.dll
+C:\Users\filip\CSharp\lambdaAttacks\bin\Release\net6.0-windows\lambdaAttacks.pdb
+C:\Users\filip\CSharp\lambdaAttacks\obj\Release\net6.0-windows\lambdaAttacks.AttackForm.resources
+C:\Users\filip\CSharp\lambdaAttacks\obj\Release\net6.0-windows\lambdaAttacks.csproj.GenerateResource.cache
+C:\Users\filip\CSharp\lambdaAttacks\obj\Release\net6.0-windows\lambdaAttacks.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\filip\CSharp\lambdaAttacks\obj\Release\net6.0-windows\lambdaAttacks.AssemblyInfoInputs.cache
+C:\Users\filip\CSharp\lambdaAttacks\obj\Release\net6.0-windows\lambdaAttacks.AssemblyInfo.cs
+C:\Users\filip\CSharp\lambdaAttacks\obj\Release\net6.0-windows\lambdaAttacks.csproj.CoreCompileInputs.cache
+C:\Users\filip\CSharp\lambdaAttacks\obj\Release\net6.0-windows\lambdaAttacks.dll
+C:\Users\filip\CSharp\lambdaAttacks\obj\Release\net6.0-windows\refint\lambdaAttacks.dll
+C:\Users\filip\CSharp\lambdaAttacks\obj\Release\net6.0-windows\lambdaAttacks.pdb
+C:\Users\filip\CSharp\lambdaAttacks\obj\Release\net6.0-windows\lambdaAttacks.genruntimeconfig.cache
+C:\Users\filip\CSharp\lambdaAttacks\obj\Release\net6.0-windows\ref\lambdaAttacks.dll
