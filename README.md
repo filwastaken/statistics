@@ -34,7 +34,7 @@ The webpages for this homework's code are:
 * [JavaScript pAttacls](/code/homework3/JavaScript/js_pAttacks)
 
 There is an explaination here:
-[application] (/code/homework3/application.html)
+[application] (/code/homework3/application)
 
 The theoretical part, on the other hand, can be found in the following [theory webpage](/docs/homework3)
 
@@ -52,7 +52,7 @@ Revisioning homework2, with ordering
 * [JavaScript OrderedFrequencies](https://github.com/bluecheese-fil/bluecheese-fil.github.io/blob/main/code/homework4/JavaScript/OrderedFreq/orderedfreq.html)
 
 Here is the end result, embedded with the important parts of the project code:
-[application](/code/homework4/application.html)
+[application](/code/homework4/application)
 
 The theoretical part can be found at the following link [theory webpage](/docs/homework4)
 
@@ -65,6 +65,18 @@ Dividing continuos random variables with intervals defined by the user
 * [JavaScript OrderedFrequencies](https://github.com/bluecheese-fil/bluecheese-fil.github.io/blob/main/code/homework5/JavaScript/lambdaAttacks.html)
 
 Here is the end result, embedded with the important parts of the project code:
-[application](/code/homework5/application.html)
+[application](/code/homework5/application)
 
 The theoretical part can be found at the following link [theory webpage](/docs/homework5)
+
+# Statistic's homework n.5
+The webpages for this homework's code are:
+
+Dividing continuos random variables with intervals defined by the user
+* [CSharp lvlRandomWalk]()
+* [JavaScript lvlRandomWalk]()
+
+Here is the end result, embedded with the important parts of the project code:
+[application](/code/homework6/application)
+
+The theoretical part can be found at the following link [theory webpage](/docs/homework6)

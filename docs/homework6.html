@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/src/styles.css">
+
+    <!-- LaTeX -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src="http://dreasgrech.com/upload/jslatex/jquery.jslatex.packed.js"></script>
+    <script> $(function () {$(".latex").latex();}); </script>
+
+  </head>
+  <body>
+
+    <p style="width: 20vw">
+      <h1> Gambler's Ruin Problem </h1>
+      <br>
+      <a>
+        Gambler's Ruin Problem is a classic problem in probability theory. In this famous scenario, a gambler starts with an initial amount of <b> i </b> dollars. On each game, the gambler wins 1$ with probability <b> p </b> and loses
+        1$ with probability <b> <div class="latex"> q = p - 1 </div> </b>. We have to keep in mind that both p and q are probability numbers, therefore must be defined as bigger or equals than 0 and smaller or equals than 1. The gambler will
+        stop playing once he has lost all his money, or has accumulated <b> N </b> dollars with his wins. This problem's question aims to find the probability that the gambler will end up with N dollars.
+
+        <!-- TODO: Keep going -->
+      </a>
+      
+      <a class="bibl">
+        <ol>
+          <li> Notes from the statistics course lectures </li>
+          <li> Poisson point process (n. d.). Retrieved from Wikipedia, <a class="bibl" href="https://en.wikipedia.org/wiki/Poisson_point_process"> https://en.wikipedia.org/wiki/poisson_point_process </a> </li>
+        </ol>
+      </a>
+    </p>
+
+    <p>
+      <a class="bottomLeft" href="/">
+        Home
+      </a>
+
+      <a class="bottomRight" href="/code/homework6/application.html">
+        Application
+      </a>
+    </p>
+  </body>
+</html>

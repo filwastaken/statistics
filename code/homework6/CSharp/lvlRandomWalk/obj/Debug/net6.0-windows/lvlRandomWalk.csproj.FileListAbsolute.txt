@@ -1,0 +1,16 @@
+C:\Users\filip\CSharp\lvlRandomWalk\bin\Debug\net6.0-windows\lvlRandomWalk.exe
+C:\Users\filip\CSharp\lvlRandomWalk\bin\Debug\net6.0-windows\lvlRandomWalk.deps.json
+C:\Users\filip\CSharp\lvlRandomWalk\bin\Debug\net6.0-windows\lvlRandomWalk.runtimeconfig.json
+C:\Users\filip\CSharp\lvlRandomWalk\bin\Debug\net6.0-windows\lvlRandomWalk.dll
+C:\Users\filip\CSharp\lvlRandomWalk\bin\Debug\net6.0-windows\lvlRandomWalk.pdb
+C:\Users\filip\CSharp\lvlRandomWalk\obj\Debug\net6.0-windows\lvlRandomWalk.AttackForm.resources
+C:\Users\filip\CSharp\lvlRandomWalk\obj\Debug\net6.0-windows\lvlRandomWalk.csproj.GenerateResource.cache
+C:\Users\filip\CSharp\lvlRandomWalk\obj\Debug\net6.0-windows\lvlRandomWalk.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\filip\CSharp\lvlRandomWalk\obj\Debug\net6.0-windows\lvlRandomWalk.AssemblyInfoInputs.cache
+C:\Users\filip\CSharp\lvlRandomWalk\obj\Debug\net6.0-windows\lvlRandomWalk.AssemblyInfo.cs
+C:\Users\filip\CSharp\lvlRandomWalk\obj\Debug\net6.0-windows\lvlRandomWalk.csproj.CoreCompileInputs.cache
+C:\Users\filip\CSharp\lvlRandomWalk\obj\Debug\net6.0-windows\lvlRandomWalk.dll
+C:\Users\filip\CSharp\lvlRandomWalk\obj\Debug\net6.0-windows\refint\lvlRandomWalk.dll
+C:\Users\filip\CSharp\lvlRandomWalk\obj\Debug\net6.0-windows\lvlRandomWalk.pdb
+C:\Users\filip\CSharp\lvlRandomWalk\obj\Debug\net6.0-windows\lvlRandomWalk.genruntimeconfig.cache
+C:\Users\filip\CSharp\lvlRandomWalk\obj\Debug\net6.0-windows\ref\lvlRandomWalk.dll
