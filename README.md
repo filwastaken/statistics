@@ -69,7 +69,7 @@ Here is the end result, embedded with the important parts of the project code:
 
 The theoretical part can be found at the following link [theory webpage](/docs/homework5)
 
-# Statistic's homework n.5
+# Statistic's homework n.6
 The webpages for this homework's code are:
 
 Dividing continuos random variables with intervals defined by the user
