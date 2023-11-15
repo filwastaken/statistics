@@ -34,7 +34,7 @@ The webpages for this homework's code are:
 * [JavaScript pAttacls](/code/homework3/JavaScript/js_pAttacks)
 
 There is an explaination here:
-[application] (/code/homework3/application)
+[application](/code/homework3/application)
 
 The theoretical part, on the other hand, can be found in the following [theory webpage](/docs/homework3)
 
