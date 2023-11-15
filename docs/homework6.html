@@ -16,16 +16,24 @@
       <br>
       <a>
         Gambler's Ruin Problem is a classic problem in probability theory. In this famous scenario, a gambler starts with an initial amount of <b> i </b> dollars. On each game, the gambler wins 1$ with probability <b> p </b> and loses
-        1$ with probability <b> <div class="latex"> q = p - 1 </div> </b>. We have to keep in mind that both p and q are probability numbers, therefore must be defined as bigger or equals than 0 and smaller or equals than 1. The gambler will
+        1$ with probability <b> q = p - 1 </b>. We have to keep in mind that both p and q are probability numbers, therefore must be defined as bigger or equals than 0 and smaller or equals than 1. The gambler will
         stop playing once he has lost all his money, or has accumulated <b> N </b> dollars with his wins. This problem's question aims to find the probability that the gambler will end up with N dollars.
-
-        <!-- TODO: Keep going -->
+        <br>
+        Let's being with a fair game, where p is one half. Considering X(t) to be the amount of dollars the gamblers has, we expect the dollars on the next round to be:
+        <div class="latex"> E[X(t+1)] = \frac{1}{2}(E[X(t)] - 1) + \frac{1}{2}(E[X(t)] + 1) </div>
+        Hence when it is a fair game, the probability that the gambler walks out of the casino with N dollars is:  <div class="latex"> \frac{i}{N} </div> In reality, the games in casino are usually unfair.
       </a>
+
+      Here is an example from the current homework, where given p the number can go up or down by 1. We then calculate how many items reached a particular element and show them through an histogram
+      
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
+        <img src="/src/hw6/RandomWalk1.png" width="60%"> </img>
+      </div>
       
       <a class="bibl">
         <ol>
           <li> Notes from the statistics course lectures </li>
-          <li> Poisson point process (n. d.). Retrieved from Wikipedia, <a class="bibl" href="https://en.wikipedia.org/wiki/Poisson_point_process"> https://en.wikipedia.org/wiki/poisson_point_process </a> </li>
+          <li> Chayes, V., Chun, L., Yang, Y., Yao, Y., Zeilberger, D. (2020, May). Retrieved from Wikipedia, <a class="bibl" href="https://en.wikipedia.org/wiki/Poisson_point_process"> https://en.wikipedia.org/wiki/poisson_point_process </a> </li>
         </ol>
       </a>
     </p>

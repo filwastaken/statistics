@@ -73,8 +73,8 @@ The theoretical part can be found at the following link [theory webpage](/docs/h
 The webpages for this homework's code are:
 
 Dividing continuos random variables with intervals defined by the user
-* [CSharp lvlRandomWalk]()
-* [JavaScript lvlRandomWalk]()
+* [CSharp lvlRandomWalk](https://github.com/bluecheese-fil/bluecheese-fil.github.io/tree/main/code/homework6/CSharp/lvlRandomWalk)
+* [JavaScript lvlRandomWalk](https://github.com/bluecheese-fil/bluecheese-fil.github.io/tree/main/code/homework6/JavaScript/lvlRandomWalk.html)
 
 Here is the end result, embedded with the important parts of the project code:
 [application](/code/homework6/application)
