@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/src/styles.css">
+
+    <!-- LaTeX -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src="http://dreasgrech.com/upload/jslatex/jquery.jslatex.packed.js"></script>
+    <script> $(function () {$(".latex").latex();}); </script>
+
+  </head>
+  <body>
+
+    <p style="width: 20vw">
+      <h1> Stochastic Differential Equations </h1>
+
+      <a>
+        A stochastic differential equation (SDE) is a differential equation in which one or more of the terms is a stochastic process. In particular, they are differential equations that involve deterministic and random components.
+        These are used to model the evolution where randomess plays a significant role. Stochastic differential equations provide a link between probability theory and the much older and more developed fields
+        of ordinary and partial differential equations. Some of the most important are:
+      </a>
+
+      <ol>
+        <li>
+          <a> <b> Geometric Brownian Motion </b> </a>
+          <div style="display: flex; flex-direction: row; align-items: center;">
+            <div style="width: 45%">
+              <a> An Geometric Brownian Motion (also known as the exponential Brownian Motion) is a continuous-time stochastic process. In particular, it's used in mathematical finance to model stock prices in a particular financial model.
+                This process is best described by its SDE, which is the following: </a>
+              <div class="latex" style="text-align: center;"> dS_{t} = \mu \ S_t \ dt + \sigma \ S_t \ dW_{t} </div>
+              <a>
+                This ultimately expresses the changes of the Brownian; in particular the process changes by a costant amount every infinitesimal period of time. Formally, the first constant is called <b>drift</b>, while the second is called <b>diffusion term</b>.
+                In particular:
+              </a>
+              
+              <ul style="margin-top: 10px;">
+                <li> <a class="latex">S_t </a> <a style="margin-left: 2px;"> rapresents the stock prices in a particular time t, </a> </li>
+                <li> <a class="latex">\mu </a> <a style="margin-left: 2px;"> is the <b>drift</b>, which is the average rate of return per time unit, </a> </li>
+                <li> <a class="latex"> \sigma </a> <a style="margin-left: 2px;"> is the <b>volatility</b>, which rapresents the standard deviation of the flactuations, </a> </li>
+                <li> <a class="latex">dW_t </a> <a style="margin-left: 2px;"> is a <b>Wiener process</b> (or the Brownian motion), which rapresents the random and continuous movements.</a> </li>
+              </ul>
+  
+              <a> An example is shown on the image on the right: </a>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; align-items: center; width: 50%; margin-left: 5%">
+              <img src="/src/hw7/GBM.png" alt="Geometric Brownian Motion" style="width: 100%;"> </img>
+              <a class="latex"> N = 80; M = 250; P = 0.5; \ \sigma = 0.5; \mu = 0.5 </a>
+            </div>
+
+          </div>
+          <hr>
+        </li>
+
+        <li>
+          <a> <b> Arithmetic Brownian Motion </b> </a>
+          <div style="display: flex; flex-direction: row; align-items: center;">
+
+            <div style="display: flex; flex-direction: column; align-items: center; width: 40%; margin-right: 5%">
+              <img src="/src/hw7/ABM.png" alt="Arithmetic Brownian Motion" style="width: 100%;"> </img>
+              <a class="latex"> N = 80; M = 250; P = 0.5 </a>
+            </div>
+
+            <div style="width: 55%">
+              <a> An Arithmetic Brownian Motion is described by the following SDE: </a>
+              <div class="latex" style="text-align: center;"> dX_{t} = \mu \ dt + \sigma \ dW_{t} </div>
+              <a>
+                This express the changes of the Brownian; in particular the process changes by a costant amount every infinitesimal period of time. Formally, the first term is called <b>drift</b>, while the second term is called the <b>diffusion term</b>.
+                In particular:
+  
+              </a>
+              
+              <ul style="margin-top: 10px;">
+                <li> <a class="latex">X_t </a> <a style="margin-left: 2px;"> rapresents the process value at time t, </a> </li>
+                <li> <a class="latex">\mu </a> <a style="margin-left: 2px;"> is the <b>drift</b>, </a> </li>
+                <li> <a class="latex"> \sigma </a> <a style="margin-left: 2px;"> is the <b>volatility</b>, </a> </li>
+                <li> <a class="latex">dW_t </a> <a style="margin-left: 2px;"> is a <b>Wiener process</b>.</a> </li>
+              </ul>
+  
+              <a> An example is shown on the image on the left: </a>
+            </div>
+          </div>
+          <hr>
+        </li>
+
+        <li>
+          <a> <b> Ornstein-Uhlenbeck Process </b> </a>
+          <div style="display: flex; flex-direction: row; align-items: center;">
+            <div style="width: 45%">
+              <a> An Ornstein-Uhlenbeck Process (also known as the Mean Reverting Process) is a stochastic proces with applications in financial mathematics and physical sciences. Its original application was as a model for the velocity of the Brownian particle
+                under a particular friction. Its SDE is the following: </a>
+              <div class="latex" style="text-align: center;"> dX_{t} = \theta (\mu - X_t) dt + \sigma \ dW_{t} </div>
+              <a>
+                The constant parameters are:
+              </a>
+              
+              <ul style="margin-top: 10px;">
+                <li> <a class="latex">\theta </a> <a style="margin-left: 2px;"> which is the rate (or speed) of the mean reversion. It is defined as strictly bigger than 0, </a> </li>
+                <li> <a class="latex">\mu </a> <a style="margin-left: 2px;"> is the long term mean of the process. In particular, the process will tend to this particular mean, </a> </li>
+                <li> <a class="latex"> \sigma </a> <a style="margin-left: 2px;"> is the <b>volatility</b>. </a> </li>
+              </ul>
+  
+              <a> By ignoring the random flactuations (given by the Weiner process), we see that </a>
+              <a class="latex"> X_t </a>
+              <a> has an overall drift towards the mean value, as expressed above. The process reverts to this mean exponentially, with rate </a>
+              <a class="latex"> \theta </a>
+              <a> . An example is shown on the image on the right: </a>
+              </a>
+
+            </div>
+            
+            <div style="display: flex; flex-direction: column; align-items: center; width: 50%; margin-left: 5%">
+              <img src="/src/hw7/graph.png" alt="Ornstein-Uhlenbeck" style="width: 100%;"> </img>
+              <a class="latex"> N = 80; \ M = 250; \ P = 0.5; \ \sigma = 0.4; \ \mu = 12; \ \theta = 0.2 </a>
+            </div>
+          </div>
+
+          <p>
+            <a> A <b> Vasicek Model </b> is a model that fundamentally follows the same same SDE of the Ornstein-Uhlenbeck Process, however the parameter </a>
+            <a class="latex"> \theta </a>
+            <a> can be a non-constant, in particular it can be a deterministic function of</a>
+            <a class="latex"> t</a> <a> (1). </a>
+          </p>
+
+          <p>
+            <a> A <b> Hull-White Model </b> is an extension of the Vasicek model with the difference that it can be made to fit the current term structure (2). In particular, it's SDE is the following: </a>
+            <div class="latex" style="text-align: center;"> dX_t = [\theta (t) - \mu X_t] dt + \sigma \ dW_t </div>
+          </p>
+          <hr>
+        </li>
+
+        <div style="display: flex; flex-direction: row; width: 100%;">
+          <div style="width: 46%;">
+            <li>
+              <a> <b> Cox-Ingersoll-Ross (CIR) Model </b> <br> A Cox-Ingersoll-Ross (CIR) Model is similar to the Vasicek Model; however it includes a term proportional to the square root of the process. Its SDE is the following: </a>
+              <div class="latex" style="text-align: center;"> dX_t = \kappa \ ( \ \theta  - X_t \ ) dt + \sigma \ \sqrt{X_t} \ dW_t </div>
+            </li>
+          </div>
+          <div style="width: 48%; margin-left: 5%">
+            <li>
+              <a> <b> Black-Karasinski Model </b> <br> A Black-Karasinski Model can be considered as an extension of the CIR Model. It introduces a random (or stochastic) volatility, allowing this parameter to vary over time. It's SDE is the following: </a>
+              <div class="latex" style="text-align: center;"> dX_t = [\ \theta(t) - \alpha X_t \ ] \ dt + \sigma(t) \ \sqrt{X_t} \ dW_t </div>
+              <a>
+                Where :
+                <ul>
+                  <li> <a class="latex"> \alpha </a> <a> is the speed of the mean reversion, </a> </li>
+                  <li> <a class="latex"> \theta (t) </a> <a> is the mean reversion <b>function</b>, with variable t, </a> </li>
+                  <li> <a class="latex"> \sigma(t) </a> <a> is the volatility function, with variable t, </a> </li>
+                  <li> <a class="latex"> X_t </a> <a> is the short rate at time t. </a> </li>
+                </ul>
+              </a>
+            </li>
+          </div>
+        </div>
+        <hr>
+
+        <div style="display: flex; flex-direction: row; width: 100%;">
+          <div style="width: 46%;">
+            <li>
+              <a>
+                <b> Heston Model </b> <br>
+                A Heston Model is a mathematical model that describes the evolution of the volatility of an underlying asset. This is defined by two stochastic equations, one for the price and one for the volatility.
+                It's SDE are:
+              </a>
+              <div class="latex" style="text-align: center;"> dS_t = \mu \ S_t \ dt + \sigma \ \sqrt{V_t} \ S_t \ dW^1_t </div>
+              <div class="latex" style="text-align: center;"> dV_t = \kappa \ ( \ \theta  - V_t \ ) dt + \sigma \ \sqrt{V_t} \ dW^2_t </div>
+
+              <a>
+                Where :
+                <ul>
+                  <li> <a class="latex"> S_t </a> <a> is the asset price at time t, </a> </li>
+                  <li> <a class="latex"> \sigma </a> <a> is the volatility, </a> </li>
+                  <li> <a class="latex"> V_t </a> <a> is the instantaneous variance at time t, which is the volatility squared, </a> </li>
+                  <li> <a class="latex"> \kappa </a> <a> is the speed of mean reversion of volatility, </a> </li>
+                  <li> <a class="latex"> \mu </a> <a> is the average rate of return, </a> </li>
+                  <li> <a class="latex"> dW^1_t </a> <a> and </a> <a class="latex"> dW^2_t </a> <a> are correlated to the Weiner process. </a> </li>
+                </ul>
+              </a>
+            </li>
+          </div>
+          <div style="width: 48%; margin-left: 5%">
+            <li>
+              <a> <b> Chen Model </b> <br> A Chen Model is a more complex stochastic volatility model that considers both jumps and continuous-time processes in the volatility equation. It's SDE is: </a>
+              <div class="latex" style="text-align: center;"> dX_t = ( \mu - \lambda X_t ) \ dt + \sigma \sqrt{X_t} dW_t + dJ_t </div>
+              <a>
+                Where :
+                <ul>
+                  <li> <a class="latex"> X_t </a> <a> is the volatility of the asset at a particular moment in time, </a> </li>
+                  <li> <a class="latex"> \mu </a> <a> is the average growth rate, </a> </li>
+                  <li> <a class="latex"> \lambda </a> <a> is the mean reverting speed, </a> </li>
+                  <li> <a class="latex"> \sigma </a> <a> is the volatility of the process, </a> </li>
+                  <li> <a class="latex"> dJ_t </a> <a> is a jump process. </a> </li>
+                </ul>
+              </a>
+            </li>
+          </div>
+        </div>
+      </ol>
+    </p>
+
+    <ol style="margin-top: 10%">
+      <!-- https://www.sciencedirect.com/topics/economics-econometrics-and-finance/mean-reversion -->
+      <!-- https://riskprep.com/tutorials/modeling-interest-rate-changes/ -->
+      <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>
+      <li> <a class="bibl"> Chayes, V., Chun, L., Yang, Y., Yao, Y., Zeilberger, D. (2020, May). Retrieved from Wikipedia, </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Poisson_point_process"> https://en.wikipedia.org/wiki/poisson_point_process </a> </li>
+    </ol>
+
+    <p>
+      <a class="bottomLeft" href="/">
+        Home
+      </a>
+
+      <a class="bottomRight" href="/code/homework7/application.html">
+        Application
+      </a>
+    </p>
+  </body>
+</html>
