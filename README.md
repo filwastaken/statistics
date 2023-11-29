@@ -80,3 +80,11 @@ Here is the end result, embedded with the important parts of the project code:
 [application](/code/homework6/application)
 
 The theoretical part can be found at the following link [theory webpage](/docs/homework6)
+
+# Statistic's homework n.7
+The webpages for this homework's code are:
+* [JavaScript code](https://github.com/bluecheese-fil/bluecheese-fil.github.io/tree/main/code/homework7/JavaScript/hw7.html)
+Here is the end result, embedded with the important parts of the project code:
+[application](/code/homework7/application)
+
+The theoretical part can be found at the following link [theory webpage](/docs/homework7)
