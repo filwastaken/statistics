@@ -88,3 +88,7 @@ Here is the end result, embedded with the important parts of the project code:
 [application](/code/homework7/application)
 
 The theoretical part can be found at the following link [theory webpage](/docs/homework7)
+
+# Statistic's thesis n.1
+## The Glivenko–Cantelli theorem, Proof, Simulations
+[thesis1](/)
