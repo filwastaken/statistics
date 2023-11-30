@@ -37,7 +37,26 @@ a, p {
   color: blue;
 }
 
+.bottomCenter {
+  position: relative;
+  float: center;
+
+  margin-bottom: 10px;
+  
+  color: blue;
+}
+
 .latex {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.thesisSelector {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.selector { color: blue; }

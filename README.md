@@ -90,5 +90,41 @@ Here is the end result, embedded with the important parts of the project code:
 The theoretical part can be found at the following link [theory webpage](/docs/homework7)
 
 # Statistic's thesis n.1
-## The Glivenko–Cantelli theorem, Proof, Simulations
-[thesis1](/)
+## The LLN meaning, proof and simulations
+[thesis1](/thesis/thesis1) :To Finish
+
+# Statistic's thesis n.2
+## The CLT meaning, proof and simulations
+[thesis2](/thesis/thesis2) :To Finish
+
+# Statistic's thesis n.3
+## The Gaussian distribution, meaning, derivations and simulations
+[thesis3](/thesis/thesis3) :To Finish
+
+# Statistic's thesis n.4
+## The Glivenko–Cantelli theorem, proof and simulations
+[thesis4](/thesis/thesis4) :To Finish
+
+# Statistic's thesis n.5
+:To Finish
+
+# Statistic's thesis n.6
+:To Finish
+
+# Statistic's thesis n.7
+:To Finish
+
+# Statistic's thesis n.8
+:To Finish
+
+# Statistic's thesis n.9
+:To Finish
+
+# Statistic's thesis n.10
+:To Finish
+
+# Statistic's thesis n.11
+:To Finish
+
+# Statistic's thesis n.12
+:To Finish

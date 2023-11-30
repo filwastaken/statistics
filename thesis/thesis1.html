@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/src/styles.css">
+
+    <!-- LaTeX -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script src="http://dreasgrech.com/upload/jslatex/jquery.jslatex.packed.js"></script>
+    <script> $(function () {$(".latex").latex();}); </script>
+
+  </head>
+  <body>
+    <h1> Thesis 1 (LLN) </h1>
+    <p style="width: 20vw">
+      <h1> The LLN meaning, proof and simulation </h1>
+      <a>
+        The <b> Law of Large Numbers </b> (LLN) is a theorem that describes the result of performing an experiment
+        a large number of times. In particular, the average of the results obtained from the experiments is close to
+        the expected value. This means that, by using indipentent and identically distributed random variables,
+        the law of large numbers assures that the end result will be asintotically equals to the expected value.
+        This is largely used everyday, especially by casinos. By assuring that the expected value of the gambiling machines
+        give the casino revenue, it becomes a sustainable buisness model with large enough number of bets. Even if the casino
+        might lose money from time to time, in the end it will gain money according to the expected value.
+        We can see how a Bernoulli series converges to the theoretical probability, according to LLN. In particular,
+        for a Bernoulli random variable, the expected value is the theoretical probability of success, and the average of the n variables, assuming them indipentent and identically distributed, as stated above.
+        In this case, the expected value equals the relative frequency.
+        <h4> Example: </h4>
+        A fair toin coss is a Bernoulli trial, where the set of possible outcomes {H, T} can be mapped on the set of Bernoulli results {0, 1}. By being fair, the probability
+        is the same for each outcome, therefore both Head and Tails have a 1/2 (0.5) chance of happening. According to the law of large numbers, the number of heads will be half the total trials.
+        In particular, if we toss the coin n times, the number of heads will be one over 2n.
+        <br>
+        There are two different versions of the law of large numbers. They are called <b> strong law of large numbers </b> and
+        <b> weak law of large numbers </b>.
+
+        <h2> Weak LLN </h2>
+        The weak law of large numbers (also known as <b> Khinchin's law </b>) states that the sample average converges
+        in probability towards the expected value. In particular:
+      </a>
+      <div class="latex"> \lim_{n\to+\infty}Pr(|\overline{X_{n}} - \mu < \varepsilon|) = 1 </div>
+      <div style="display: flex; justify-content: center;">
+        <img src="http://upload.wikimedia.org/wikipedia/commons/4/49/Lawoflargenumbersanimation2.gif"> 
+      </div>
+      <a>
+        Let's now look at the proof:
+        <h4> WLLN proof </h4>
+        <!-- Add proof -->
+        We start by defying the mean
+        <h2> Strong LLN </h2>
+        The <b> strong law </b> states that the sample average converges almost surely to the expected value. That is
+      </a>
+      <div class="latex"> Pr(\lim_{n\to+\infty}\overline{X_{n}} = \mu) = 1 </div>
+
+      <a>
+        <!-- Continua guardando anche Noemi -->
+      </a>
+    </p>
+
+    <ol>
+      <li> <a class="bibl"> Scribbr (2022). Central Limit Theorem, retrieved from </a> <a class="bibl" href="https://www.scribbr.com/statistics/central-limit-theorem/"> https://www.scribbr.com/statistics/central-limit-theorem/ </a> </li>
+    </ol>
+
+    <p class="thesisSelector">
+      <a class="selector" style="color: grey"> Previous Thesis </a>
+      <a class="selector" href="/"> Home </a>
+      <a class="selector" href="/thesis/thesis2.html"> Next thesis </a>
+    </p>
+  </body>
+</html>
