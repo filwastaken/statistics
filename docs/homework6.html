@@ -4,10 +4,7 @@
     <link rel="stylesheet" href="/src/styles.css">
 
     <!-- LaTeX -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    <script src="http://dreasgrech.com/upload/jslatex/jquery.jslatex.packed.js"></script>
-    <script> $(function () {$(".latex").latex();}); </script>
-
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
   </head>
   <body>
 
@@ -15,27 +12,27 @@
       <h1> Gambler's Ruin Problem </h1>
       <br>
       <a>
-        Gambler's Ruin Problem is a classic problem in probability theory. In this famous scenario, a gambler starts with an initial amount of <b> i </b> dollars. On each game, the gambler wins 1$ with probability <b> p </b> and loses
-        1$ with probability <b> q = p - 1 </b>. We have to keep in mind that both p and q are probability numbers, therefore must be defined as bigger or equals than 0 and smaller or equals than 1. The gambler will
-        stop playing once he has lost all his money, or has accumulated <b> N </b> dollars with his wins. This problem's question aims to find the probability that the gambler will end up with N dollars.
+        Gambler's Ruin Problem is a classic problem in probability theory. In this famous scenario, a gambler starts with an initial amount of \( i \) dollars. On each game, the gambler wins 1$ with probability \( p \) and loses
+        1$ with probability \( q = p - 1 \). We have to keep in mind that both p and q are probability numbers, therefore must be defined as bigger or equals than 0 and smaller or equals than 1. The gambler will
+        stop playing once he has lost all his money, or has accumulated \( N \) dollars with his wins. This problem's question aims to find the probability that the gambler will end up with N dollars.
         <br>
-        Let's being with a fair game, where p is one half. Considering X(t) to be the amount of dollars the gamblers has, we expect the dollars on the next round to be:
-        <div class="latex"> E[X(t+1)] = \frac{1}{2}(E[X(t)] - 1) + \frac{1}{2}(E[X(t)] + 1) </div>
-        Hence when it is a fair game, the probability that the gambler walks out of the casino with N dollars is:  <div class="latex"> \frac{i}{N} </div> In reality, the games in casino are usually unfair.
+        Let's being with a fair game, where p is one half. Considering \( X(t) \) to be the amount of dollars the gamblers has, we expect the dollars on the next round to be:
+        $$ E[X(t+1)] = \frac{1}{2}(E[X(t)] - 1) + \frac{1}{2}(E[X(t)] + 1) $$
+        Hence when it is a fair game, the probability that the gambler walks out of the casino with \(N\) dollars is: \( \frac{i}{N} \). In reality, the games in casino are usually unfair.
+        <br>
+        Here is an example from the current homework, where given p the number can go up or down by 1. We then calculate how many items reached a particular element and show them through an histogram
       </a>
 
-      Here is an example from the current homework, where given p the number can go up or down by 1. We then calculate how many items reached a particular element and show them through an histogram
       
       <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
         <img src="/src/hw6/RandomWalk1.png" width="60%"> </img>
       </div>
       
-      <a class="bibl">
-        <ol>
-          <li> Notes from the statistics course lectures </li>
-          <li> Chayes, V., Chun, L., Yang, Y., Yao, Y., Zeilberger, D. (2020, May). Retrieved from Wikipedia, <a class="bibl" href="https://en.wikipedia.org/wiki/Poisson_point_process"> https://en.wikipedia.org/wiki/poisson_point_process </a> </li>
-        </ol>
-      </a>
+      <ol>
+        <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>
+        <li> <a class="bibl"> Gambler's Ruin Problem (n.d.). Retrieved from Wikipedia, </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Gambler%27s_ruin"> https://en.wikipedia.org/wiki/Gambler%27s_ruin </a> </li>
+        <li> <a class="bibl"> Gambler's Ruin Problem (n.d.). Retrieved from Rutgers University, </a> <a class="bibl" href="https://sites.math.rutgers.edu/~zeilberg/EM20/GamblersRuin.pdf"> https://sites.math.rutgers.edu/~zeilberg/EM20/GamblersRuin.pdf </a> </li>
+      </ol>
     </p>
 
     <p>

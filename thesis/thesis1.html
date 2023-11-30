@@ -2,12 +2,8 @@
 <html>
   <head>
     <link rel="stylesheet" href="/src/styles.css">
-
     <!-- LaTeX -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    <script src="http://dreasgrech.com/upload/jslatex/jquery.jslatex.packed.js"></script>
-    <script> $(function () {$(".latex").latex();}); </script>
-
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
   </head>
   <body>
     <h1> Thesis 1 (LLN) </h1>
@@ -26,37 +22,64 @@
         In this case, the expected value equals the relative frequency.
         <h4> Example: </h4>
         A fair toin coss is a Bernoulli trial, where the set of possible outcomes {H, T} can be mapped on the set of Bernoulli results {0, 1}. By being fair, the probability
-        is the same for each outcome, therefore both Head and Tails have a 1/2 (0.5) chance of happening. According to the law of large numbers, the number of heads will be half the total trials.
+        is the same for each outcome, therefore both Head and Tails have a \( \frac{1}{2} \) (0.5) chance of happening. According to the law of large numbers, the number of heads will be half the total trials.
         In particular, if we toss the coin n times, the number of heads will be one over 2n.
         <br>
         There are two different versions of the law of large numbers. They are called <b> strong law of large numbers </b> and
         <b> weak law of large numbers </b>.
-
         <h2> Weak LLN </h2>
-        The weak law of large numbers (also known as <b> Khinchin's law </b>) states that the sample average converges
-        in probability towards the expected value. In particular:
       </a>
-      <div class="latex"> \lim_{n\to+\infty}Pr(|\overline{X_{n}} - \mu < \varepsilon|) = 1 </div>
-      <div style="display: flex; justify-content: center;">
-        <img src="http://upload.wikimedia.org/wikipedia/commons/4/49/Lawoflargenumbersanimation2.gif"> 
+
+      <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
+        <a style="width: 70%; margin-right: 10%">
+          The weak law of large numbers (also known as <b> Khinchin's law </b>) states that the sample average converges
+          in probability towards the expected value. In particular:
+          $$ \lim_{n\to+\infty}Pr(|\overline{X_n} - \mu < \varepsilon|) = 1 $$
+          Interpreting this result, the weak law states that for any nonzero margin specified (ε),
+          no matter how small, with a sufficiently large sample there will be a very high probability
+          that the average of the observations will be close to the expected value.
+        </a>
+        <img style="height: 25%; margin-right: 5%" src="http://upload.wikimedia.org/wikipedia/commons/4/49/Lawoflargenumbersanimation2.gif">
       </div>
-      <a>
-        Let's now look at the proof:
-        <h4> WLLN proof </h4>
-        <!-- Add proof -->
-        We start by defying the mean
-        <h2> Strong LLN </h2>
-        The <b> strong law </b> states that the sample average converges almost surely to the expected value. That is
-      </a>
-      <div class="latex"> Pr(\lim_{n\to+\infty}\overline{X_{n}} = \mu) = 1 </div>
 
       <a>
-        <!-- Continua guardando anche Noemi -->
+        <h4> Proof:</h4>
+        Let's consider \( X_1 \), \( X_2 \) to \( X_n \), an infinite number of identically distributed random variables, that have all the same
+        expected value.
+        The average is \( \overline{X_n} = \frac{1}{2} * \sum_{1}^{n}X_n \). Then, by the weak law, it must be true that
+        $$ \overline{X_n} \to E[X_1] = E[X_2] = ... \ for \ n\to+\infty $$
+        Let's consider the Chebyshev's inequality proof, by considering a finite variance. Since all items are indipentent, then the variance of \( X_n \) must be
+        $$ Var(\overline{X_n}) = Var(\frac{1}{n}(X_1 + ... + X_n)) = \frac{1}{n^2} Var(X_1 + ... + X_n) = \frac{n \sigma^2}{n^2} = \frac{\sigma^2}{n} $$
+        Using Chebyshev's inequality on \( \overline{X_n} \) we get:
+        $$ P(|\overline{X_n} - \mu| < \epsilon) = 1 - P(|\overline{X_n} - \mu| \ge \epsilon) \ge 1 - \frac{\sigma^2}{n \epsilon^2} $$
+        As n approaches infinity, the expression approaches 1. Therefore, we have proved that, by increasing the number of variables, the average will equals the expected value.
+        <h2> Strong LLN </h2>
+        The <b> strong law </b> states that the sample average converges almost surely to the expected value. That is:
+        $$ Pr(\lim_{n\to+\infty}\overline{X_n} = \mu) = 1 $$
+        This means that, as the number of trials tend to infinity, the probability of the average observation 
+        converging towards the expected value is 1. This called is called "strong law" since all random variables which
+        converge strongly, are guaranteed to converge weakly too. However, the opposite is not always true, since there
+        are certain cases where the weak law holds while the strong one doesn't. In particular, while the weak law states that
+        it's <b> likely </b> that the average converges to the expected value, the strong law states it's a certainty.
+        <h4> Proof: </h4>
+        The proof for the strong law is much more complex than it's counterpart. Without losing generality, it's possible
+        to center the expected value by choosing \( \mu = 0 \). By using Kolmogorov's Strong Law of Large Numbers, which states
+        $$ P(\lim_{n \to \infty} \frac{1}{n} \sum_{i = 1}^{n}(X_i - \mu) = 0) = 1 $$
+
+        <h4> Example </h4>
+        We can look at the following image from exercise 3 to show how the LLN holds:
+        <img style="width: 100%;" src="/src/th1/graph.png">
+        $$ N = 200, K = 500, P = 0.5 $$
+        Here the average is close to the expected value, as it should be. We can also see how most of the lines tends to accumulate towards the
+        average (which is located in the center), since that's equal to the expected value.
       </a>
     </p>
 
     <ol>
-      <li> <a class="bibl"> Scribbr (2022). Central Limit Theorem, retrieved from </a> <a class="bibl" href="https://www.scribbr.com/statistics/central-limit-theorem/"> https://www.scribbr.com/statistics/central-limit-theorem/ </a> </li>
+      <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>
+      <li> <a class="bibl"> Law of large numbers. (n.d.). In Wikipedia. Retrieved from </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Law_of_large_numbers"> https://en.wikipedia.org/wiki/Law_of_large_numbers </a> </li>
+      <li> <a class="bibl"> Law of large numbers. (n.d.). In Probability course. Retrieved from </a> <a class="bibl" href="https://www.probabilitycourse.com/chapter7/7_1_1_law_of_large_numbers.php"> https://www.probabilitycourse.com/chapter7/7_1_1_law_of_large_numbers.php </a> </li>
+      <li> <a class="bibl"> Orloff J., Bloom J. (n. d.). Central Limit Theorem and Law of Large Numbers. Retrieved from MIT, </a> <a class="bibl" href="https://math.mit.edu/~dav/05.dir/class6-prep.pdf"> https://math.mit.edu/~dav/05.dir/class6-prep.pdf </a> </li>
     </ol>
 
     <p class="thesisSelector">

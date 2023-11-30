@@ -91,11 +91,11 @@ The theoretical part can be found at the following link [theory webpage](/docs/h
 
 # Statistic's thesis n.1
 ## The LLN meaning, proof and simulations
-[thesis1](/thesis/thesis1) :To Finish
+Link to the first thesis, about LLN (law of large numbers): [thesis1](/thesis/thesis1)
 
 # Statistic's thesis n.2
 ## The CLT meaning, proof and simulations
-[thesis2](/thesis/thesis2) :To Finish
+Link to the second thesis, about CLT (Central Limit Theorem): [thesis2](/thesis/thesis2)
 
 # Statistic's thesis n.3
 ## The Gaussian distribution, meaning, derivations and simulations

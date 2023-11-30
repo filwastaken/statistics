@@ -2,25 +2,59 @@
 <html>
   <head>
     <link rel="stylesheet" href="/src/styles.css">
-
     <!-- LaTeX -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    <script src="http://dreasgrech.com/upload/jslatex/jquery.jslatex.packed.js"></script>
-    <script> $(function () {$(".latex").latex();}); </script>
-
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
   </head>
   <body>
-
+    <h1> Thesis 2 (CLT) </h1>
     <p style="width: 20vw">
+      <h1> The CLT meaning, proof and simulations </h1>
+      <a>
+        The <b> Central Limit Theorem </b> (CLT) is a theorem that describes the properties of a sample mean, with a large enough sample.
+        In particular it states that, by taking a sufficiently large sample from a population, it's means will be normally distributed,
+        even if the population isn't normally distributed.
+        We can describe the normal distribution by the paramters of the distribution of the population. In particular, the mean of the sampling
+        distirbution is the mean of the population: \( \mu_{\overline{x}} = \mu \). On the other hand, the standard deviation of the sampling
+        distirbution is the standard deviation of the population divided by the square root of the sample size: \( \sigma_{\overline{x}} = \frac{\sigma}{\sqrt{n}} \).
+        We can now describe the normal function on those variables:
+        $$ \overline{X} \sim N(\mu, \frac{\sigma}{\sqrt{n}}) $$
+        We can look for this behaviour with the following example, created in exercise. The distribution drawn below follows a Poisson process, as we can see from the image
+        on the left. However, with a large enough sample, we can see the typical bell curve of the normal distribution. This is consequence of the central limit theorem (image on the right).
+        <div style="display: flex; justify-content: space-around; align-items: center; flex-direction: row; margin-top: 25px; margin-bottom: 25px;">
+          <div style="width: 48%;">
+            <img style="width: 100%" src="/src/th2/clt_low.png">
+            $$ N = 25, M = 20, \lambda = 25 $$
+          </div>
+          <div style="width: 48%">
+            <img style="width: 100%" src="/src/th2/clt_high.png">
+            $$ N = 200, M = 500, \lambda = 15 $$
+          </div>
+        </div>
 
+        <h4> Proof: </h4>
+        Let's now consider the proof for CLT.
+
+        <!-- Continue with proof for CTL -->
+        Let's consider \( X_1 \), \( X_2 \) to \( X_n \), an infinite number of identically distributed random variables, that have all the same
+        expected value.
+        The average is \( \overline{X_n} = \frac{1}{2} * \sum_{1}^{n}X_n \). Then, by the weak law, it must be true that
+        $$ \overline{X_n} \to E[X_1] = E[X_2] = ... \ for \ n\to+\infty $$
+        Let's consider the Chebyshev's inequality proof, by considering a finite variance. Since all items are indipentent, then the variance of \( X_n \) must be
+        $$ Var(\overline{X_n}) = Var(\frac{1}{n}(X_1 + ... + X_n)) = \frac{1}{n^2} Var(X_1 + ... + X_n) = \frac{n \sigma^2}{n^2} = \frac{\sigma^2}{n} $$
+        Using Chebyshev's inequality on \( \overline{X_n} \) we get:
+        $$ P(|\overline{X_n} - \mu| < \epsilon) = 1 - P(|\overline{X_n} - \mu| \ge \epsilon) \ge 1 - \frac{\sigma^2}{n \epsilon^2} $$
+        As n approaches infinity, the expression approaches 1. Therefore, we have proved that, by increasing the number of variables, the average will equals the expected value.
+      </a>
     </p>
 
     <ol>
-      <li> <a class="bibl"> Scribbr (2022). Central Limit Theorem, retrieved from </a> <a class="bibl" href="https://www.scribbr.com/statistics/central-limit-theorem/"> https://www.scribbr.com/statistics/central-limit-theorem/ </a> </li>
+      <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>
+      <li> <a class="bibl"> Central Limit Theorem | Formula, Definition & Examples. (n. d.). In Scribbr, Retrieved from <a class="bibl" href="https://www.scribbr.com/statistics/central-limit-theorem/"> https://www.scribbr.com/statistics/central-limit-theorem/ </a> </a>
+      <li> <a class="bibl"> Central Limit Theorem. (n.d.). In Wikipedia. Retrieved from </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Central_limit_theorem"> https://en.wikipedia.org/wiki/Central_limit_theorem </a> </li>
     </ol>
 
     <p class="thesisSelector">
-      <a class="selector" href="/thesis/thesis1.html"> Previous Thesis </a>
+      <a class="selector" href="/thesis/thesis1.html"> Previous thesis </a>
       <a class="selector" href="/"> Home </a>
       <a class="selector" href="/thesis/thesis3.html"> Next thesis </a>
     </p>
