@@ -34,16 +34,24 @@
         <h4> Proof: </h4>
         Let's now consider the proof for CLT.
 
-        <!-- Continue with proof for CTL -->
-        Let's consider \( X_1 \), \( X_2 \) to \( X_n \), an infinite number of identically distributed random variables, that have all the same
-        expected value.
-        The average is \( \overline{X_n} = \frac{1}{2} * \sum_{1}^{n}X_n \). Then, by the weak law, it must be true that
-        $$ \overline{X_n} \to E[X_1] = E[X_2] = ... \ for \ n\to+\infty $$
-        Let's consider the Chebyshev's inequality proof, by considering a finite variance. Since all items are indipentent, then the variance of \( X_n \) must be
-        $$ Var(\overline{X_n}) = Var(\frac{1}{n}(X_1 + ... + X_n)) = \frac{1}{n^2} Var(X_1 + ... + X_n) = \frac{n \sigma^2}{n^2} = \frac{\sigma^2}{n} $$
-        Using Chebyshev's inequality on \( \overline{X_n} \) we get:
-        $$ P(|\overline{X_n} - \mu| < \epsilon) = 1 - P(|\overline{X_n} - \mu| \ge \epsilon) \ge 1 - \frac{\sigma^2}{n \epsilon^2} $$
-        As n approaches infinity, the expression approaches 1. Therefore, we have proved that, by increasing the number of variables, the average will equals the expected value.
+        Let's define a sequence of indipendent and identically distributed random variable \( X_i \) for i between 1 and n, that have mean 0 and variance \( \sigma^2 \). Let
+        $$ S_n = \sum_{i=1}^nX_i $$
+        We can verify that:
+        $$ \lim_{n \to \infty} P(\frac{S_n}{\sigma \sqrt{n}} \le x) = \Phi(x), -\infty < x < \infty $$
+
+        The proof lies on defining \( Z_n = \frac{S_n}{\sigma \sqrt{n}} \). We will show that the MGF (Moment generating function) of this variable tends to be equal to the one of the normal distribution.
+        The moment-generating function of a random variable is an alternative specification of its probability distribution. It provides an alternative way to analytical results instead of working directly
+        with probability density functions or cumulative distribution functions.
+
+        $$ M_{S_n} (t) = [M(t)]^n $$ and $$ M_{Z_n} (t) = [M(\frac{t}{\sigma \sqrt{n}})]^n $$
+        We can expand \( M(s) \) as the following Taylor series: \( M(s) = M(0) + sM'(0) + \frac{1}{2}M''(0) + ... \).
+        Considering that \( E(X) = 0 \), \( M'(0) = 0 \) and \( M''(0) = \sigma^2 \), we thus have:
+        $$ M_{Z_n} (t) = (1 + \frac{t^2}{2n} + \epsilon_n)^n $$
+        This is how  Euler's number is defined: therefore it holds true that
+        <div style="text-align: center; margin-top: 10px; margin-bottom: 10px;"> \( M_{Z_n} (t) \to e^\frac{t^2}{2} \) as \( n \to \infty \) </div>
+        where the last expression is the MGF of the standard nomral distribution, as we wanted to prove. 
+        The CLT implies that as the sample size increases, the distribution of \( \overline{X_n} \) becomes closer to a normal distribution. This is a crucial result in statistics,
+        allowing us to use the normal distribution for various statistical inferences.
       </a>
     </p>
 
@@ -51,6 +59,8 @@
       <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>
       <li> <a class="bibl"> Central Limit Theorem | Formula, Definition & Examples. (n. d.). In Scribbr, Retrieved from <a class="bibl" href="https://www.scribbr.com/statistics/central-limit-theorem/"> https://www.scribbr.com/statistics/central-limit-theorem/ </a> </a>
       <li> <a class="bibl"> Central Limit Theorem. (n.d.). In Wikipedia. Retrieved from </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Central_limit_theorem"> https://en.wikipedia.org/wiki/Central_limit_theorem </a> </li>
+      <li> <a class="bibl"> Rice, J. A., Mathematical Statistics and Data analysis, Duxbury Press, Belmont, CA (1995). Retrieved from </a> <a class="bibl" href="https://sites.chemengr.ucsb.edu/~ceweb/courses/che132c/Proof_Central_Limit_Theorem.pdf"> https://sites.chemengr.ucsb.edu/~ceweb/courses/che132c/Proof_Central_Limit_Theorem.pdf </a> </li>
+      <li> <a class="bibl"> Moment Generating Function. (n.d.). In Wikipedia. Retrieved from </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Moment-generating_function"> https://en.wikipedia.org/wiki/Moment-generating_function </a> </li>
     </ol>
 
     <p class="thesisSelector">
