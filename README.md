@@ -99,23 +99,23 @@ Link to the second thesis, about CLT (Central Limit Theorem): [thesis2](/thesis/
 
 # Statistic's thesis n.3
 ## The Gaussian distribution, meaning, derivations and simulations
-Link to the third thesis, about the Gaussian distribution: [thesis3](/thesis/thesis3) :To Finish
+Link to the third thesis, about the Gaussian distribution: [thesis3](/thesis/thesis3)
 
 # Statistic's thesis n.4
-## The Glivenko–Cantelli theorem, proof and simulations
-[thesis4](/thesis/thesis4) :To Finish
+## The Glivenko-Cantelli theorem, proof and simulations
+Link to the fourth thesis, about the Glivenko–Cantelli theorem: [thesis4](/thesis/thesis4) :To Finish
 
 # Statistic's thesis n.5
-:To Finish
+[thesis5](/thesis/thesis5) :To Finish
 
 # Statistic's thesis n.6
-:To Finish
+[thesis6](/thesis/thesis6) :To Finish
 
 # Statistic's thesis n.7
-:To Finish
+[thesis7](/thesis/thesis7) :To Finish
 
 # Statistic's thesis n.8
-:To Finish
+[thesis8](/thesis/thesis8) :To Finish
 
 # Statistic's thesis n.9
 :To Finish
