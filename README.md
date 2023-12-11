@@ -103,7 +103,7 @@ Link to the third thesis, about the Gaussian distribution: [thesis3](/thesis/the
 
 # Statistic's thesis n.4
 ## The Glivenko-Cantelli theorem, proof and simulations
-Link to the fourth thesis, about the Glivenko–Cantelli theorem: [thesis4](/thesis/thesis4) :To Finish
+Link to the fourth thesis, about the Glivenko–Cantelli theorem: [thesis4](/thesis/thesis4)
 
 # Statistic's thesis n.5
 [thesis5](/thesis/thesis5) :To Finish
