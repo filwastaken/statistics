@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/src/styles.css">
+
+    <!-- LaTeX -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+  </head>
+  <body>
+    <h1> Thesis 5 </h1>
+    <p style="width: 20vw">
+      <h1> Statistical Distributions: Continuous, Discrete, Properties and simulations </h1>
+      <a>
+        <b> Statistical distributions </b> are immensly important in statistics and probability theory. They describe the likelihood of an event to happen, or the likelihood of an outcome to become true among different possibilities.
+        In particular, we consider two types of distribution, depending on they particular set on which they are defined:
+
+        <h2> 1. Discrete distributions </h2>
+
+        Discrete distributions are able to rapresent random variables that can only take distinct values, therefore it can be mapped on a set of integers, like \( \mathbb{N} \). These are variables that have a finite value and a finite limit.
+        For example, the amount of animals in a room is a finite variable, since it will never be able to assume any non-integer value, such as 3.5 (0.5 of an animal has no meaning in this context).
+        These distribution are defined by probability mass functions (often called pmf), which calculates the probability that the specific random variable will result in a particular outcome or, in other terms:
+        $$ Pr(X=a) $$
+
+        Some of the most famous discrete distributions are:
+        <ol>
+          <li> The Bernoulli distribution </li>
+          <li> The Binomial distribution </li>
+          <li> The Hypergeometric distribution </li>
+          <li> The Negative hypergeometric distribution </li>
+        </ol>
+      </a>
+
+      <br>
+
+      <h3> Bernoulli distribution </h3>
+      <div style="display: flex; flex-direction: row; align-items: center;"> 
+        <a>
+          Any variable that falls within this distribution can only assume to values: \( 1 \) with probability \( p \) and \( 0 \) with probability \( 1 - p \).
+          <br>
+          It can be thought as an experiment that allows only yes-no answers. The probability mass function of this distribution can be seen on the image on the right.
+          The most important property of this distribution follows from the fact that has only two possible outcomes:
+          $$ Pr(X=1) = p = 1 - Pr(X=0) = 1 - q $$
+        </a>
+        <img style="margin-left: 5%; margin-right: 5%; width: 25%;" src="/src/th5/Bernoulli.png">
+      </div>
+
+      <h3> Binomial distribution </h3>
+      <div style="display: flex; flex-direction: row; align-items: center;">
+        <img style="width: 70%; margin-right: 5%;" src="/src/th5/Binomial_pmf.png">
+        <a>
+          This distribution takes two parameters: \( n \) and \( p \) and studies the number of successes in a sequence of \( n \) Bernoulli experiments, each i.i.d, with probability \( p \).
+          This is usually used to model the number of successes in a sample of size \( n \) <b> with replacement </b>.
+          To calculate the probability that a binomial distribution will have a certain number of 1's outcomes, we can calculate the probability based on the bernoulli distribution. In particular, we can consider the probability
+          of \( Pr(X=a) \) where \( a \le n \). For this to be true, then \( a \) amount of bernoulli variables must have had '1' as outcome, while the others must have had '0'. This can be calculated easily and,
+          since all the variables are i.i.d., for both conditions to be true we can consider the product. To consider all possibilities however, we need to consider all ways the could achieve a amount of ones and b amount of zeroes.
+          For example, if the first variable returned 0 and the second one returned 1, or if the first variable returned 1 and the second one returned 0, it wouldn't really make a difference. Therefore, the probability is:
+          $$ Pr(X = a) = \binom{n}{a} p^a (1-p)^{n-a} $$
+          Any variable that complies with this distribution can only assume to values: \( 1 \) with probability \( p \) and \( 0 \) with probability \( 1 - p \).
+          The probability mass function can be seen on the image on the left.
+        </a>
+      </div>
+
+      <h3> Hypergeometric distribution </h3>
+      <div style="display: flex; flex-direction: row; align-items: center;">
+        <a>
+          The Hypergeometric distribution studies the probability of a bernoulli variable to result in \( 1, k \) amount of times in a row. This can be tought as a coin flip where we are looking at the probability that
+          head will land \( k \) times in a row, where the probability that the coin will land on 'head' is \( p \) and the probability that it will land on 'tail' is \( q = 1 - p \).
+          We need to be careful since we are considering a specific scenario. If we were to map this problem on multiple random bernoulli variables, then there would be <b> no replacement </b>.
+          We consider this probability to be the following:
+          $$ p_x(k) = Pr(X = k) = \frac{\binom{K}{k} \binom{N-K}{n-k}}{\binom{N}{n}}$$
+          Where:
+          <ul>
+            <li> <b> \( N \) </b> is the population size, </li>
+            <li> <b> \( K \) </b> is the number of success states in the population, </li>
+            <li> <b> \( n \) </b> is the number of draws (or trials), </li>
+            <li> <b> \( k \) </b> is the number of osserved successes. </li>
+          </ul>
+          We can look at this distribution's pmf (probability mass function) on the right:
+        </a>
+        <img style="margin-left: 5%; margin-right: 5%; width: 70%" src="/src/th5/Hypergeometric.png">
+      </div>
+
+      <h3> Negative hypergeometric distribution </h3>
+      <div style="display: flex; flex-direction: row; align-items: center;">
+        <a>
+          In probability theory the <b> negative hypergeometric distribution </b> describes probabilities for when the sampling from a finite population without replacement ... TODO continua qui
+          https://en.wikipedia.org/wiki/Negative_hypergeometric_distribution
+
+          The Hypergeometric distribution studies the probability of a bernoulli variable to result in \( 1, k \) amount of times in a row. This can be tought as a coin flip where we are looking at the probability that
+          head will land \( k \) times in a row, where the probability that the coin will land on 'head' is \( p \) and the probability that it will land on 'tail' is \( q = 1 - p \).
+          We need to be careful since we are considering a specific scenario. If we were to map this problem on multiple random bernoulli variables, then there would be <b> no replacement </b>.
+          We consider this probability to be the following:
+          $$ p_x(k) = Pr(X = k) = \frac{\binom{K}{k} \binom{N-K}{n-k}}{\binom{N}{n}}$$
+          Where:
+          <ul>
+            <li> <b> \( N \) </b> is the population size, </li>
+            <li> <b> \( K \) </b> is the number of success states in the population, </li>
+            <li> <b> \( n \) </b> is the number of draws (or trials), </li>
+            <li> <b> \( k \) </b> is the number of osserved successes. </li>
+          </ul>
+          We can look at this distribution's pmf (probability mass function) on the right:
+        </a>
+        <img style="margin-left: 5%; margin-right: 5%; width: 70%" src="/src/th5/Hypergeometric.png">
+      </div>
+    </p>
+
+
+
+    <ol>
+      https://en.wikipedia.org/wiki/Hypergeometric_distribution
+      https://en.wikipedia.org/wiki/Bernoulli_distribution
+      https://en.wikipedia.org/wiki/Binomial_distribution
+
+      https://noemi2001.github.io/statistics/TH5/TH5.html
+      https://github.com/Ninjabippo1205/Statistics/blob/main/thesis/TH5_%20Statistical%20Distributions.pdf
+
+      <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>
+      <li> <a class="bibl"> Glivenko-Cantelli theorem (n. d.). In Wikipedia, Retrieved from <a class="bibl" href="https://en.wikipedia.org/wiki/Glivenko-Cantelli_theorem"> https://en.wikipedia.org/wiki/Glivenko-Cantelli_theorem </a> </a>
+      <li> <a class="bibl"> The Glivenko-Cantelli Theorem (n. d.). In University of Chicago, Retrieved from <a class="bibl" href="https://home.uchicago.edu/~amshaikh/webfiles/glivenko-cantelli.pdf"> https://home.uchicago.edu/~amshaikh/webfiles/glivenko-cantelli.pdf </a> </a>
+      <li> <a class="bibl"> Salnikov, D. (2021). A Constructive Proof of the Glivenko-Cantelli Theorem. arXiv preprint arXiv:2110.13236. </a>
+    </ol>
+
+    <p class="thesisSelector">
+      <a class="selector" href="/thesis/thesis4.html"> Previous Thesis </a>
+      <a class="selector" href="/"> Home </a>
+      <a class="selector" href="/thesis/thesis6.html"> Next thesis </a>
+    </p>
+  </body>
+</html>

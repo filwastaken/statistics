@@ -106,7 +106,8 @@ Link to the third thesis, about the Gaussian distribution: [thesis3](/thesis/the
 Link to the fourth thesis, about the Glivenko–Cantelli theorem: [thesis4](/thesis/thesis4)
 
 # Statistic's thesis n.5
-[thesis5](/thesis/thesis5) :To Finish
+## Statistical Distributions: Continuous, Discrete, Properties and simulations 
+Link to the fifth thesis, about the statisticals distribution: [thesis5](/thesis/thesis5) :To Finish
 
 # Statistic's thesis n.6
 [thesis6](/thesis/thesis6) :To Finish
