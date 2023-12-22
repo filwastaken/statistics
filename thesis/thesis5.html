@@ -46,7 +46,7 @@
 
       <h3> Binomial distribution </h3>
       <div style="display: flex; flex-direction: row; align-items: center;">
-        <img style="width: 70%; margin-right: 5%;" src="/src/th5/Binomial_pmf.png">
+        <img style="width: 70%; margin-right: 5%;" src="/src/th5/Binomial.png">
         <a>
           This distribution takes two parameters: \( n \) and \( p \) and studies the number of successes in a sequence of \( n \) Bernoulli experiments, each i.i.d, with probability \( p \).
           This is usually used to model the number of successes in a sample of size \( n \) <b> with replacement </b>.
@@ -82,42 +82,111 @@
 
       <h3> Negative hypergeometric distribution </h3>
       <div style="display: flex; flex-direction: row; align-items: center;">
+        <img style="width: 70%; margin-right: 5%;" src="/src/th5/Negative_hypergeometric.png">
         <a>
-          In probability theory the <b> negative hypergeometric distribution </b> describes probabilities for when the sampling from a finite population without replacement ... TODO continua qui
-          https://en.wikipedia.org/wiki/Negative_hypergeometric_distribution
-
-          The Hypergeometric distribution studies the probability of a bernoulli variable to result in \( 1, k \) amount of times in a row. This can be tought as a coin flip where we are looking at the probability that
-          head will land \( k \) times in a row, where the probability that the coin will land on 'head' is \( p \) and the probability that it will land on 'tail' is \( q = 1 - p \).
-          We need to be careful since we are considering a specific scenario. If we were to map this problem on multiple random bernoulli variables, then there would be <b> no replacement </b>.
+          In probability theory the <b> negative hypergeometric distribution </b> describes probabilities for when the sampling from a finite population without replacement.
+          In particular, unlike the hypergeometric distribution which describes the number of successes, the negative hypergeometric describes the probability of drawing from a sample until \( r \) failures
+          are found, successed by \( k \) successes. More precisely, the negative hypergeometric distribution describes the likelihood of
+          \( k \) successes and \( r \) failures in a sample precisely.
           We consider this probability to be the following:
-          $$ p_x(k) = Pr(X = k) = \frac{\binom{K}{k} \binom{N-K}{n-k}}{\binom{N}{n}}$$
+          $$ Pr(X = k) = \frac{\binom{k+r-1}{k} \binom{N-r-k}{K-k}}{\binom{N}{K}} $$
           Where:
           <ul>
             <li> <b> \( N \) </b> is the population size, </li>
             <li> <b> \( K \) </b> is the number of success states in the population, </li>
-            <li> <b> \( n \) </b> is the number of draws (or trials), </li>
+            <li> <b> \( r \) </b> is the number of failures, </li>
             <li> <b> \( k \) </b> is the number of osserved successes. </li>
           </ul>
-          We can look at this distribution's pmf (probability mass function) on the right:
+          The probability mass function can be seen on the image on the left.
         </a>
-        <img style="margin-left: 5%; margin-right: 5%; width: 70%" src="/src/th5/Hypergeometric.png">
+      </div>
+
+      <a>
+        <h2> 2. Continuous distributions </h2>
+        Continuous distributions are linked to random variables that can assume any value within a given range and are tipycally described by <b> probability density function </b>. The pdf is a function used to
+        calculate the probability that a continuous random variable will be less than or equal to a given value and is calculated at: \( Pr(a \le X \le b ) \) or \( Pr(X \le b) \).
+        We can also consider the cumulative distribution function of a continuous random variable, which is described as the area under the curve of the density function. For this reason it is calculated with the following intergral:
+        $$ CDF(x) = \int_{- \infty}^{0} PDF(x) \,dx $$
+        It inherits the following properties from the integral:
+        $$ CDF(b - a) = CDF(b) - CDF(a) = \int_{a}^{b} PDF(x) \,dx $$
+        Let's consider a few examples:
+      </a>
+
+      <h3> Continuous uniform distribution </h3>
+      <a>
+        In probability theory and statistics the continuous uniform distributions or rectangular distributions are a family of symmetric probability distributions. Such distrivution describes an experiment where there's an arbitrary outcome that lies
+        in a certain range. The bounds of this range are given as parameters \( a \) and \( b \) and the intervals could be either <b> open </b> or <b> closed </b>.
+        Let's have a look at the probability density function:
+
+        $$
+        f(x) = \begin{cases}
+          \frac{1}{b-a} & \text{for $ a \le x \le b $, }\\
+          0 & \text{otherwise}
+        \end{cases}
+        $$
+        
+        And the cumulative distribution function:
+        $$
+        F(x) = \begin{cases}
+          0 & \text{for $ a < x $,}\\
+          \frac{x-a}{b-a} & \text{for $ a \le x \le b $,}\\
+          1 & \text{for $ x > b $.}
+        \end{cases}
+        $$
+      </a>
+
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 48%; max-width: 600px; margin-right: 5%;">
+          <a> Uniform PDF </a>
+          <img style="width: 100%;" src="/src/th5/uniform_pdf.png">
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 48%; max-width: 600px; margin-right: 5%;">
+          <a> Uniform CDF </a>
+          <img style="width: 100%;" src="/src/th5/uniform_cdf.png">
+        </div>
+      </div>
+
+      <h3> Exponential distribution </h3>
+      <a>
+        In probability theory and statistics the exponential distribution is the probability distribution of the time between events in a Poisson point process. The probability density function of the exponential is:
+
+        $$
+        f(x) = \begin{cases}
+          \lambda e^{- \lambda x} & x \ge 0,\\
+          0 & \text{otherwise.}
+        \end{cases}
+        $$
+
+        The parameter \( \lambda > 0 \) is often called rate parameter and the distribution in the range \( [0, \infty) \). The cumulative distribution function is:
+        $$
+        F(x, \lambda) = \begin{cases}
+          1 - e^{- \lambda x} & x \ge 0,\\
+          0 & x < 0.\\
+        \end{cases}
+        $$
+      </a>
+
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 48%; max-width: 600px; margin-right: 5%;">
+          <a> Exponential PDF </a>
+          <img style="width: 100%;" src="/src/th5/exponential_pdf.png">
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 48%; max-width: 600px; margin-right: 5%;">
+          <a> Exponential CDF </a>
+          <img style="width: 100%;" src="/src/th5/exponential_cdf.png">
+        </div>
       </div>
     </p>
 
-
-
     <ol>
-      https://en.wikipedia.org/wiki/Hypergeometric_distribution
-      https://en.wikipedia.org/wiki/Bernoulli_distribution
-      https://en.wikipedia.org/wiki/Binomial_distribution
-
-      https://noemi2001.github.io/statistics/TH5/TH5.html
-      https://github.com/Ninjabippo1205/Statistics/blob/main/thesis/TH5_%20Statistical%20Distributions.pdf
-
       <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>
-      <li> <a class="bibl"> Glivenko-Cantelli theorem (n. d.). In Wikipedia, Retrieved from <a class="bibl" href="https://en.wikipedia.org/wiki/Glivenko-Cantelli_theorem"> https://en.wikipedia.org/wiki/Glivenko-Cantelli_theorem </a> </a>
-      <li> <a class="bibl"> The Glivenko-Cantelli Theorem (n. d.). In University of Chicago, Retrieved from <a class="bibl" href="https://home.uchicago.edu/~amshaikh/webfiles/glivenko-cantelli.pdf"> https://home.uchicago.edu/~amshaikh/webfiles/glivenko-cantelli.pdf </a> </a>
-      <li> <a class="bibl"> Salnikov, D. (2021). A Constructive Proof of the Glivenko-Cantelli Theorem. arXiv preprint arXiv:2110.13236. </a>
+      <li> <a class="bibl"> Hypergeometric distribution (n. d.). In Wikipedia, Retrieved from </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Hypergeometric_distribution"> https://en.wikipedia.org/wiki/Hypergeometric_distribution </a> </li>
+      <li> <a class="bibl"> Bernoulli distribution (n. d.). In Wikipedia, Retrieved from </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Bernoulli_distribution"> https://en.wikipedia.org/wiki/Bernoulli_distribution </a> </li>
+      <li> <a class="bibl"> Binomial distribution (n. d.). In Wikipedia, Retrieved from </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Binomial_distribution"> https://en.wikipedia.org/wiki/Binomial_distribution </a> </li>
+      <li> <a class="bibl"> Negative hypergeometric distribution (n. d.). In Wikipedia, Retrieved from </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Negative_hypergeometric_distribution"> https://en.wikipedia.org/wiki/Negative_hypergeometric_distribution </a> </li>
+      <li> <a class="bibl"> Continuous uniform distribution (n. d.). In Wikipedia, Retrieved from </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Continuous_uniform_distribution"> https://en.wikipedia.org/wiki/Continuous_uniform_distribution </a> </li>
+      <li> <a class="bibl"> Continuous Bernoulli distribution (n. d.). In Wikipedia, Retrieved from </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Continuous_Bernoulli_distribution"> https://en.wikipedia.org/wiki/Continuous_Bernoulli_distribution </a> </li>
+      <li> <a class="bibl"> Exponential distribution (n. d.). In Wikipedia, Retrieved from </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Exponential_distribution"> https://en.wikipedia.org/wiki/Exponential_distribution </a> </li>
     </ol>
 
     <p class="thesisSelector">
