@@ -110,10 +110,10 @@ Link to the fourth thesis, about the Glivenko–Cantelli theorem: [thesis4](/the
 Link to the fifth thesis, about the statisticals distribution: [thesis5](/thesis/thesis5)
 
 # Statistic's thesis n.6
-[thesis6](/thesis/thesis6) :To Finish
+Algorithms for random variates generation [thesis6](/thesis/thesis6)
 
 # Statistic's thesis n.7
-[thesis7](/thesis/thesis7) :To Finish
+"Online" Algorithms (Data Streams): Ideas and code [thesis7](/thesis/thesis7) :To Finish
 
 # Statistic's thesis n.8
 [thesis8](/thesis/thesis8) :To Finish

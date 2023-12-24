@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/src/styles.css">
+
+    <!-- Menlo font -->
+    <link href="https://fonts.cdnfonts.com/css/menlo" rel="stylesheet">
+
+    <!-- LaTeX -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+  </head>
+  <body>
+    <h1> Thesis 7 </h1>
+    <p style="width: 20vw">
+      <h1> "Online" Algorithms (Data Streams): Ideas and code </h1>
+      <a>
+        A stream of data refers to the continuous arrival of inputs at a very fast rate with limited capacity to store it. Algorithms have to work with such fast data, preferrably in linear time and size. Some methods rely on metric embeddings,
+        pseudo-random computations, sparse approzimation theory and communication complexity.
+        Some scenarios of data streams include:
+      </a>
+
+      <ul>
+        <li> <a> Social Media Feeds, such as interactions with photos, posts, comments and other objects in social platform like Instagram, Facebook or others; </a> </li>
+        <li> <a> Financial Transactions, such as the continuous flow of money in the stock marker and currency exchange rates; </a> </li>
+        <li> <a> IP network traffic analisys, including the flow of packets accross the network infrastructure; </a> </li>
+        <li> <a> Sensor data, particularly from IoT devices such as temperature, altitude, pressure and other factors of interest; </a> </li>
+        <li> <a> Processing of large data sets. </a> </li>
+      </ul>
+
+      <a>
+        <b> Online algorithms </b> are designed to work with data as it arrives, instead of waiting for the whole dataset to be available. This is especially important if we are talking about a virtually never ending data set, such as the
+        information relied to the algorithm from an IoT sensor.
+         Let's condier how to 
+      </a>
+      <h2> Counting elements in a stream </h2>
+      <a>
+        In this case we intend to process incrementally counts of occurences. It could be used with a thermal sensor to count the occurences of a particular temperature. A mathematical descriptions is the following:
+        Let \( S = [s_1, s_2, s_3, s_4, s_5, ... ] \) be an infinite sequence that rapresents a data stream. In particular, we consider the i-th item to be \( s_i \). We mean to produce a set of items \( I \) defined as
+        \( I = \{(x_1, c_1), (x_2, c_2), (x_3, c_3), (x_4, c_4), (x_5, c_5), (x_6, c_6), (x_7, c_7)\} \) where \( x_i \) refers to the value assumed in the infinite series, and \( c_j \) refers to the number of times that item has appeared in the sequence.
+        In particular we consider the following rules:
+      </a>
+      <ul>
+        <li> <a> If \( s_i \) is not in I, then \( I' = I \cup \{(s_i, 1)\} \) </a> </li>
+        <li> <a> If \( s_i \) is already in I, then \( I' = ( I \setminus \{ (s_i, x_i) \} ) \cup \{(s_i, x_i + 1)\} \) </a> </li>
+      </ul>
+      <a>
+        This is an example of how this behaviour could be achieved with an hashmap:
+      </a>
+
+      <pre style="font-family: Menlo, monospace; font-size: large; border-style: solid; width: fit-content; padding-right: 50px; margin-left: 20px;">
+        <code>
+    function CountStreamElements(stream){
+      HashMap hm = new HashMap()
+
+      for each item in stream{
+        // I am using the ternary operator to speed up the process.
+        hm[item] = (item exists in hm) ? hm[item] + 1 : 1
+      }
+    }
+        </code>
+      </pre>
+
+      <h2> Find the top k elements </h2>
+      <a>
+
+      </a>
+
+      <a>
+        https://twiki.di.uniroma1.it/pub/Ing_algo/DiarioLezioni/muthu.pdf
+        https://cseweb.ucsd.edu/~dasgupta/291-geom/streaming.pdf
+        https://www.cs.princeton.edu/courses/archive/spring04/cos598B/bib/Muthu-Survey.pdf
+
+      </a>
+      
+    </p>
+
+    <ol>
+      <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>
+      <li> <a class="bibl"> Rossetti Arena Book (n. d.). In Github, Retrieved from </a> <a class="bibl" href="https://rossetti.github.io/RossettiArenaBook/app-rnrv-rvs.html"> https://rossetti.github.io/RossettiArenaBook/app-rnrv-rvs.html </a> </li>
+      <li> <a class="bibl"> Generating Random Variates  (n. d.). In Chaoyang University of Technology, Retrieved from </a> <a class="bibl" href="https://www.cyut.edu.tw/~hchorng/downdata/1st/SS8_Random%20Variate.pdf"> https://www.cyut.edu.tw/~hchorng/downdata/1st/SS8_Random%20Variate.pdf </a> </li>
+    </ol>
+
+    <p class="thesisSelector">
+      <a class="selector" href="/thesis/thesis6.html"> Previous Thesis </a>
+      <a class="selector" href="/"> Home </a>
+      <a class="selector" href="/thesis/thesis8.html"> Next thesis </a>
+    </p>
+  </body>
+</html>
