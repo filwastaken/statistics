@@ -57,27 +57,86 @@
         hm[item] = (item exists in hm) ? hm[item] + 1 : 1
       }
     }
-        </code>
-      </pre>
+        </code> </pre>
 
-      <h2> Find the top k elements </h2>
+      <h2> Calculating the moving average </h2>
       <a>
-
+        This process aims to compute the average of a fixed-size amount of elements
+        as the algorithm moves throught the data stream. We again consider \( S = [s_1, s_2, s_3, ...] \)
+        the datastream ad define \( MovAvg(S, w) \) a function that requires as input a datastream
+        and a positive integer \( w \) that will be the window size. This function
+        produces a sequence of moving averages \( M = [m_1, m_2, m_3, ...] \) where \( m_i \)
+        is the i-th element is the average in the span from \( s_i \) to \( s_{s+w-1} \).
+        The algorithm can be described as follows:
       </a>
 
-      <a>
-        https://twiki.di.uniroma1.it/pub/Ing_algo/DiarioLezioni/muthu.pdf
-        https://cseweb.ucsd.edu/~dasgupta/291-geom/streaming.pdf
-        https://www.cs.princeton.edu/courses/archive/spring04/cos598B/bib/Muthu-Survey.pdf
+      <ul>
+        <li> <a> If \( i < w \) then \( m_i = \sum^{i}_{j=1} s_j \), the average of the first i elements, </a> </li>
+        <li> If \( i \ge w \) then \( m_i = \sum^{i}_{j=i-w+1} s_j \), which is the average of the last w elements in the stream.<a> </a> </li>
+      </ul>
 
+      <a> The pseudocode is written here: </a>
+      <pre style="font-family: Menlo, monospace; font-size: large; border-style: solid; width: fit-content; padding-right: 50px; margin-left: 20px;">
+        <code>
+    function MovingAverage(stream, win_size){
+      win_sum = 0
+      win = empty list
+
+      i = 1
+      while i < stream length {
+        win_sum += stream[i]
+        win.add(stream[i])
+
+        if i >= win_size {
+          // Here the moving average is calculated
+          moving_average = win_sum / win_size
+          
+
+          win_sum -= win[i - win_size]
+          win.remove(stream[i - win_size])
+        }
+
+        i++
+      }
+    }
+  </code> </pre>
+    
+      <h2> Finding the top k elements </h2>
+      <a>
+        This algorithms aims to find the set of the largest k elements in the dataset.
+        This can be achieved by using a sorted collection of data to keep track of the largest elements.
+        In particular, we consider a stream \( S = [s_1, s_2, s_3, s_4, ...] \) and define a function
+        \( TopKElements(S, k) \) that takes as input a datastream \( S \) and a positive integer \( k \).
+        This produces the set of the top k elements \( T = \{t_1, t_2, t_3, t_4, ... \} \).
+        To store the highest elements we could use a list and a fast sorting function, like quick sort or merge sort.
+        We can also keep in mind that, since the list will always be limited to k+1 elements, sorting functions
+        like insertion sort or selection sort are viable as well. Quick sort does the best job since it can be implemented
+        in-place and has a maximum time of \( O(n log(n)) \). The pseudo code is written down here:
       </a>
-      
+
+      <pre style="font-family: Menlo, monospace; font-size: large; border-style: solid; width: fit-content; padding-right: 50px; margin-left: 20px;">
+        <code>
+    function TopKElements(stream, k){
+
+      top = empty list
+
+      for i from 0 to stream length {
+        top.add(stream[i])
+
+        if top size > k {
+          top.sort() // descending order
+          top.remove(k) // remove last element, which is the smallest
+        }
+      }
+    }
+        </code> </pre>
     </p>
-
-    <ol>
+    
+    <ol>      
       <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>
-      <li> <a class="bibl"> Rossetti Arena Book (n. d.). In Github, Retrieved from </a> <a class="bibl" href="https://rossetti.github.io/RossettiArenaBook/app-rnrv-rvs.html"> https://rossetti.github.io/RossettiArenaBook/app-rnrv-rvs.html </a> </li>
-      <li> <a class="bibl"> Generating Random Variates  (n. d.). In Chaoyang University of Technology, Retrieved from </a> <a class="bibl" href="https://www.cyut.edu.tw/~hchorng/downdata/1st/SS8_Random%20Variate.pdf"> https://www.cyut.edu.tw/~hchorng/downdata/1st/SS8_Random%20Variate.pdf </a> </li>
+      <li> <a class="bibl"> Data Streams: Algorithms and Applications (n. d.). In Sapienza, Retrieved from </a> <a class="bibl" href="https://twiki.di.uniroma1.it/pub/Ing_algo/DiarioLezioni/muthu.pdf"> https://twiki.di.uniroma1.it/pub/Ing_algo/DiarioLezioni/muthu.pdf </a> </li>
+      <li> <a class="bibl"> Muthukrishnan, S. Data Streams: Algorithms and Applications (n. d.). In Princeton University, Retrieved from </a> <a class="bibl" href="https://www.cs.princeton.edu/courses/archive/spring04/cos598B/bib/Muthu-Survey.pdf"> https://www.cs.princeton.edu/courses/archive/spring04/cos598B/bib/Muthu-Survey.pdf </a> </li>
+      <li> <a class="bibl"> Online and streaming algorithms for clustering (n. d.). In University of California San Diego, Retrieved from </a> <a class="bibl" href="https://cseweb.ucsd.edu/~dasgupta/291-geom/streaming.pdf"> https://cseweb.ucsd.edu/~dasgupta/291-geom/streaming.pdf </a> </li>
     </ol>
 
     <p class="thesisSelector">

@@ -110,22 +110,29 @@ Link to the fourth thesis, about the Glivenko–Cantelli theorem: [thesis4](/the
 Link to the fifth thesis, about the statisticals distribution: [thesis5](/thesis/thesis5)
 
 # Statistic's thesis n.6
-Algorithms for random variates generation [thesis6](/thesis/thesis6)
+## Algorithms for random variates generation
+Link to the sitxth algorithm, about random variates generation [thesis6](/thesis/thesis6)
 
 # Statistic's thesis n.7
-"Online" Algorithms (Data Streams): Ideas and code [thesis7](/thesis/thesis7) :To Finish
+## "Online" Algorithms (Data Streams): Ideas and code
+Link to the seventh algorithm, about the online algorithms [thesis7](/thesis/thesis7)
 
 # Statistic's thesis n.8
-[thesis8](/thesis/thesis8) :To Finish
+## Stochastic processes and SDE's
+Link the the eigth algorithm, about the stochastic processes [thesis8](/thesis/thesis8)
 
 # Statistic's thesis n.9
-:To Finish
+## The Poisson Process: Meaning, Properties, Simulations
+Link the the ninth algorithm, about the poisson process [thesis9](/thesis/thesis9) :TODO
 
 # Statistic's thesis n.10
-:To Finish
+// Th10: The Viener process and the GBM, Derivations and simulations
+[thesis10](/thesis/thesis10) :TODO
 
 # Statistic's thesis n.11
-:To Finish
+// Th11. The functional CLT (Donsker's invariance principle): Proof, Simulations
+[thesis11](/thesis/thesis11) :TODO
 
 # Statistic's thesis n.12
-:To Finish
+// Th12: Ito Integration ans Calculus, Concept and Didactical Simulations
+[thesis12](/thesis/thesis12) :TODO

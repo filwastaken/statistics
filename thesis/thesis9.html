@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/src/styles.css">
+
+    <!-- LaTeX -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+  </head>
+  <body>
+    <h1> Thesis 9 </h1>
+    <p style="width: 20vw">
+      <h1> The Poisson Process: Meaning, Properties, Simulations </h1>
+      <a>
+        https://builtin.com/data-science/poisson-process
+        https://www.probabilitycourse.com/chapter11/11_1_2_basic_concepts_of_the_poisson_process.php
+        https://noemi2001.github.io/statistics/HW5/HW5_Theory.html
+      </a>
+    </p>
+
+    OLD
+    <hr>
+
+    <p style="width: 20vw">
+      <h1> Poisson Point Process </h1>
+      <br>
+      <a>
+        In statistics a <b> Poisson Point Process </b> is a kind of random mathematical object. It consists of points randomly located on a mathematical space, where each point is
+        indipendent from each other. This is often called Poisson random measure or, simply, Poisson process. This process is characterized via the Poisson distribution, where the probability is dipended on N (called a Poisson random variable).
+        Therefore, the probability of non-overlapping regions is:
+        $$ Pr\left\{ N = n \right\}=\frac{\lambda^{n}}{n!}e^{-\lambda} $$
+        This is the probability that the Nth number is equal to n. The other variables are \( \lambda \) , the parameter of the Poisson distribution, \( e \) the Euler's constant and \( n \), which is the number of events that we are calculating.
+        To recap, the properties that a Poisson Process follows are:
+        <ul>
+          <li> Indipendece. </li>
+          <li> Homogeneity , since the points are distributed uniformally throughout the space or time interval.</li>
+          <li> Poisson property </li>
+        </ul>
+        <br>
+      </a>
+
+      It's possible to look at the Poisson distribution via the 5th assigned homework. In particular, we can see how the distributin changes by increasing the number of attacks \((n)\), the systems \((m)\) and the poisson variable \((\lambda)\).
+      
+      <div style="display: flex; flex-direction: column; flex-wrap: wrap; align-items: center; align-content: center; margin: 20px 0px 20px 0px; margin: auto; width: 95%;">
+        <div style="margin-top: 20px; margin-bottom: 20px; align-self: center;">
+          <img style="width: 49%" src="/src/hw5/Image1.png">
+          <img style="width: 49%" src="/src/hw5/Image3.png"> 
+        </div>
+        <div style="margin-top: 20px; margin-bottom: 20px; align-self: center;">
+          <img style="width: 49%" src="/src/hw5/Image2_1.png"> 
+          <img style="width: 49%" src="/src/hw5/Image2_2.png"> 
+        </div>
+      </div>
+      
+      Looking at the previous images we can see that, from N and M sufficiently large and for small λ, the distribution come close to the theoretical asymptotic function.
+      We can again see how, by choosing a large amount of samples, the bell from the normal distribution shows up again.
+      
+      <a class="bibl">
+        <ol>
+          <li> Notes from the statistics course lectures </li>
+          <li> Poisson point process (n. d.). Retrieved from Wikipedia, <a class="bibl" href="https://en.wikipedia.org/wiki/Poisson_point_process"> https://en.wikipedia.org/wiki/poisson_point_process </a> </li>
+        </ol>
+      </a>
+    </p>
+
+    <ol>
+      <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>
+      <li> <a class="bibl"> Central Limit Theorem | Formula, Definition & Examples. (n. d.). In Scribbr, Retrieved from <a class="bibl" href="https://www.scribbr.com/statistics/central-limit-theorem/"> https://www.scribbr.com/statistics/central-limit-theorem/ </a> </a> </li>
+      <li> <a class="bibl"> Central Limit Theorem. (n.d.). In Wikipedia. Retrieved from </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Central_limit_theorem"> https://en.wikipedia.org/wiki/Central_limit_theorem </a> </li>
+      <li> <a class="bibl"> Rice, J. A., Mathematical Statistics and Data analysis, Duxbury Press, Belmont, CA (1995). Retrieved from </a> <a class="bibl" href="https://sites.chemengr.ucsb.edu/~ceweb/courses/che132c/Proof_Central_Limit_Theorem.pdf"> https://sites.chemengr.ucsb.edu/~ceweb/courses/che132c/Proof_Central_Limit_Theorem.pdf </a> </li>
+      <li> <a class="bibl"> Moment Generating Function. (n.d.). In Wikipedia. Retrieved from </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Moment-generating_function"> https://en.wikipedia.org/wiki/Moment-generating_function </a> </li>
+    </ol>
+
+    <p class="thesisSelector">
+      <a class="selector" href="/thesis/thesis8.html"> Previous thesis </a>
+      <a class="selector" href="/"> Home </a>
+      <a class="selector" href="/thesis/thesis10.html"> Next thesis </a>
+    </p>
+  </body>
+</html>
