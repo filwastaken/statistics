@@ -111,23 +111,23 @@ Link to the fifth thesis, about the statisticals distribution: [thesis5](/thesis
 
 # Statistic's thesis n.6
 ## Algorithms for random variates generation
-Link to the sitxth algorithm, about random variates generation [thesis6](/thesis/thesis6)
+Link to the sitxth thesis, about random variates generation [thesis6](/thesis/thesis6)
 
 # Statistic's thesis n.7
 ## "Online" Algorithms (Data Streams): Ideas and code
-Link to the seventh algorithm, about the online algorithms [thesis7](/thesis/thesis7)
+Link to the seventh thesis, about the online algorithms [thesis7](/thesis/thesis7)
 
 # Statistic's thesis n.8
 ## Stochastic processes and SDE's
-Link the the eigth algorithm, about the stochastic processes [thesis8](/thesis/thesis8)
+Link the the eigth thesis, about the stochastic processes [thesis8](/thesis/thesis8)
 
 # Statistic's thesis n.9
 ## The Poisson Process: Meaning, Properties, Simulations
-Link the the ninth algorithm, about the poisson process [thesis9](/thesis/thesis9) :TODO
+Link the the ninth thesis, about the poisson process [thesis9](/thesis/thesis9)
 
 # Statistic's thesis n.10
-// Th10: The Viener process and the GBM, Derivations and simulations
-[thesis10](/thesis/thesis10) :TODO
+## The Wiener process and the GBM, Derivations and simulations
+Link to the tenth thesis, about the Wiener process [thesis10](/thesis/thesis10)
 
 # Statistic's thesis n.11
 // Th11. The functional CLT (Donsker's invariance principle): Proof, Simulations

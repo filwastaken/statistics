@@ -11,34 +11,39 @@
     <p style="width: 20vw">
       <h1> The Poisson Process: Meaning, Properties, Simulations </h1>
       <a>
-        https://builtin.com/data-science/poisson-process
-        https://www.probabilitycourse.com/chapter11/11_1_2_basic_concepts_of_the_poisson_process.php
-        https://noemi2001.github.io/statistics/HW5/HW5_Theory.html
-      </a>
-    </p>
-
-    OLD
-    <hr>
-
-    <p style="width: 20vw">
-      <h1> Poisson Point Process </h1>
-      <br>
-      <a>
         In statistics a <b> Poisson Point Process </b> is a kind of random mathematical object. It consists of points randomly located on a mathematical space, where each point is
         indipendent from each other. This is often called Poisson random measure or, simply, Poisson process. This process is characterized via the Poisson distribution, where the probability is dipended on N (called a Poisson random variable).
         Therefore, the probability of non-overlapping regions is:
         $$ Pr\left\{ N = n \right\}=\frac{\lambda^{n}}{n!}e^{-\lambda} $$
         This is the probability that the Nth number is equal to n. The other variables are \( \lambda \) , the parameter of the Poisson distribution, \( e \) the Euler's constant and \( n \), which is the number of events that we are calculating.
         To recap, the properties that a Poisson Process follows are:
-        <ul>
-          <li> Indipendece. </li>
-          <li> Homogeneity , since the points are distributed uniformally throughout the space or time interval.</li>
-          <li> Poisson property </li>
-        </ul>
-        <br>
+      </a>
+      <ul>
+        <li> <a> Indipendece.  </a> </li>
+        <li> <a> Homogeneity , since the points are distributed uniformally throughout the space or time interval. </a> </li>
+        <li> <a> Poisson property  </a> </li>
+      </ul>
+
+      <a>
+        In particular, a Poisson Process is formally defined as follow:
       </a>
 
-      It's possible to look at the Poisson distribution via the 5th assigned homework. In particular, we can see how the distributin changes by increasing the number of attacks \((n)\), the systems \((m)\) and the poisson variable \((\lambda)\).
+      <div style="border-style: solid; border-radius: 2px; padding: 15px 15px 15px 15px; margin-top: 10px; margin-bottom: 10px;">
+        <a> Let \( \lambda > 0 \) be fixed. The couting process \( \{ N(t), t \in [0, \infty) \} \) is called a <b> Poisson process </b> with <b> rates </b> \( \lambda \) if the following conditions hold: </a>
+        <ol>
+          <li> <a> \( N(0) = 0 \), </a></li>
+          <li> <a> \( N(t) \) has indipendent increments, </a></li>
+          <li> <a> The number of arrivals in any interval of length \( \tau > 0 \) has <i> \( Poisson( \lambda \tau ) \) </i> distribution. </a></li>
+        </ol>
+      </div>
+
+      <a>
+        A Poisson distribution is defined by the following formula:
+        $$ P(X = k) = \frac{e^{- \lambda} \lambda^k}{k!}$$
+        It's possible to look at the Poisson distribution via the 5th assigned homework. In particular, we can see how the distributin changes by increasing the number of attacks \( (n) \),
+        the systems \( (m) \) and the poisson variable \( ( \lambda ) \).
+      </a>
+
       
       <div style="display: flex; flex-direction: column; flex-wrap: wrap; align-items: center; align-content: center; margin: 20px 0px 20px 0px; margin: auto; width: 95%;">
         <div style="margin-top: 20px; margin-bottom: 20px; align-self: center;">
@@ -51,23 +56,27 @@
         </div>
       </div>
       
-      Looking at the previous images we can see that, from N and M sufficiently large and for small λ, the distribution come close to the theoretical asymptotic function.
-      We can again see how, by choosing a large amount of samples, the bell from the normal distribution shows up again.
-      
-      <a class="bibl">
-        <ol>
-          <li> Notes from the statistics course lectures </li>
-          <li> Poisson point process (n. d.). Retrieved from Wikipedia, <a class="bibl" href="https://en.wikipedia.org/wiki/Poisson_point_process"> https://en.wikipedia.org/wiki/poisson_point_process </a> </li>
-        </ol>
+      <a>
+        Looking at the previous images we can see that, from \( N \) and \( M \) sufficiently large and for small λ, the distribution come close to the theoretical asymptotic function.
+        We can again see how, by choosing a large amount of samples, the bell from the normal distribution shows up again.
+        <br>
+        An interesting property of a Poisson process involves figuring out how long we have to wait until the next event. We can consider the following scenario: A bus arrives at the bus-stop every 12 minutes on average. How long can we expect to wait to
+        see the next bus if we arrive at a random time? The probability of waiting a a given amount of time decreases exponentially as time increases. This behaviour is described by the following equation:
+        $$ \large{ P(T > t) } = \Large { e^{- \frac{\text{events}}{\text{time}} * t} } $$
+        We can see that the waiting time between events are memoryless, so the time between two events has no effect on the time between any other events. This property is the <b>Markov property</b>!
       </a>
+
+      <div style="width: 100%; text-align: center; margin-top: 15px; margin-bottom: 15px;">
+        <img style="width: 25%;" src="/src/th9/poisson_waiting.png">
+      </div>
     </p>
 
     <ol>
       <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>
-      <li> <a class="bibl"> Central Limit Theorem | Formula, Definition & Examples. (n. d.). In Scribbr, Retrieved from <a class="bibl" href="https://www.scribbr.com/statistics/central-limit-theorem/"> https://www.scribbr.com/statistics/central-limit-theorem/ </a> </a> </li>
-      <li> <a class="bibl"> Central Limit Theorem. (n.d.). In Wikipedia. Retrieved from </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Central_limit_theorem"> https://en.wikipedia.org/wiki/Central_limit_theorem </a> </li>
-      <li> <a class="bibl"> Rice, J. A., Mathematical Statistics and Data analysis, Duxbury Press, Belmont, CA (1995). Retrieved from </a> <a class="bibl" href="https://sites.chemengr.ucsb.edu/~ceweb/courses/che132c/Proof_Central_Limit_Theorem.pdf"> https://sites.chemengr.ucsb.edu/~ceweb/courses/che132c/Proof_Central_Limit_Theorem.pdf </a> </li>
-      <li> <a class="bibl"> Moment Generating Function. (n.d.). In Wikipedia. Retrieved from </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Moment-generating_function"> https://en.wikipedia.org/wiki/Moment-generating_function </a> </li>
+      <li> <a class="bibl"> Poisson point process (n. d.). Retrieved from Wikipedia, </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Poisson_point_process"> https://en.wikipedia.org/wiki/poisson_point_process </a> </li>
+      <li> <a class="bibl"> The Poisson Process and Poisson Distribution, Explained (n. d.). Retrieved from buitin, </a> <a class="bibl" href="https://builtin.com/data-science/poisson-process"> https://builtin.com/data-science/poisson-process </a> </li>
+      <li> <a class="bibl"> Poisson Processes (n. d.). Retrieved from probabilitycourse.com, </a> <a class="bibl" href="https://www.probabilitycourse.com/chapter11/11_1_2_basic_concepts_of_the_poisson_process.php"> https://www.probabilitycourse.com/chapter11/11_1_2_basic_concepts_of_the_poisson_process.php </a> </li>
+      <li> <a class="bibl"> Poisson Distributions | Definition, Formula & Examples (n. d.). Retrieved from Scribbr, </a> <a class="bibl" href="https://www.scribbr.com/statistics/poisson-distribution/"> https://www.scribbr.com/statistics/poisson-distribution/ </a> </li>
     </ol>
 
     <p class="thesisSelector">
