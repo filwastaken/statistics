@@ -8,44 +8,50 @@
   </head>
   <body>
     <h1> Thesis 3 </h1>
-    <p style="width: 20vw">
+    <div>
       <h1> The Gaussian distribution, meaning, derivations and simulations </h1>
-      <a>
-        The <b> Gaussian distribution </b> (or normal distribution ) is a type of continuous probability distribution for a real-valued random variable. The density function of the variable is the following:
+      <p>
+        The <b> Gaussian distribution </b> (or normal distribution) is a type of continuous probability distribution for a real-valued random variable. The density function of the variable is the following:
         $$ f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{1}{2} ( \frac{x - \mu}{\sigma} )} $$
         The parameter \( \mu \) is the mean of the distribution. In this particular distribution, mean, median and mode coincide. \( \sigma \) on the other hand, is the standard deviation, while the variance of this distribution is \( \sigma^2 \).
         The Gaussian function is said to be "normally distributed".
         This distribution is used across all science field, given its importance to represent unknown real-valued ramdom variable and the CTL, discussed in the previous thesis.
-        <h3> Standard normal distribution</h3>
+      </p>
+      <h3> Standard normal distribution</h3>
+      <p>
         The simplest case of a normal distribution is known as the standard normal distribution. This is a special case where \( \mu = 0 \) and \( \sigma = 1 \), and it's described by the following probability density function:
         $$ \varphi(z) = \frac{e^{-z^2/2}}{\sqrt{2\pi}}$$
-
-        <h3> General normal distribution </h3>
+      </p>
+      <h3> General normal distribution </h3>
+      <p>
         Every normal distribution is a version of the standard normal distribution. We can descrive those classes of functions thanks to the following:
         $$ f(x | \mu, \sigma^2)  = \frac{1}{\sigma} \varphi (\frac{x - \mu}{\sigma}) $$
         The domain here has been stretched by a factor of \( \sigma \) and has been translated by \( \mu \).
+      </p>
 
-        <div style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
-          <img src="/src/th3/gaussianbell.svg">
-        </div>
-        We can look at some density simulations based on the probability of P(x):
+      <div style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
+        <img src="/src/th3/gaussianbell.svg">
+      </div>
 
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 25px; margin-bottom: 25px;">
-          <img src="/src/th3/-10p.png" style="width: 38%;">
-          <img src="/src/th3/00p.png" style="width: 38%;">
-          <img src="/src/th3/10p.png" style="width: 38%;">
-          <img src="/src/th3/15p.png" style="width: 38%;">
-        </div>
+      <p> We can look at some density simulations based on the probability of P(x): </p>
 
-        <h3> Applications of Gaussian distribution </h3>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 25px; margin-bottom: 25px;">
+        <img src="/src/th3/-10p.png" style="width: 500px;">
+        <img src="/src/th3/00p.png" style="width: 500px">
+        <img src="/src/th3/10p.png" style="width: 500px">
+        <img src="/src/th3/15p.png" style="width: 500px">
+      </div>
+
+      <h3> Applications of Gaussian distribution </h3>
+      <p>
         The normal distribution has serveral utilities and applications, such as <b> modeling data </b>, due to the fact that many naturla phenomena follow a normal distribution; <b> statisticacl interference </b>,
         since many tests rely on CTL, simplifying the procedures to interpret data. It is also used in <b> process control </b>, mostly to monitor processes and find anomalies and deviations patterns and in
         <b> machine leraning </b>, that allows machine to learn and act logically in a trained problem. Other use cases are <b> physics </b> and <b> engineering </b>, <b> psychology </b> and <b> financial risk assessment</b>.
-
+        
         The interactive simulation can be found at the following link:
         <a href="https://www.mathsisfun.com/data/standard-normal-distribution-table.html"> Standard Normal Distribution Table</a>
-      </a>
-    </p>
+      </p>
+    </div>
 
     <ol>
       <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>

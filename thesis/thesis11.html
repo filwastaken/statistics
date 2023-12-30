@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/src/styles.css">
+
+    <!-- LaTeX -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+  </head>
+  <body>
+    <h1> Thesis 11 </h1>
+    <div>
+      <h1> The functional CLT (Donsker's invariance principle): Proof, Simulations </h1>
+      <p>
+        In probability theory the functional CLT, also known as Donsker's theorem or Donsker's invariance principle, is an extension of the central limit theorem,
+        discussed in the <a href="/thesis/thesis2.html">second thesis</a>, for empirical distribution functions. In particular, the theorem states that
+        an appropriately centered and scaled version of the empirical distribution function converges to te Gaussian proccess, which follows the normal distribution,
+        discussed in the <a href="/thesis/thesis3.html">third thesis</a>.
+      </p>
+
+Let 
+�
+1
+,
+�
+2
+,
+�
+3
+,
+…X_1, X_2, X_3, \ldots be a sequence of independent and identically distributed (i.i.d.) random variables with mean 0 and variance 1. Let 
+�
+�
+:=
+∑
+�
+=
+1
+�
+�
+�
+S_n:=\sum_{i=1}^n X_i. The stochastic process 
+�
+:=
+(
+�
+�
+)
+�
+∈
+�
+S:=(S_n)_{n\in\N} is known as a random walk. Define the diffusively rescaled random walk (partial-sum process) by
+
+�
+(
+�
+)
+(
+�
+)
+:=
+�
+⌊
+�
+�
+⌋
+�
+,
+�
+∈
+[
+0
+,
+1
+]
+.
+W^{(n)}(t) := \frac{S_{\lfloor nt\rfloor}}{\sqrt{n}}, \qquad t\in [0,1].
+The central limit theorem asserts that 
+�
+(
+�
+)
+(
+1
+)
+W^{(n)}(1) converges in distribution to a standard Gaussian random variable 
+�
+(
+1
+)
+W(1) as 
+�
+→
+∞n\to \infty . Donsker's invariance principle[1][2] extends this convergence to the whole function 
+�
+(
+�
+)
+:=
+(
+�
+(
+�
+)
+(
+�
+)
+)
+�
+∈
+[
+0
+,
+1
+]
+W^{(n)}:=(W^{(n)}(t))_{t\in [0,1]}. More precisely, in its modern form, Donsker's invariance principle states that: As random variables taking values in the Skorokhod space 
+�
+[
+0
+,
+1
+]
+\mathcal{D}[0,1], the random function 
+�
+(
+�
+)
+W^{(n)} converges in distribution to a standard Brownian motion 
+�
+:=
+(
+�
+(
+�
+)
+)
+�
+∈
+[
+0
+,
+1
+]
+W:=(W(t))_{t\in [0,1]} as 
+�
+→
+∞
+.
+n\to \infty.
+
+    </div>
+    
+    <ol>
+      <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>
+      <li> <a class="bibl"> Brownian motion (n. d.). Retrieved from Wikipedia, </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Brownian_motion"> https://en.wikipedia.org/wiki/Brownian_motion </a> </li>
+      <li> <a class="bibl"> Geometric brownian motion (n. d.). Retrieved from Wikipedia, </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Geometric_Brownian_motion"> https://en.wikipedia.org/wiki/Geometric_Brownian_motion </a> </li>
+      <li> <a class="bibl"> Geometric Brownian Motion (n. d.). Retrieved from sciencedirect, </a> <a class="bibl" href="https://www.sciencedirect.com/topics/mathematics/geometric-brownian-motion"> https://www.sciencedirect.com/topics/mathematics/geometric-brownian-motion </a> </li>
+    </ol>
+
+    <p class="thesisSelector">
+      <a class="selector" href="/thesis/thesis9.html"> Previous thesis </a>
+      <a class="selector" href="/"> Home </a>
+      <a class="selector" href="/thesis/thesis11.html"> Next thesis </a>
+    </p>
+  </body>
+</html>

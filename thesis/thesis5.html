@@ -8,46 +8,46 @@
   </head>
   <body>
     <h1> Thesis 5 </h1>
-    <p style="width: 20vw">
+    <div>
       <h1> Statistical Distributions: Continuous, Discrete, Properties and simulations </h1>
-      <a>
+      <p>
         <b> Statistical distributions </b> are immensly important in statistics and probability theory. They describe the likelihood of an event to happen, or the likelihood of an outcome to become true among different possibilities.
         In particular, we consider two types of distribution, depending on they particular set on which they are defined:
-
-        <h2> 1. Discrete distributions </h2>
+      </p>
+      <h2> 1. Discrete distributions </h2>
+      <p>
 
         Discrete distributions are able to rapresent random variables that can only take distinct values, therefore it can be mapped on a set of integers, like \( \mathbb{N} \). These are variables that have a finite value and a finite limit.
         For example, the amount of animals in a room is a finite variable, since it will never be able to assume any non-integer value, such as 3.5 (0.5 of an animal has no meaning in this context).
         These distribution are defined by probability mass functions (often called pmf), which calculates the probability that the specific random variable will result in a particular outcome or, in other terms:
         $$ Pr(X=a) $$
-
+        
         Some of the most famous discrete distributions are:
-        <ol>
-          <li> The Bernoulli distribution </li>
-          <li> The Binomial distribution </li>
-          <li> The Hypergeometric distribution </li>
-          <li> The Negative hypergeometric distribution </li>
-        </ol>
-      </a>
-
-      <br>
+      </p>
+      <ol>
+        <li> The Bernoulli distribution </li>
+        <li> The Binomial distribution </li>
+        <li> The Hypergeometric distribution </li>
+        <li> The Negative hypergeometric distribution </li>
+      </ol>
 
       <h3> Bernoulli distribution </h3>
+
       <div style="display: flex; flex-direction: row; align-items: center;"> 
-        <a>
+        <p>
           Any variable that falls within this distribution can only assume to values: \( 1 \) with probability \( p \) and \( 0 \) with probability \( 1 - p \).
           <br>
           It can be thought as an experiment that allows only yes-no answers. The probability mass function of this distribution can be seen on the image on the right.
           The most important property of this distribution follows from the fact that has only two possible outcomes:
           $$ Pr(X=1) = p = 1 - Pr(X=0) = 1 - q $$
-        </a>
+        </p>
         <img style="margin-left: 5%; margin-right: 5%; width: 25%;" src="/src/th5/Bernoulli.png">
       </div>
 
       <h3> Binomial distribution </h3>
       <div style="display: flex; flex-direction: row; align-items: center;">
         <img style="width: 70%; margin-right: 5%;" src="/src/th5/Binomial.png">
-        <a>
+        <p>
           This distribution takes two parameters: \( n \) and \( p \) and studies the number of successes in a sequence of \( n \) Bernoulli experiments, each i.i.d, with probability \( p \).
           This is usually used to model the number of successes in a sample of size \( n \) <b> with replacement </b>.
           To calculate the probability that a binomial distribution will have a certain number of 1's outcomes, we can calculate the probability based on the bernoulli distribution. In particular, we can consider the probability
@@ -57,52 +57,56 @@
           $$ Pr(X = a) = \binom{n}{a} p^a (1-p)^{n-a} $$
           Any variable that complies with this distribution can only assume to values: \( 1 \) with probability \( p \) and \( 0 \) with probability \( 1 - p \).
           The probability mass function can be seen on the image on the left.
-        </a>
+        </p>
       </div>
 
       <h3> Hypergeometric distribution </h3>
       <div style="display: flex; flex-direction: row; align-items: center;">
-        <a>
-          The Hypergeometric distribution studies the probability of a bernoulli variable to result in \( 1, k \) amount of times in a row. This can be tought as a coin flip where we are looking at the probability that
-          head will land \( k \) times in a row, where the probability that the coin will land on 'head' is \( p \) and the probability that it will land on 'tail' is \( q = 1 - p \).
-          We need to be careful since we are considering a specific scenario. If we were to map this problem on multiple random bernoulli variables, then there would be <b> no replacement </b>.
-          We consider this probability to be the following:
-          $$ p_x(k) = Pr(X = k) = \frac{\binom{K}{k} \binom{N-K}{n-k}}{\binom{N}{n}}$$
-          Where:
+        <div>
+          <p>
+            The Hypergeometric distribution studies the probability of a bernoulli variable to result in \( 1, k \) amount of times in a row. This can be tought as a coin flip where we are looking at the probability that
+            head will land \( k \) times in a row, where the probability that the coin will land on 'head' is \( p \) and the probability that it will land on 'tail' is \( q = 1 - p \).
+            We need to be careful since we are considering a specific scenario. If we were to map this problem on multiple random bernoulli variables, then there would be <b> no replacement </b>.
+            We consider this probability to be the following:
+            $$ p_x(k) = Pr(X = k) = \frac{\binom{K}{k} \binom{N-K}{n-k}}{\binom{N}{n}}$$
+            Where:
+          </p>
           <ul>
             <li> <b> \( N \) </b> is the population size, </li>
             <li> <b> \( K \) </b> is the number of success states in the population, </li>
             <li> <b> \( n \) </b> is the number of draws (or trials), </li>
             <li> <b> \( k \) </b> is the number of osserved successes. </li>
           </ul>
-          We can look at this distribution's pmf (probability mass function) on the right:
-        </a>
+          <p> We can look at this distribution's pmf (probability mass function) on the right: </p>
+        </div>
         <img style="margin-left: 5%; margin-right: 5%; width: 70%" src="/src/th5/Hypergeometric.png">
       </div>
 
       <h3> Negative hypergeometric distribution </h3>
       <div style="display: flex; flex-direction: row; align-items: center;">
         <img style="width: 70%; margin-right: 5%;" src="/src/th5/Negative_hypergeometric.png">
-        <a>
-          In probability theory the <b> negative hypergeometric distribution </b> describes probabilities for when the sampling from a finite population without replacement.
-          In particular, unlike the hypergeometric distribution which describes the number of successes, the negative hypergeometric describes the probability of drawing from a sample until \( r \) failures
-          are found, successed by \( k \) successes. More precisely, the negative hypergeometric distribution describes the likelihood of
-          \( k \) successes and \( r \) failures in a sample precisely.
-          We consider this probability to be the following:
-          $$ Pr(X = k) = \frac{\binom{k+r-1}{k} \binom{N-r-k}{K-k}}{\binom{N}{K}} $$
-          Where:
+        <div>
+          <p>
+            In probability theory the <b> negative hypergeometric distribution </b> describes probabilities for when the sampling from a finite population without replacement.
+            In particular, unlike the hypergeometric distribution which describes the number of successes, the negative hypergeometric describes the probability of drawing from a sample until \( r \) failures
+            are found, successed by \( k \) successes. More precisely, the negative hypergeometric distribution describes the likelihood of
+            \( k \) successes and \( r \) failures in a sample precisely.
+            We consider this probability to be the following:
+            $$ Pr(X = k) = \frac{\binom{k+r-1}{k} \binom{N-r-k}{K-k}}{\binom{N}{K}} $$
+            Where:
+          </p>
           <ul>
             <li> <b> \( N \) </b> is the population size, </li>
             <li> <b> \( K \) </b> is the number of success states in the population, </li>
             <li> <b> \( r \) </b> is the number of failures, </li>
             <li> <b> \( k \) </b> is the number of osserved successes. </li>
           </ul>
-          The probability mass function can be seen on the image on the left.
-        </a>
+          <p> The probability mass function can be seen on the image on the left. </p>
+        </div>
       </div>
 
-      <a>
-        <h2> 2. Continuous distributions </h2>
+      <h2> 2. Continuous distributions </h2>
+      <p>
         Continuous distributions are linked to random variables that can assume any value within a given range and are tipycally described by <b> probability density function </b>. The pdf is a function used to
         calculate the probability that a continuous random variable will be less than or equal to a given value and is calculated at: \( Pr(a \le X \le b ) \) or \( Pr(X \le b) \).
         We can also consider the cumulative distribution function of a continuous random variable, which is described as the area under the curve of the density function. For this reason it is calculated with the following intergral:
@@ -110,10 +114,10 @@
         It inherits the following properties from the integral:
         $$ CDF(b - a) = CDF(b) - CDF(a) = \int_{a}^{b} PDF(x) \,dx $$
         Let's consider a few examples:
-      </a>
+      </p>
 
       <h3> Continuous uniform distribution </h3>
-      <a>
+      <p>
         In probability theory and statistics the continuous uniform distributions or rectangular distributions are a family of symmetric probability distributions. Such distrivution describes an experiment where there's an arbitrary outcome that lies
         in a certain range. The bounds of this range are given as parameters \( a \) and \( b \) and the intervals could be either <b> open </b> or <b> closed </b>.
         Let's have a look at the probability density function:
@@ -133,21 +137,21 @@
           1 & \text{for $ x > b $.}
         \end{cases}
         $$
-      </a>
+      </p>
 
       <div style="display: flex; justify-content: center; align-items: center;">
         <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 48%; max-width: 600px; margin-right: 5%;">
-          <a> Uniform PDF </a>
+          <p> Uniform PDF </p>
           <img style="width: 100%;" src="/src/th5/uniform_pdf.png">
         </div>
         <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 48%; max-width: 600px; margin-right: 5%;">
-          <a> Uniform CDF </a>
+          <p> Uniform CDF </p>
           <img style="width: 100%;" src="/src/th5/uniform_cdf.png">
         </div>
       </div>
 
       <h3> Exponential distribution </h3>
-      <a>
+      <p>
         In probability theory and statistics the exponential distribution is the probability distribution of the time between events in a Poisson point process. The probability density function of the exponential is:
 
         $$
@@ -164,15 +168,15 @@
           0 & x < 0.\\
         \end{cases}
         $$
-      </a>
+      </p>
 
       <div style="display: flex; justify-content: center; align-items: center;">
         <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 48%; max-width: 600px; margin-right: 5%;">
-          <a> Exponential PDF </a>
+          <p> Exponential PDF </p>
           <img style="width: 100%;" src="/src/th5/exponential_pdf.png">
         </div>
         <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 48%; max-width: 600px; margin-right: 5%;">
-          <a> Exponential CDF </a>
+          <p> Exponential CDF </p>
           <img style="width: 100%;" src="/src/th5/exponential_cdf.png">
         </div>
       </div>

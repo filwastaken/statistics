@@ -11,41 +11,41 @@
   </head>
   <body>
     <h1> Thesis 7 </h1>
-    <p style="width: 20vw">
+    <div>
       <h1> "Online" Algorithms (Data Streams): Ideas and code </h1>
-      <a>
+      <p>
         A stream of data refers to the continuous arrival of inputs at a very fast rate with limited capacity to store it. Algorithms have to work with such fast data, preferrably in linear time and size. Some methods rely on metric embeddings,
         pseudo-random computations, sparse approzimation theory and communication complexity.
         Some scenarios of data streams include:
-      </a>
+      </p>
 
       <ul>
-        <li> <a> Social Media Feeds, such as interactions with photos, posts, comments and other objects in social platform like Instagram, Facebook or others; </a> </li>
-        <li> <a> Financial Transactions, such as the continuous flow of money in the stock marker and currency exchange rates; </a> </li>
-        <li> <a> IP network traffic analisys, including the flow of packets accross the network infrastructure; </a> </li>
-        <li> <a> Sensor data, particularly from IoT devices such as temperature, altitude, pressure and other factors of interest; </a> </li>
-        <li> <a> Processing of large data sets. </a> </li>
+        <li> Social Media Feeds, such as interactions with photos, posts, comments and other objects in social platform like Instagram, Facebook or others; </li>
+        <li> Financial Transactions, such as the continuous flow of money in the stock marker and currency exchange rates; </li>
+        <li> IP network traffic analisys, including the flow of packets accross the network infrastructure; </li>
+        <li> Sensor data, particularly from IoT devices such as temperature, altitude, pressure and other factors of interest; </li>
+        <li> Processing of large data sets. </li>
       </ul>
 
-      <a>
+      <p>
         <b> Online algorithms </b> are designed to work with data as it arrives, instead of waiting for the whole dataset to be available. This is especially important if we are talking about a virtually never ending data set, such as the
         information relied to the algorithm from an IoT sensor.
          Let's condier how to 
-      </a>
+      </p>
       <h2> Counting elements in a stream </h2>
-      <a>
+      <p>
         In this case we intend to process incrementally counts of occurences. It could be used with a thermal sensor to count the occurences of a particular temperature. A mathematical descriptions is the following:
         Let \( S = [s_1, s_2, s_3, s_4, s_5, ... ] \) be an infinite sequence that rapresents a data stream. In particular, we consider the i-th item to be \( s_i \). We mean to produce a set of items \( I \) defined as
         \( I = \{(x_1, c_1), (x_2, c_2), (x_3, c_3), (x_4, c_4), (x_5, c_5), (x_6, c_6), (x_7, c_7)\} \) where \( x_i \) refers to the value assumed in the infinite series, and \( c_j \) refers to the number of times that item has appeared in the sequence.
         In particular we consider the following rules:
-      </a>
+      </p>
       <ul>
-        <li> <a> If \( s_i \) is not in I, then \( I' = I \cup \{(s_i, 1)\} \) </a> </li>
-        <li> <a> If \( s_i \) is already in I, then \( I' = ( I \setminus \{ (s_i, x_i) \} ) \cup \{(s_i, x_i + 1)\} \) </a> </li>
+        <li> If \( s_i \) is not in I, then \( I' = I \cup \{(s_i, 1)\} \) </li>
+        <li> If \( s_i \) is already in I, then \( I' = ( I \setminus \{ (s_i, x_i) \} ) \cup \{(s_i, x_i + 1)\} \) </li>
       </ul>
-      <a>
+      <p>
         This is an example of how this behaviour could be achieved with an hashmap:
-      </a>
+      </p>
 
       <pre style="font-family: Menlo, monospace; font-size: large; border-style: solid; width: fit-content; padding-right: 50px; margin-left: 20px;">
         <code>
@@ -60,7 +60,7 @@
         </code> </pre>
 
       <h2> Calculating the moving average </h2>
-      <a>
+      <p>
         This process aims to compute the average of a fixed-size amount of elements
         as the algorithm moves throught the data stream. We again consider \( S = [s_1, s_2, s_3, ...] \)
         the datastream ad define \( MovAvg(S, w) \) a function that requires as input a datastream
@@ -68,14 +68,14 @@
         produces a sequence of moving averages \( M = [m_1, m_2, m_3, ...] \) where \( m_i \)
         is the i-th element is the average in the span from \( s_i \) to \( s_{s+w-1} \).
         The algorithm can be described as follows:
-      </a>
+      </p>
 
       <ul>
-        <li> <a> If \( i < w \) then \( m_i = \sum^{i}_{j=1} s_j \), the average of the first i elements, </a> </li>
-        <li> If \( i \ge w \) then \( m_i = \sum^{i}_{j=i-w+1} s_j \), which is the average of the last w elements in the stream.<a> </a> </li>
+        <li> If \( i < w \) then \( m_i = \sum^{i}_{j=1} s_j \), the average of the first i elements, </li>
+        <li> If \( i \ge w \) then \( m_i = \sum^{i}_{j=i-w+1} s_j \), which is the average of the last w elements in the stream. </li>
       </ul>
 
-      <a> The pseudocode is written here: </a>
+      <p> The pseudocode is written here: </p>
       <pre style="font-family: Menlo, monospace; font-size: large; border-style: solid; width: fit-content; padding-right: 50px; margin-left: 20px;">
         <code>
     function MovingAverage(stream, win_size){
@@ -102,7 +102,7 @@
   </code> </pre>
     
       <h2> Finding the top k elements </h2>
-      <a>
+      <pw>
         This algorithms aims to find the set of the largest k elements in the dataset.
         This can be achieved by using a sorted collection of data to keep track of the largest elements.
         In particular, we consider a stream \( S = [s_1, s_2, s_3, s_4, ...] \) and define a function
@@ -112,7 +112,7 @@
         We can also keep in mind that, since the list will always be limited to k+1 elements, sorting functions
         like insertion sort or selection sort are viable as well. Quick sort does the best job since it can be implemented
         in-place and has a maximum time of \( O(n log(n)) \). The pseudo code is written down here:
-      </a>
+      </pw>
 
       <pre style="font-family: Menlo, monospace; font-size: large; border-style: solid; width: fit-content; padding-right: 50px; margin-left: 20px;">
         <code>
@@ -130,7 +130,7 @@
       }
     }
         </code> </pre>
-    </p>
+      </div>
     
     <ol>      
       <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>

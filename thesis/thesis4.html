@@ -8,9 +8,9 @@
   </head>
   <body>
     <h1> Thesis 4 </h1>
-    <p style="width: 20vw">
-      <h1> The Glivenko-Cantelli theorem, proof and simulations </h1>
-      <a>
+    <div>
+    <h1> The Glivenko-Cantelli theorem, proof and simulations </h1>
+      <p>
         The <b> Glivenko-Cantelli theorem </b>  (sometimes referred as the Fundamental Theorem of Statistics) determins the asymptotic behaviour of the empirical distribution funciton as the number of i.i.d.
         ( indipendent and identically distributed ) observations increases. Let \( X_i \), where \( i = 1, ..., n \), the empirical distribution function is defined as
         $$ \hat{F}_n(x) = \frac{1}{n} \sum_{1 \le i \le n} I\{X_i \le x\} $$
@@ -21,29 +21,35 @@
         given any \( x in \mathbb{R} \).
         We now need to make sure that \( \hat{F}_n(x) \) is a reasonable estimate of \( F(x) \) when viewed as functions of x.
         This is true thanlks to the Glivenko-Cantelli theorem, that asserts the following:
-
-        <h3> Theorem 1.1 </h3>
+      </p>
+      <h3> Theorem 1.1 </h3>
+      <p>
         Let \( X_i \) for \( i = 1, ..., n \) be an i.i.d. sequence of random variables that have distribution F, defined on \( \mathbb{R} \).
         Then, it holds true that
         $$ \sup_{x \in \mathbb{R}} |\hat{F}_n(x) - F(x) | \to 0$$
-
+        
         The theorem means that the empirical cumulative distribution function (ECDF) of a random sample
         converges uniformly to the true cumulative distribution function. This is perhaps the oldest and most well 
         know result in process theory, which is the basis of econometrics. The equation defined above is an
         example of Kolmogorov-Smirnov statistic.
+      </p>
 
-        <div style="display: flex; justify-content: center; margin-top: 20px; margin-bottom: 20px; width: 100%;">
-          <img style="width: 80%;" src="/src/th4/Gli-Can_th.gif">
-        </div>
+      <div style="display: flex; justify-content: center; margin-top: 20px; margin-bottom: 20px; width: 100%;">
+        <img style="width: 80%;" src="/src/th4/Gli-Can_th.gif">
+      </div>
 
+      <p>
         The Glivenko-Cantelli theorem results crucial since it underlines how it's possible to describe and capture
         the entire characteristics of a distribution function \( F \) thanks to <b> samples </b>. As the size grows,
         the empirical distribution function converges uniformly to the true distribution function (based on the entire population).
         This implies that the notions inferred on the population increase in accuracy as the data size increases.
         Therefore, studying distributions through samples is a reliable and functional approach to learn about the
         underlying distribution.
+      </p>
+      
+      <h3> Proof: </h3>
 
-        <h3> Proof: </h3>
+      <p>
         Let's consider a continuous random variable X, such that \( - \infty = x_0 < x_1 < x_2 < ... < x_{m-1} < x_m = +\infty \) and
         $$ F(x_j) - F(X_{j-1}) = \frac{1}{m} $$
         for \( j \) in \(1, ..., m \).
@@ -51,20 +57,20 @@
         j defined between 1 and m where \( x \in [x_{j-1}, x_j] \). It follows:
         $$ \hat{F}_n(x) < F(x) \le \hat{F}_n(x_j) - F(x_{j-1}) = \hat{F}_n(x_j) - F(x_j) + \frac{1}{m} $$
         $$ \hat{F}_n(x) - F(x) \ge \hat{F}_n(x_{j-1}) - F(x_j) = \hat{F}_n(x_{j-1}) - F(x_{j-1}) - \frac{1}{m} $$
-
+        
         Using these two inequalities, we get:
-
+        
         $$ ||\hat{F}_n - F||_{\infty} = \sup_{x \in \mathbb{R}}|\hat{F}_n(x_j) - F(x_j)| \le \epsilon - \frac{1}{m} $$
         Since we have seen that \( \max_{j \in \{1, ..., j\}} |\hat{F}_n(x_j) - F(x_j)| \to 0 \) thanks to the law of large numbers,
         we can ensure that given any positive \( \epsilon \) and any positive integer \( m \) where \( \frac{1}{m} < \epsilon \), there exists
         \( N \) such as, for all \( n \ge N \):
-
+        
         $$ \max_{j \in \{1, ..., j\}} |\hat{F}_n(x_j) - F(x_j)| \le \epsilon - \frac{1}{m} $$
-
+        
         We can finally conclude that \( ||F_n - F||_{\infty} \le \epsilon \) almost surely, fulfilling the defition of "almost sure convergence",
         proving the Glivenko-Cantelli theorem.
-      </a>
-    </p>
+      </p>
+    </div>
 
     <ol>
       <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>

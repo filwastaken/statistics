@@ -8,41 +8,39 @@
   </head>
   <body>
     <h1> Thesis 9 </h1>
-    <p style="width: 20vw">
+    <div>
       <h1> The Poisson Process: Meaning, Properties, Simulations </h1>
-      <a>
+      <p>
         In statistics a <b> Poisson Point Process </b> is a kind of random mathematical object. It consists of points randomly located on a mathematical space, where each point is
         indipendent from each other. This is often called Poisson random measure or, simply, Poisson process. This process is characterized via the Poisson distribution, where the probability is dipended on N (called a Poisson random variable).
         Therefore, the probability of non-overlapping regions is:
         $$ Pr\left\{ N = n \right\}=\frac{\lambda^{n}}{n!}e^{-\lambda} $$
         This is the probability that the Nth number is equal to n. The other variables are \( \lambda \) , the parameter of the Poisson distribution, \( e \) the Euler's constant and \( n \), which is the number of events that we are calculating.
         To recap, the properties that a Poisson Process follows are:
-      </a>
+      </p>
       <ul>
-        <li> <a> Indipendece.  </a> </li>
-        <li> <a> Homogeneity , since the points are distributed uniformally throughout the space or time interval. </a> </li>
-        <li> <a> Poisson property  </a> </li>
+        <li> Indipendece.  </li>
+        <li> Homogeneity , since the points are distributed uniformally throughout the space or time interval. </li>
+        <li> Poisson property  </li>
       </ul>
-
-      <a>
-        In particular, a Poisson Process is formally defined as follow:
-      </a>
+      
+      <p> In particular, a Poisson Process is formally defined as follow: </p>
 
       <div style="border-style: solid; border-radius: 2px; padding: 15px 15px 15px 15px; margin-top: 10px; margin-bottom: 10px;">
-        <a> Let \( \lambda > 0 \) be fixed. The couting process \( \{ N(t), t \in [0, \infty) \} \) is called a <b> Poisson process </b> with <b> rates </b> \( \lambda \) if the following conditions hold: </a>
+        <p> Let \( \lambda > 0 \) be fixed. The couting process \( \{ N(t), t \in [0, \infty) \} \) is called a <b> Poisson process </b> with <b> rates </b> \( \lambda \) if the following conditions hold: </p>
         <ol>
-          <li> <a> \( N(0) = 0 \), </a></li>
-          <li> <a> \( N(t) \) has indipendent increments, </a></li>
-          <li> <a> The number of arrivals in any interval of length \( \tau > 0 \) has <i> \( Poisson( \lambda \tau ) \) </i> distribution. </a></li>
+          <li> \( N(0) = 0 \), </li>
+          <li> \( N(t) \) has indipendent increments, </li>
+          <li> The number of arrivals in any interval of length \( \tau > 0 \) has <i> \( Poisson( \lambda \tau ) \) </i> distribution. </li>
         </ol>
       </div>
 
-      <a>
+      <p>
         A Poisson distribution is defined by the following formula:
         $$ P(X = k) = \frac{e^{- \lambda} \lambda^k}{k!}$$
         It's possible to look at the Poisson distribution via the 5th assigned homework. In particular, we can see how the distributin changes by increasing the number of attacks \( (n) \),
         the systems \( (m) \) and the poisson variable \( ( \lambda ) \).
-      </a>
+      </p>
 
       
       <div style="display: flex; flex-direction: column; flex-wrap: wrap; align-items: center; align-content: center; margin: 20px 0px 20px 0px; margin: auto; width: 95%;">
@@ -56,7 +54,7 @@
         </div>
       </div>
       
-      <a>
+      <p>
         Looking at the previous images we can see that, from \( N \) and \( M \) sufficiently large and for small λ, the distribution come close to the theoretical asymptotic function.
         We can again see how, by choosing a large amount of samples, the bell from the normal distribution shows up again.
         <br>
@@ -64,12 +62,12 @@
         see the next bus if we arrive at a random time? The probability of waiting a a given amount of time decreases exponentially as time increases. This behaviour is described by the following equation:
         $$ \large{ P(T > t) } = \Large { e^{- \frac{\text{events}}{\text{time}} * t} } $$
         We can see that the waiting time between events are memoryless, so the time between two events has no effect on the time between any other events. This property is the <b>Markov property</b>!
-      </a>
+      </p>
 
       <div style="width: 100%; text-align: center; margin-top: 15px; margin-bottom: 15px;">
         <img style="width: 25%;" src="/src/th9/poisson_waiting.png">
       </div>
-    </p>
+    </div>
 
     <ol>
       <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>

@@ -8,9 +8,9 @@
   </head>
   <body>
     <h1> Thesis 10 </h1>
-    <p style="width: 20vw">
+    <div>
       <h1> The Wiener process and the GBM, Derivations and simulations </h1>
-      <a>
+      <p>
         The Wiener process, also known as Brownian motion, is a continuous-time stochastic process that describes the random motion of particles supended in a medium. A Geometric Brownian Motion (GBM), also known as <b> exponential Brownian motion </b>
         is a continuous-time process where the logarithm of the randomly varying quantity follows a Brownian motion. This process is particularly useful in mathematical finance to model stock prices. The Wiener process obeys the following
         stochastic differential equation (SDE):
@@ -18,32 +18,32 @@
         Where \( Z_t \) is the standard Brownian motion, \( \mu \) and \( \sigma \) are constants, in particular the drift and volatility. On the other hand, the geometric brownian motion follows a different SDE:
         $$ dS_t = \mu S_t dt + \sigma S_t dZ_t $$
         Where \( W_t \) is the Wiener process (or Brownian motion), \( \mu \) rapresents the drift and \( \sigma \) is the percentage volatility. We can see at some simulations of a brownian motion. In particular, in the image on the left,
-        we can see a 2-dimensional random walk, while on the right there is a simulation of a Brownian motion of a large particle, that could be compared to a dust particle, colliding with smaller particles such as the molecules of a gas.
-      </a>
-
+        we can see a 2-dimensional random walk, while on the right there is a simulation of a Brownian motion of a large particle, that could be compared to a dust particle, colliding with smaller particles such as the molecules of a gas.  
+      </p>
+      
       <div style="margin-top: 25px; margin-bottom: 25px; width: 100%; display: flex; justify-content: space-around; flex-direction: row; align-items: center;">
         <img style="width: 25%;" src="/src/th10/2d_bm.gif">
         <img style="width: 25%;" src="/src/th10/particle_bm.gif">
       </div>
 
-      <a>
+      <p>
         These processes have various applications in multiple fields, such as finance, physics, computer science and biology. Some of the most important applications are:
-      </a>
+      </p>
+
       <ul>
-        <li> <a> Biology: Population dynamics, </a> </li>
-        <li> <a> Computer Science: Monte Carlo simulations, </a> </li>
-        <li> <a> Engineering: Signal processing, </a> </li>
-        <li> <a> Finance: Option pricing, Risk management and Stock price modeling, </a> </li>
-        <li> <a> Climate modeling. </a> </li>
+        <li> Biology: Population dynamics, </li>
+        <li> Computer Science: Monte Carlo simulations, </li>
+        <li> Engineering: Signal processing, </li>
+        <li> Finance: Option pricing, Risk management and Stock price modeling, </li>
+        <li> Climate modeling. </li>
       </ul>
-
-      <a> A brownian motion simulation has been created in the </a> <a href="/code/homework7/application.html">homework7 applications</a> <a>. There is a snippet below:</a>
-
+      
+      <p> A brownian motion simulation has been created in the <a href="/code/homework7/application.html">homework7 applications</a>. There is a snippet below: </p>
       <div style="width: 100%; display: flex; justify-content: center; margin-top: 25px; margin-bottom: 25px;">
         <iframe src="/code/homework7/JavaScript/hw7.html" style="width: 95%; height: 1000px"> </iframe>
       </div>
 
-    </p>
+    </div>
     
     <ol>
       <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>

@@ -7,9 +7,9 @@
   </head>
   <body>
     <h1> Thesis 1 </h1>
-    <p style="width: 20vw">
+    <div>
       <h1> The LLN meaning, proof and simulation </h1>
-      <a>
+      <p>
         The <b> Law of Large Numbers </b> (LLN) is a theorem that describes the result of performing an experiment
         a large number of times. In particular, the average of the results obtained from the experiments is close to
         the expected value. This means that, by using indipentent and identically distributed random variables,
@@ -20,30 +20,33 @@
         We can see how a Bernoulli series converges to the theoretical probability, according to LLN. In particular,
         for a Bernoulli random variable, the expected value is the theoretical probability of success, and the average of the n variables, assuming them indipentent and identically distributed, as stated above.
         In this case, the expected value equals the relative frequency.
-        <h4> Example: </h4>
+      </p>
+      <h4> Example: </h4>
+      <p>
         A fair toin coss is a Bernoulli trial, where the set of possible outcomes {H, T} can be mapped on the set of Bernoulli results {0, 1}. By being fair, the probability
         is the same for each outcome, therefore both Head and Tails have a \( \frac{1}{2} \) (0.5) chance of happening. According to the law of large numbers, the number of heads will be half the total trials.
         In particular, if we toss the coin n times, the number of heads will be one over 2n.
         <br>
         There are two different versions of the law of large numbers. They are called <b> strong law of large numbers </b> and
         <b> weak law of large numbers </b>.
-        <h2> Weak LLN </h2>
-      </a>
+      </p>
+      
+      <h2> Weak LLN </h2>
 
       <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
-        <a style="width: 70%; margin-right: 10%">
-          The weak law of large numbers (also known as <b> Khinchin's law </b>) states that the sample average converges
+        <p style="width: 70%; margin-right: 10%">
+          The weak law of large numbers (also known as <b>Khinchin's law</b>) states that the sample average converges
           in probability towards the expected value. In particular:
           $$ \lim_{n\to+\infty}Pr(|\overline{X_n} - \mu < \varepsilon|) = 1 $$
           Interpreting this result, the weak law states that for any nonzero margin specified (ε),
           no matter how small, with a sufficiently large sample there will be a very high probability
           that the average of the observations will be close to the expected value.
-        </a>
+        </p>
         <img style="height: 25%; margin-right: 5%" src="http://upload.wikimedia.org/wikipedia/commons/4/49/Lawoflargenumbersanimation2.gif">
       </div>
 
-      <a>
-        <h4> Proof:</h4>
+      <h4> Proof:</h4>
+      <p>
         Let's consider \( X_1 \), \( X_2 \) to \( X_n \), an infinite number of identically distributed random variables, that have all the same
         expected value.
         The average is \( \overline{X_n} = \frac{1}{2} * \sum_{1}^{n}X_n \). Then, by the weak law, it must be true that
@@ -53,7 +56,9 @@
         Using Chebyshev's inequality on \( \overline{X_n} \) we get:
         $$ P(|\overline{X_n} - \mu| < \epsilon) = 1 - P(|\overline{X_n} - \mu| \ge \epsilon) \ge 1 - \frac{\sigma^2}{n \epsilon^2} $$
         As n approaches infinity, the expression approaches 1. Therefore, we have proved that, by increasing the number of variables, the average will equals the expected value.
-        <h2> Strong LLN </h2>
+      </p>
+      <h2> Strong LLN </h2>
+      <p>
         The <b> strong law </b> states that the sample average converges almost surely to the expected value. That is:
         $$ Pr(\lim_{n\to+\infty}\overline{X_n} = \mu) = 1 $$
         This means that, as the number of trials tend to infinity, the probability of the average observation 
@@ -65,15 +70,16 @@
         The proof for the strong law is much more complex than it's counterpart. Without losing generality, it's possible
         to center the expected value by choosing \( \mu = 0 \). By using Kolmogorov's Strong Law of Large Numbers, which states
         $$ P(\lim_{n \to \infty} \frac{1}{n} \sum_{i = 1}^{n}(X_i - \mu) = 0) = 1 $$
-
-        <h4> Example </h4>
-        We can look at the following image from exercise 3 to show how the LLN holds:
-        <img style="width: 100%;" src="/src/th1/graph.png">
+      </p>
+      <h4> Example </h4>
+      <p>
+        We can look at the following image from <a href="/code/homework3/application.html">exercise 3</a> to show how the LLN holds:
+        <img style="width: 100%; margin-top: 20px;" src="/src/th1/graph.png">
         $$ N = 200, K = 500, P = 0.5 $$
         Here the average is close to the expected value, as it should be. We can also see how most of the lines tends to accumulate towards the
         average (which is located in the center), since that's equal to the expected value.
-      </a>
-    </p>
+      </p>
+    </div>
 
     <ol>
       <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>

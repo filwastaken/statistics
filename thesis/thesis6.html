@@ -8,78 +8,75 @@
   </head>
   <body>
     <h1> Thesis 6 </h1>
-    <p style="width: 20vw">
+    <div>
       <h1> Algorithms for random variates generation </h1>
-      <a>
+      <p>
         Pseudo-random numbers is the foundation for generating samples from probability distribution models in a simulation. When using this tool, we assume that the generating function has been rigorously tested and it produces numbers between 0 and 1
         uniformly \( U_i \sim U(0, 1) \). The realized value from a probability distribution is called random variate and, since distributions use many different probability as input, we need methods for generating different random variate on different
         distributions. This is accomplished with four strategies, such as:
-      </a>
+      </p>
 
       <ol>
-        <li> <a> Inverse transform or inverse cumulative distribution function (CDF) method </a> </li>
-        <li> <a> Convolution </a> </li>
-        <li> <a> Acceptance/Rejection </a> </li>
-        <li> <a> Mixture and Truncated Distributions </a> </li>
+        <li> Inverse transform or inverse cumulative distribution function (CDF) method </li>
+        <li> Convolution </li>
+        <li> Acceptance/Rejection </li>
+        <li> Mixture and Truncated Distributions </li>
       </ol>
 
       <h3> Inverse Transform Method </h3>
-      <a>
+      <p>
         The inverse transform method is the preferred provided that the CDF can be easily derived or computed numerically.
         The key advantage is that for every \( U_i \) used, a corresponding \( X_i \) will be generated. Therefore there is a one-to-one link between the pseudo-random number \( u_i \) and the generated variate \( x_i \).
         This technique is based on the inverse cumulative distribution funciton. First we generate a pseudo-random variable \( u_i \) between 0 and 1. Then \( x_i \) is calculated as
         $$ x_i = F^{-1}(u_i) $$
         For each \( u_i \) generated, there is a unique \( x_i \) because of the monotone property of the CDF.
-      </a>
+      </p>
 
       <h3> Convolution </h3>
-      <a>
+      <p>
         Many random variables are related with each other with functional relationship. One of the most common relations is the <b> convolution </b> relationship, which is the distribution of the sum of two or more random variables.
         Let \( Y_i \sim G(y) \) be indipendent and identically distributed random variables, we consider \( X = \sum^n_{i=1} Y_i \). The distribution of X is said to be n-fold convolution of Y. Some common variables realted this way are:
-      </a>
+      </p>
 
       <ul>
-        <li> <a> The binomial random variable is the sum of Bernoulli random variables, </a> </li>
-        <li> <a> The negative binomial random variable is the sum of geometric random variables, </a> </li>
-        <li> <a> The Erlang random variable is the sum of exponential random variables, </a> </li>
-        <li> <a> The Normal random variable is the sum of other normal random variables, </a> </li>
-        <li> <a> The chi-squared random variable is the sum of squared normal random variables. </a> </li>
+        <li> The binomial random variable is the sum of Bernoulli random variables, </li>
+        <li> The negative binomial random variable is the sum of geometric random variables, </li>
+        <li> The Erlang random variable is the sum of exponential random variables, </li>
+        <li> The Normal random variable is the sum of other normal random variables, </li>
+        <li> The chi-squared random variable is the sum of squared normal random variables. </li>
       </ul>
 
       <h3> Acceptance/Rejection </h3>
-      <a>
+      <p>
         With acceptance/rejection we refer to the method of creating a new PDF \( w(x) \) from \( f(x) \). The first PDF is defined such that the selected sample from \( w(x) \) can be used to rapresent random variates from \( f(x) \) and
         it's based on the development of a majorizing function for \( f(x) \). A <b> majorizing function </b> \( g(x) \) is considered such for a function \( f(x) \) if \( g(x) \ge f(x) \) for \( - \infty < x < + \infty \). In addition,
         \( g(x) \) must have finite area:
         $$ c = \int^{+ \infty}_{- \infty} g(x) dx$$
         If \( w(x) \) is defined as \( \frac{g(x)}{c} \) then it is a probability density function. The acceptance/rejection method start by obtaining a random variate \( W \) from \( w(x) \). We then generate \( U \sim U(0, 1) \) and sample the two
         random variates untile \( U * g(W) \le f(W) \), where \( W \) si returned. The loop is then repeated. i.e.
-      </a>
+      </p>
       <ol>
-        <li> <a> Generate \( W \sim w(x) \), </a> </li>
-        <li> <a> Generate \( U \sim U(0, 1) \),</a> </li>
-        <li> <a> Until \( U * g(W) \le f(W) \),</a> </li>
-        <li> <a> Return \( W \),</a> </li>
-        <li> <a> Repeat. </a> </li>
+        <li> Generate \( W \sim w(x) \), </li>
+        <li> Generate \( U \sim U(0, 1) \), </li>
+        <li> Until \( U * g(W) \le f(W) \), </li>
+        <li> Return \( W \), </li>
+        <li> Repeat. </li>
       </ol>
 
       <h3> Inverse transform sampling </h3>
-      <a>
+      <p>
         This is used to create variates that follow the exponential distribution by using an uniform random variable between 0 and 1. It's possible to transform them by using the formula
         $$ X = \frac{-1}{\lambda} * log(1 - U) $$
         Where \( \lambda \) is the parameter of the exponential distribution.
-      </a>
-
-      <a>
+      </p>
+      <p>
         These are a few examples, but there are many more algorithms to generate random variates from various distributions. We particulary focus on execution time of variates generation, composed by two items: <b> set-up time </b> and 
         <b> marginal execution time </b>. We refer to set-up time as that time that is required at the beginning to do some computing to specify constants ro tables. Margianl execution time is required to generate each random variate.
         The latter is much more important since, in simulations, we tend to use thousands variates or more, making set-up time less important.
-      </a>
-      
-    </p>
+      </p>
+    </div>
 
     <ol>
-      
       <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>
       <li> <a class="bibl"> Rossetti Arena Book (n. d.). In Github, Retrieved from </a> <a class="bibl" href="https://rossetti.github.io/RossettiArenaBook/app-rnrv-rvs.html"> https://rossetti.github.io/RossettiArenaBook/app-rnrv-rvs.html </a> </li>
       <li> <a class="bibl"> Generating Random Variates  (n. d.). In Chaoyang University of Technology, Retrieved from </a> <a class="bibl" href="https://www.cyut.edu.tw/~hchorng/downdata/1st/SS8_Random%20Variate.pdf"> https://www.cyut.edu.tw/~hchorng/downdata/1st/SS8_Random%20Variate.pdf </a> </li>
