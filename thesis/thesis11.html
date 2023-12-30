@@ -15,138 +15,36 @@
         discussed in the <a href="/thesis/thesis2.html">second thesis</a>, for empirical distribution functions. In particular, the theorem states that
         an appropriately centered and scaled version of the empirical distribution function converges to te Gaussian proccess, which follows the normal distribution,
         discussed in the <a href="/thesis/thesis3.html">third thesis</a>.
+        <br>
+        Let \( X_1, X_2, X_3, ... \) be a sequence of <b> indipendent and identically distributed </b> random variables. We consider these variables with mean \( 0 \)
+        and variance \( 1 \). Let \( S_n = \sum^n_{i=1} X_i \). We consider the stochastic process called "random walk" as \( S := (S_n)_{n \in \mathbb{N} }\)
+        
+        Let us now define the rescalated random walk, which equals the partial-sum process, by considering
+        $$ W^{(n)} (t) := \frac{S_{\lfloor nt \rfloor}}{\sqrt{n}} \text{ , where } t \in [0, 1] $$
+        The CTL asserts that \( W^{(n)}(1) \) converges in distribution to a <b> Gaussian random variable </b> \( W(1) \) as \( n \to \infty \). Donsker's invariance
+        principle extends this convergence to the whole function:
+        $$ W^{(n)} := (W^{(n)} (t))_{t \in [0, 1]} $$
+        More precisely, Donsker's invariance principle states that the random function \( W^{(n)} \) converges in distributino to a <b> standard Brownian motion </b>.
       </p>
 
-Let 
-�
-1
-,
-�
-2
-,
-�
-3
-,
-…X_1, X_2, X_3, \ldots be a sequence of independent and identically distributed (i.i.d.) random variables with mean 0 and variance 1. Let 
-�
-�
-:=
-∑
-�
-=
-1
-�
-�
-�
-S_n:=\sum_{i=1}^n X_i. The stochastic process 
-�
-:=
-(
-�
-�
-)
-�
-∈
-�
-S:=(S_n)_{n\in\N} is known as a random walk. Define the diffusively rescaled random walk (partial-sum process) by
+      <div style="display: flex; flex-wrap: wrap; align-content: center; align-items: center; flex-direction: column; margin-top: 50px">
+        <p> Donsker's invariance principle for a simple random walk: </p>
+        <img src="/src/th11/Donskers_invariance_principle.gif">
+      </div>
 
-�
-(
-�
-)
-(
-�
-)
-:=
-�
-⌊
-�
-�
-⌋
-�
-,
-�
-∈
-[
-0
-,
-1
-]
-.
-W^{(n)}(t) := \frac{S_{\lfloor nt\rfloor}}{\sqrt{n}}, \qquad t\in [0,1].
-The central limit theorem asserts that 
-�
-(
-�
-)
-(
-1
-)
-W^{(n)}(1) converges in distribution to a standard Gaussian random variable 
-�
-(
-1
-)
-W(1) as 
-�
-→
-∞n\to \infty . Donsker's invariance principle[1][2] extends this convergence to the whole function 
-�
-(
-�
-)
-:=
-(
-�
-(
-�
-)
-(
-�
-)
-)
-�
-∈
-[
-0
-,
-1
-]
-W^{(n)}:=(W^{(n)}(t))_{t\in [0,1]}. More precisely, in its modern form, Donsker's invariance principle states that: As random variables taking values in the Skorokhod space 
-�
-[
-0
-,
-1
-]
-\mathcal{D}[0,1], the random function 
-�
-(
-�
-)
-W^{(n)} converges in distribution to a standard Brownian motion 
-�
-:=
-(
-�
-(
-�
-)
-)
-�
-∈
-[
-0
-,
-1
-]
-W:=(W(t))_{t\in [0,1]} as 
-�
-→
-∞
-.
-n\to \infty.
-
+      <h3> Proof </h3>
+      <p>
+        Let's consider the proof for this theorem:
+        <br>
+        It is based on the idea that it's possible to embed the ranom variables in the same probability space as the Brownian motion. This ensures that the scaled partial
+        sums resembles the behaviour of a Brownian motion, given the correct scale.
+        We start with a Brownian motion \( Bm(t) \) and define a the stopping times \( T_n \). In these points, the brownian motion will intersect the
+        horizontal inteher lines. Formally we consider the stopping times as the following:
+        $$ T_1 = inf\{t: \| Bm(t) \| = 1 \} $$ $$ T_{i+1} = inf\{t > T_n : \| Bm(t) - Bm(T_n) \| = 1 \} $$
+        where \( T_n \) is the stopping time.
+        <br>
+        We now embed with <b> Skorokhod embedding </b>, where CONTINUE HERE 
+      </p>
     </div>
     
     <ol>
