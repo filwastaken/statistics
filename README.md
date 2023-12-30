@@ -130,7 +130,7 @@ Link to the tenth thesis, about the Wiener process [thesis10](/thesis/thesis10)
 ##
 
 # Statistic's thesis n.11: The functional CLT (Donsker's invariance principle): Proof, Simulations
-Link to the eleventh thesis, about the Donsker's invariance principle [thesis11](/thesis/thesis11) : ToComplete
+Link to the eleventh thesis, about the Donsker's invariance principle [thesis11](/thesis/thesis11)
 ##
 
 # Statistic's thesis n.12

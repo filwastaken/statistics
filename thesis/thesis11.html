@@ -29,7 +29,7 @@
 
       <div style="display: flex; flex-wrap: wrap; align-content: center; align-items: center; flex-direction: column; margin-top: 50px">
         <p> Donsker's invariance principle for a simple random walk: </p>
-        <img src="/src/th11/Donskers_invariance_principle.gif">
+        <img style="width: 400px;" src="/src/th11/Donskers_invariance_principle.gif">
       </div>
 
       <h3> Proof </h3>
@@ -43,21 +43,43 @@
         $$ T_1 = inf\{t: \| Bm(t) \| = 1 \} $$ $$ T_{i+1} = inf\{t > T_n : \| Bm(t) - Bm(T_n) \| = 1 \} $$
         where \( T_n \) is the stopping time.
         <br>
-        We now embed with <b> Skorokhod embedding </b>, where CONTINUE HERE 
+        We now embed with <b> Skorokhod embedding </b>. This asserts the existance of a stopping time \( T \) so that \( Bm(T) \) follows the law of a random variable
+        where the expected value is 0 ( \( E[X] = 0 \) ) and the expected value of the squared variable is limited ( \( E[X^2] < \infty \) ),
+        and \( E[T] = E[X^2] \). We can then consider \( X \) a real random variable with mean 0 and variance 1 and define \( T_1 \) such that \( E[T_1] = 1 \)
+        and \( Bm(T_1) \) follows the same distribution as \( X \).
+        We now define \( T^2_0 \) that follows the same rules as \( T_1 \): \( E[T^2_0] = 1 \) and \(Bm (T^2_0) \) follows the same distribution as \( X \).
+        <br>
+        Let's consider \( T_2 = T_1 = T^2_0 \), we know that \( E[T_2] = E[T_1] + E[T^2_0] = 2 \). It's possible to continue this process by definining a sequence of
+        stopping times \( T_1 < T_2 < T_3 < ... < T_n \) such that \( S_n = Bm(T_n) \), meaning that the Brownian motion with stopping times \( T_n \) has the
+        same distribution as the random walk described by \( S_n \).
+        After rescaling the Brownian motion, the difference
+        $$ \sqrt{n} ( \frac{B_{nt}}{\sqrt{n} - S^*_n} ) $$
+        becomes negligible as \( n \) approaces infinity ( \( n \to \infty \)).
+        This implies the convergence in distribution of the scaled empirical process to a standard Brownian bridge.
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; align-content: center; align-items: center; flex-direction: column; margin-top: 50px">
+        <p> Example of defining stopping times for a SRW: </p>
+        <img style="width: 450px" src="/src/th11/stoptime.png">
+      </div>
+
+      <p>
+        A simulation of random walk can be seen in the <a href="/code/homework7/application.html"> homework 7</a>.
       </p>
     </div>
     
     <ol>
       <li> <a class="bibl"> Notes from the statistics course lectures </a> </li>
       <li> <a class="bibl"> Brownian motion (n. d.). Retrieved from Wikipedia, </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Brownian_motion"> https://en.wikipedia.org/wiki/Brownian_motion </a> </li>
-      <li> <a class="bibl"> Geometric brownian motion (n. d.). Retrieved from Wikipedia, </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Geometric_Brownian_motion"> https://en.wikipedia.org/wiki/Geometric_Brownian_motion </a> </li>
-      <li> <a class="bibl"> Geometric Brownian Motion (n. d.). Retrieved from sciencedirect, </a> <a class="bibl" href="https://www.sciencedirect.com/topics/mathematics/geometric-brownian-motion"> https://www.sciencedirect.com/topics/mathematics/geometric-brownian-motion </a> </li>
+      <li> <a class="bibl"> Donsker's theorem (n. d.). Retrieved from Wikipedia, </a> <a class="bibl" href="https://en.wikipedia.org/wiki/Donsker%27s_theorem"> https://en.wikipedia.org/wiki/Donsker%27s_theorem </a> </li>
+      <li> <a class="bibl"> Donsker's invariance principle (n. d.). Retrieved from encyclopediaofmath, </a> <a class="bibl" href="https://encyclopediaofmath.org/wiki/Donsker_invariance_principle"> https://encyclopediaofmath.org/wiki/Donsker_invariance_principle </a> </li>
+      <li> <a class="bibl"> Brownian Motion: A Crash Course (n. d.). Retrieved from Washington education, </a> <a class="bibl" href="https://sites.math.washington.edu/~rohde/583/Lectures13_14.pdf"> https://sites.math.washington.edu/~rohde/583/Lectures13_14.pdf </a> </li>
     </ol>
 
     <p class="thesisSelector">
-      <a class="selector" href="/thesis/thesis9.html"> Previous thesis </a>
+      <a class="selector" href="/thesis/thesis10.html"> Previous thesis </a>
       <a class="selector" href="/"> Home </a>
-      <a class="selector" href="/thesis/thesis11.html"> Next thesis </a>
+      <a class="selector" href="/thesis/thesis12.html"> Next thesis </a>
     </p>
   </body>
 </html>
