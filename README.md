@@ -89,50 +89,50 @@ Here is the end result, embedded with the important parts of the project code:
 
 The theoretical part can be found at the following link [theory webpage](/docs/homework7)
 
-# Statistic's thesis n.1: The LLN meaning, proof and simulations
+# Statistic's thesis n.1:
+## The LLN meaning, proof and simulations
 Link to the first thesis, about LLN (law of large numbers): [thesis1](/thesis/thesis1)
-##
 
-# Statistic's thesis n.2: The CLT meaning, proof and simulations
+# Statistic's thesis n.2:
+## The CLT meaning, proof and simulations
 Link to the second thesis, about CLT (Central Limit Theorem): [thesis2](/thesis/thesis2)
-##
 
-# Statistic's thesis n.3: The Gaussian distribution, meaning, derivations and simulations
+# Statistic's thesis n.3:
+## The Gaussian distribution, meaning, derivations and simulations
 Link to the third thesis, about the Gaussian distribution: [thesis3](/thesis/thesis3)
-##
 
-# Statistic's thesis n.4: The Glivenko-Cantelli theorem, proof and simulations
+# Statistic's thesis n.4:
+## The Glivenko-Cantelli theorem, proof and simulations
 Link to the fourth thesis, about the Glivenko–Cantelli theorem: [thesis4](/thesis/thesis4)
-##
 
-# Statistic's thesis n.5: Statistical Distributions: Continuous, Discrete, Properties and simulations 
+# Statistic's thesis n.5:
+## Statistical Distributions: Continuous, Discrete, Properties and simulations 
 Link to the fifth thesis, about the statisticals distribution: [thesis5](/thesis/thesis5)
-##
 
-# Statistic's thesis n.6: Algorithms for random variates generation
+# Statistic's thesis n.6:
+## Algorithms for random variates generation
 Link to the sitxth thesis, about random variates generation [thesis6](/thesis/thesis6)
-##
 
-# Statistic's thesis n.7: "Online" Algorithms (Data Streams): Ideas and code
+# Statistic's thesis n.7:
+## "Online" Algorithms (Data Streams): Ideas and code
 Link to the seventh thesis, about the online algorithms [thesis7](/thesis/thesis7)
-##
 
-# Statistic's thesis n.8: Stochastic processes and SDE's
+# Statistic's thesis n.8:
+## Stochastic processes and SDE's
 Link the the eigth thesis, about the stochastic processes [thesis8](/thesis/thesis8)
-##
 
-# Statistic's thesis n.9: The Poisson Process: Meaning, Properties, Simulations
+# Statistic's thesis n.9:
+## The Poisson Process: Meaning, Properties, Simulations
 Link the the ninth thesis, about the poisson process [thesis9](/thesis/thesis9)
-##
 
-# Statistic's thesis n.10: The Wiener process and the GBM, Derivations and simulations
+# Statistic's thesis n.10:
+## The Wiener process and the GBM, Derivations and simulations
 Link to the tenth thesis, about the Wiener process [thesis10](/thesis/thesis10)
-##
 
-# Statistic's thesis n.11: The functional CLT (Donsker's invariance principle): Proof, Simulations
+# Statistic's thesis n.11:
+## The functional CLT (Donsker's invariance principle): Proof, Simulations
 Link to the eleventh thesis, about the Donsker's invariance principle [thesis11](/thesis/thesis11)
-##
 
 # Statistic's thesis n.12
-// Th12: Ito Integration ans Calculus, Concept and Didactical Simulations
-[thesis12](/thesis/thesis12) :TODO
+## Ito Integration and Calculus, Concept and Didactical Simulations
+Link to the twelfth thesis, about Ito integration and calculus [thesis12](/thesis/thesis12)
