@@ -7,7 +7,11 @@ a, p, li {
   font-size: large;
 }
 
-.bibl { font-size: medium; }
+.bibl { 
+  font-size: medium;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
 
 .framecontainer {
   display: flex;

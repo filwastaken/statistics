@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/src/styles.css">
+
+    <!-- LaTeX -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+
+    <style>
+      li {
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1> Final Thesis </h1>
+    <div>
+      <h1 style="margin-bottom: 50px"> Stochastic processes and SDE's </h1>
+
+      <h2 style="color: white; background-color: black; padding-top: 5px; padding-bottom: 5px;"> Stochastic processes </h2>
+      <p>
+        Stochastic processes have a crucial impact in many applications, they hold the power to mathematically model the evolution of systems over time.
+        They are often described by <b>stochastic differential equations</b>, also known as "SDE" and help examine, evaluate and simulate a particular model.
+        In particular, a <b>stochastic process</b>, or random process, is a mathematical object defined in probability theory and used across most probability
+        courses and related fields that models a given system. This process is usually defined as a sequence of random variables, where the index is an
+        interpretation for time. They can either be <b>discrete</b> or <b>continuous</b> regarding time and are widely used as mathematical models of
+        systems and phenomena that appear to behave randomly.
+      </p>
+      <h3>Discrete time</h3>
+      <p>
+        In discrete-time, the random variables evolves at at distinct and particular points in time. In this case, we consider to process to behave and evolve
+        only at those points in time, since there is no in between. More in general, discrete distributinos deal with variables that takes distinct valunes, such
+        as any variable that has a value with a finite and numerical interval. An example may be the number of people in a room, since it will never assume any number
+        that is not contained in \( \mathbb{N} \). These distribution are defined by the <b>probability mass function</b> (PMF). This calculated the probability
+        that the random variable will assume that specific value when drawn (in a random occurrence):
+        $$ Pr(X = a) $$
+        We can define a random variable \(  v(t) \) at time \( t \) as the outcomes of the same experiment modeled by the discrete stochastic process at different time.
+        This means that \( v(t) = \varphi(s, t) \), with \( t \in \mathbb{Z}^+ \). If the time is fixed ( \( t = \overline{t} \) ), then \( \varphi(s, \overline{t}) \)
+        is a random variable.
+      </p>
+      <h3> Continuous time </h3>
+      <p>
+        In continuous-time however, the process evolves and behaves continuously, since there are no points where the process will either exists or not.
+        This kind of process exists, behave and evolve for the entire given time, continuously. In general, continuous distribution are associated with random
+        variables that can assume any valued givena  range. Some examples could be an height (1.788 meters) or a temperature (36.85 \( C^o \)).
+        Continuous distribution are described with the <b>probability density function</b> (PDF), used to calculate where the random variable will assume
+        value less then or equal to the one calculated:
+        $$ Pr(a \le X \le b) \text{ or } Pr(X \le c) $$
+      </p>
+
+      <div style="display: flex; flex-direction: column; flex-wrap: wrap; align-items: center; justify-content: center; align-content: center; margin: 30px 0px 30px 0px;">
+        <a> Example of discrete random variable: This variable can assume any value in \( \mathbb{Z} \) since it follows a random walk variable.</a>
+        <img style="width: 700px;" src="/src/finalth/discrete_walk.png">
+      </div>
+      
+      <h2> Properties of stochastic process </h2>
+      <p>
+        Stochastic processes have different properties. 
+      </p>
+
+      <ol type="I">
+        <li>
+          A stochastic process is said to be <b> strongly stationary </b> if its random properties don't change over time. In particular, we expect a strongly
+          stationary stochastic process to keep its mean, variance and correlation structure over time. More formally, it is such if the statistical properties
+          that are true at times \( T = t_1, t_2, t_3, ... \) are true at the times \( T' = T + \tau = t_1 + \tau, t_2 + \tau, t_3 + \tau, t_4 + \tau, ... \);
+        </li>
+
+        <li>
+          A stochastic process is said to be <b>weak-sense stationary</b> if the expected value is constant at any time \( t \) and the covariance between times
+          \( (t_1, t_2) \) and \( (t_3, t_4) \) are the same if the time difference is the same:
+          $$ |t_2 - t_1| = |t_4 - t_3| = \tau $$
+        </li>
+
+        <li>
+          A stochastic process is said to be <b> martingale </b> if its expected value at any future time is equal to its current value.
+          This mean that a martingale stochastic process will assume one and only one expected value, which will remain constant forever;
+          A martingal process is any fiar game, where the player cannot gain or lose any advantage by knowing the past outcome.
+        </li>
+
+        <li>
+          A stochastic process is said to be <b> ergodic </b> if the time average of a random variable converges to the expected value as time goes to infinity.
+          In particular, the ergodic property indicate that the long-term behvaiour of a system modeled by the stochastic process is indipendent from the inital condition,
+          and that the systen explores all possible states with equal probability. An example of an ergodic system is the sum of the number extracted from a fair dice:
+          each number has the same probability that it will be chosen randomly \( \frac{1}{6} \), and knowing the dice extraction's past does not give any
+          information that can be used, since the expected value is constant to \( \frac{S_n}{n} = 3.5 \);
+        </li>
+
+        <li>
+          A stochastic process is said to be <b>indipendent</b> if its increments are indipendent random variables. This means that the future values of the process
+          do not depend on the assumed values in the past. An example is the Poisson process, an indipendent random process, since the number of events that occur in a
+          time interval, and its increment in any time interval is indipendent of its value before that interval;
+        </li>
+
+        <li>
+          A stochastic process is said to be <b>continuous</b> if its <i>sample paths are continuous functions of the index set</i>.
+          In particular, this means that there are no jumps or breaks over the possible values that the random process can assume.
+          For example, while a Brownian motion can indicate the continuous movemenet of particles in fluids such as air, other processes do not have this possibility,
+          such as the Poisson process. This is true since the Poisson process is used to predict the number of occurence of events in a time interval, and cannot handle
+          continuous numbers;
+        </li>
+
+        <li>
+          A stochastic process has the <b> Markov property </b> if the future behvaiour of the process depends on its current state and not its past history.
+          This means that, taken two identical stochastic process, where one started from point \( a \), moved to \( b \) and ended in \( c \); while the other one
+          started from point \( b \), moved to \( a \) and ended in \( c \). If these two processes hold the Markov properties, then they will behave the same, since
+          they're described only by the state they are in ( \( c \) ) and the underlying distribution.
+        </li>
+      </ol>
+
+      <h3> Applications </h3>
+
+      <p>
+        There are many application for stochastic processes, from biology, chemistry, neuroscience, psychology, image processing, statistical signal processing,
+        control theory, computer science, cryptography, telecommunications, ecology and others. Some of the most important are:
+      </p>
+
+      <ul type="circle">
+        <li>
+          <b>Cryptography</b>: stochastic processes are used in cryptography to generate random numbers to model the behaviour of cryptographic systems.
+          Another way stochsatic processes are used is for the generation of prime factors to create a pair of private and public keys in asymmetric encryption;
+        </li>
+
+        <li>
+          <b>Queueing theory</b>: stochastic processes are used in queuing theory, a branch of mathematics that studies the act of waiting in line. These processes
+          are used to model and analyze the flow of customers arriving and leaving the general facility, queuing, being served and leaving. This branch of applications
+          is used especially in communication networks among other;
+        </li>
+
+        <li>
+          <b>Machine learning</b>: stochastic processes are used to model physical and engineering systems, such that a computer can reason around it and arrive at
+          conclusion thanks to a randomly chaning model of reality. This will help the final artificial interlligence to resolve around unexpected behvaiour
+          and level of complessity that are not directly translatable in code, or machine language, especially thanks to the use of a <b>Markov random field</b>;
+        </li>
+
+        <li>
+          <b>Statistical signal processing</b>: stochastic processes are used in signal processing since, in the current state of the world, signals and other
+          communications between computer can and will fail. This means that there is a need for resilience and recovery while a machine is running. This is especially
+          true when we consider the theory branch that studies secure, both as in private and certain, signal passing and processing in distributed systems. Some
+          branches where this is most used is in RADAR technology, estimation probles and adaptive filtering.
+        </li>
+      </ul>
+
+      <h2 style="color: white; background-color: black; padding-top: 5px; padding-bottom: 5px;"> Stochastic Differential Equations (SDEs) </h2>
+      <p>
+        A <b>stochastic differential equation</b> (SDE) is a differential equation in which one or more terms are a stochastic process. In particular, these kind of
+        equations involve both a deterministic and a random aspect of a described system, modeling a particular real world scenario, described by the evolution
+        of the equation or, in general, described by the evolution of the process associated to its SDE. These are mostly used to model after scenarios where
+        randomness plays a crucial role. Stochastic differential equations provide a link between probability theory and the much older and more developed fields of
+        ordinary and partial differential equations. The general form of a <b>one-dimensional</b> SDE is the following:
+
+        $$ dX_t = a(t, X_t) dt + b(t, X_t) dW_t $$
+
+        In this equation, \( X_t \) is the process, \( a(t, X_t) \) and \( b(t, X_t) \) are the deterministic functions, \( dt \) is the deterministic derivative and
+        \( dW_t \) is the random derivative, realted to a Brownian motion, already discussed in the <a href="/thesis/thesis10.html">tenth thesis</a>.
+        Generally, SDEs provide a way to describe the evolution of a system over time, while that system is being influenced by deterministic functions as well as
+        random fluctuations. A stochastic process is the solution for an SDE, however these are usually simulated, since finding a precise and mathematical solution
+        for an SDE is a very complicated task that requires a lot of time and complex calculations. One of the most used technique is the Itô calculus, already discussed
+        in details in the <a href="/thesis/thesis12.html">twelfth thesis</a>. Itô calculus, in particular, is an extension of calculus to stochastic processes
+        such as the <i><b>Brownian motion</b></i>, with applications in finance and SDE.
+        It is possible to describe different kinds of SDEs, based on they're properties and how they are defined and, therefore, simulated. In particular, we find interesting
+        the difference between <b>linear</b> and <b>non linear</b>, and between <b>autonomous</b> and <b>time dependent</b> SDEs.
+      </p>
+
+      <h4> SDE Linearity </h4>
+      <p>
+        A <b>linear</b> stochastic differential equations is defined as such if both the <i>drift</i> function and the <i>diffusion</i> function are linear functions.
+        A generalization of a linear stochastic differential equation is the following:
+        $$ dX_t = a(t) X_t \ dt + b(t) X_t \ dW_t $$
+        As we can see, both the first and second part of the sum are functions that are linearly dependent on time and a stochastic variable \( X_t \).
+        A <b>non-linear</b> function on the other hand are those stochastic differential equations where the <i>drift</i> and <i>diffusion</i> contains
+        non-linear terms. One example is a function that contains any of the trigonometric functions, since they are all non-linear, a logarithmic or an
+        exponential function:
+        $$ dX_t = ln(X_t) dt + X^3_t dW_t $$
+      </p>
+      <h4> SDE dependancy </h4>
+      <p>
+        An stochastic differential equation is defined as <b>autonomous</b> if the <i>drift</i> and <i>diffusion</i> are not explicitly dependent on time. One
+        example is:
+        $$ dX_t = a(X_t) dt + b(X_t) dW_t $$
+        On the other hand, a <b>time dependent</b> SDE is such if both the <i>drift</i> and <i>diffusion</i> terms are direct functions of time, which means that
+        they will change just with the passage of time:
+        $$ dX_t = a(X_t, t) dt + b(X_t, t) dW_t $$
+      </p>
+
+      <h2 style="margin-bottom: 25px; margin-top: 50px;"> Examples of Stochastic processes with their describing SDEs </h2>
+      
+      <h3> Arithmetic Brownian Motion </h3>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <img src="/src/hw7/ABM.png" alt="Arithmetic Brownian Motion" style="width: 40%;"> </img>
+        <p> $$ N = 80; M = 250; P = 0.5 $$ </p>
+      </div>
+
+      <p>
+        An Arithmetic Brownian Motion is described by the following SDE:
+        $$ dX_{t} = \mu \ dt + \sigma \ dW_{t} $$
+        This express the changes of the Brownian; in particular the process changes by a costant amount every infinitesimal period of time.
+        Formally, the first term is called <i>drift</i>, while the second term is called the <i>diffusion term</i>. In particular:
+      </p>
+              
+      <ul style="margin-top: 10px;">
+        <li> \( X_t \) rapresents the process value at time t, </li>
+        <li> \( \mu \) is the <i>drift</i>, </li>
+        <li> \(  \sigma \) is the <i>volatility</i>, </li>
+        <li> \( dW_t \) is a <i>Wiener process</i>.</li>
+      </ul>
+  
+      <p> An example is shown on the image above. </p>
+      <hr>
+
+      <h3> Geometric Brownian Motion </h3>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <img src="/src/hw7/GBM.png" alt="Geometric Brownian Motion" style="width: 50%;"> </img>
+        <p> $$ N = 80; M = 250; P = 0.5; \ \sigma = 0.5; \mu = 0.5 $$ </p>
+      </div>
+
+      <p> An Geometric Brownian Motion (also known as the exponential Brownian Motion) is a continuous-time stochastic process. In particular, it's used in mathematical finance to model stock prices in a particular financial model.
+        This process is best described by its SDE, which is the following:
+        $$ dS_{t} = \mu \ S_t \ dt + \sigma \ S_t \ dW_{t} $$
+        This ultimately expresses the changes of the Brownian; in particular the process changes by a costant amount every infinitesimal period of time.
+        As in the example above, the first constant is formally called <i>drift</i>, while the second is called <i>diffusion term</i>.
+        In particular:
+      </p>
+          
+      <ul style="margin-top: 10px;">
+        <li> \( S_t \) rapresents the stock prices in a particular time t, </li>
+        <li> \(\mu \) is the <i>drift</i>, which is the average rate of return per time unit, </li>
+        <li> \( \sigma \) is the <i>volatility</i>, which rapresents the standard deviation of the flactuations, </li>
+        <li> \( dW_t \) is a <i>Wiener process</i> (or the Brownian motion), which rapresents the random and continuous movements.</li>
+      </ul>
+      <p> An example is shown on the image above. </p>
+      <hr>
+
+      <h3> Ornstein-Uhlenbeck Process </h3>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <img src="/src/hw7/graph.png" alt="Ornstein-Uhlenbeck" style="width: 50%;"> </img>
+        <p> $$ N = 80; \ M = 250; \ P = 0.5; \ \sigma = 0.4; \ \mu = 12; \ \theta = 0.2 $$</p>
+      </div>
+
+      <p>
+        An Ornstein-Uhlenbeck Process (also known as the Mean Reverting Process) is a stochastic proces with applications in financial mathematics and physical sciences.
+        Its original application was as a model for the velocity of the Brownian particle under a particular friction. Its SDE is the following:
+        $$ dX_{t} = \theta (\mu - X_t) dt + \sigma \ dW_{t} $$
+        The constant parameters are:
+      </p>
+              
+      <ul style="margin-top: 10px;">
+        <li> \( \theta \) which is the rate (or speed) of the mean reversion. It is defined as strictly bigger than 0, </li>
+        <li> \( \mu \) is the long term mean of the process. In particular, the process will tend to this particular mean, </li>
+        <li> \( \sigma \) is the <i>volatility</i>. </li>
+      </ul>
+  
+      <p>
+        By ignoring the random flactuations (given by the Weiner process), we see that \( X_t \)
+        has an overall drift towards the mean value, as expressed above. The process reverts to this mean exponentially, with rate
+        \( \theta \). An example is shown on the image on the right:
+      </p>
+
+      <h4> Vasicek Model </h4>
+      <p>
+        A <b> Vasicek Model </b> is a model that fundamentally follows the same same SDE of the Ornstein-Uhlenbeck Process, however the parameter
+        \( \theta \) can be a non-constant, in particular it can be a deterministic function of \( t \).
+      </p>
+
+      <h4> Hull-White Model </h4>
+      <p>
+        A <b> Hull-White Model </b> is an extension of the Vasicek model with the difference that it can be made to fit the current term structure. In particular, it's SDE is the following:
+        $$ dX_t = [\theta (t) - \mu X_t] dt + \sigma \ dW_t $$
+      </p>
+      <hr>
+
+      <h3> Cox-Ingersoll-Ross (CIR) Model</h3>
+      <p>
+        A <b>Cox-Ingersoll-Ross (CIR) Model</b> is similar to the Vasicek Model; however it includes a term proportional to the square root of the process.
+        Its SDE is the following:
+        $$ dX_t = \kappa \ ( \ \theta  - X_t \ ) dt + \sigma \ \sqrt{X_t} \ dW_t $$
+      </p>
+      <hr>
+
+      <h3> Black-Karasinski Model </h3>
+      <p>
+        <b>Black-Karasinski Model</b> can be considered as an extension of the CIR Model. It introduces a random (or stochastic) volatility, allowing this parameter to vary over time. It's SDE is the following:
+        $$ dX_t = [\ \theta(t) - \alpha X_t \ ] \ dt + \sigma(t) \ \sqrt{X_t} \ dW_t $$
+        Where :
+      </p>
+      <ul>
+        <li> \( \alpha \) is the speed of the mean reversion, </li>
+        <li> \( \theta (t) \) is the mean reversion function, with variable t, </li>
+        <li> \( \sigma(t) \) is the volatility function, with variable t, </li>
+        <li> \( X_t \) is the short rate at time t. </li>
+      </ul>
+      <hr>
+
+      <h3> Heston Model </h3>
+      <p>
+        A <b>Heston Model</b> is a mathematical model that describes the evolution of the volatility of an underlying asset.
+        This is defined by two stochastic equations, one for the price and one for the volatility. It's composing SDEs are:
+        $$ dS_t = \mu \ S_t \ dt + \sigma \ \sqrt{V_t} \ S_t \ dW^1_t $$
+        $$ dV_t = \kappa \ ( \ \theta  - V_t \ ) dt + \sigma \ \sqrt{V_t} \ dW^2_t $$
+        Where :
+      </p>
+
+      <ul>
+        <li> \( S_t \) is the asset price at time t,</li>
+        <li> \( \sigma \) is the volatility,</li>
+        <li> \( V_t \) is the instantaneous variance at time t, which is the volatility squared,</li>
+        <li> \( \kappa \) is the speed of mean reversion of volatility,</li>
+        <li> \( \mu \) is the average rate of return,</li>
+        <li> \( dW^1_t \) and \( dW^2_t \) are correlated to the Weiner process.</li>
+      </ul>
+      <hr>
+
+      <h3> Chen Model </h3>
+      <p>
+        A <b>Chen Model</b> is a more complex stochastic volatility model that considers both jumps and continuous-time processes in the volatility equation.
+        Its SDEs are:
+        $$ dX_t = ( \mu - \lambda X_t ) \ dt + \sigma \sqrt{X_t} dW_t + dJ_t $$
+        Where :
+      </p>
+
+      <ul>
+        <li> \( X_t \) is the volatility of the asset at a particular moment in time, </li>
+        <li> \( \mu \) is the average growth rate, </li>
+        <li> \( \lambda \) is the mean reverting speed, </li>
+        <li> \( \sigma \) is the volatility of the process, </li>
+        <li> \( dJ_t \) is a jump process. </li>
+      </ul>
+
+
+      <h2> Simulations </h2>
+      <p>
+        A simulation has already been implemented in <a href="/code/homework7/JavaScript/hw7.html"> homework 7 </a> (JavaScript), where most of the stochastic processes encountered in this thesis have been
+        implemented. Simulations provide a hands-on approach and are sometimes critical in solving stochastic differential equations, since they are extremly hard
+        and computationally expensive to solve analytically. It is possible to look at the code implementation of the simulations linked above at the following
+        <a href="/code/homework7/application.html"> link </a> for the application, where it's shown how the application is built and a GitHub link can be followed to
+        look at the entire project and website.
+      </p>
+    </div>
+
+    <ol style="margin-top: 75px">
+      <li class="bibl"> Notes from the statistics course lectures </li>
+      <li class="bibl"> Stochastic process. (n.d.). In Wikipedia. Retrieved from <a class="bibl" href="https://en.wikipedia.org/wiki/Stochastic_process"> https://en.wikipedia.org/wiki/Stochastic_process </a> </li>
+      <li class="bibl"> Stochastic process. (n.d.). In Britannica. Retrieved from <a class="bibl" href="https://www.britannica.com/science/stochastic-process"> https://www.britannica.com/science/stochastic-process </a> </li>
+      <li class="bibl"> Stochastic Properties. (n.d.). In Bookdown. Retrieved from <a class="bibl" href="https://bookdown.org/probability/bookdown-demo/stochastic-properties.html"> https://bookdown.org/probability/bookdown-demo/stochastic-properties.html </a> </li>
+      <li class="bibl"> Introduction to stochastic processes. (n.d.). In Università degli studi di Bergamo. Retrieved from <a class="bibl" href="https://cal.unibg.it/wp-content/uploads/DSI/slide/Lecture-12-Stochastic-process.pdf"> https://cal.unibg.it/wp-content/uploads/DSI/slide/Lecture-12-Stochastic-process.pdf </a> </li>
+      <li class="bibl"> Stochastic Differential Equations. (n.d.). In Wikipedia. Retrieved from <a class="bibl" href="https://en.wikipedia.org/wiki/Stochastic_differential_equation"> https://en.wikipedia.org/wiki/Stochastic_differential_equation </a> </li>
+      <li class="bibl"> Stochastic Differential Equations. (n.d.). In ScienceDirect. Retrieved from <a class="bibl" href="https://www.sciencedirect.com/topics/mathematics/stochastic-differential-equation"> https://www.sciencedirect.com/topics/mathematics/stochastic-differential-equation </a> </li>
+      <li class="bibl"> Stochastic Differential Equations. (n.d.). In Massachusetts Institute of Technology. Retrieved from </a> <a class="bibl" href="https://academiccommons.columbia.edu/doi/10.7916/d8-ngq8-9s10"> https://academiccommons.columbia.edu/doi/10.7916/d8-ngq8-9s10 </a> </li>
+      <li class="bibl"> Arithmetic Brownian Motion Process and SDEs. (n.d.). In QuantPie. Retrieved from <a class="bibl" href="https://quantpie.co.uk/SDEs/Arithemtic_Brownian_Mean_Variance.php"> https://quantpie.co.uk/SDEs/Arithemtic_Brownian_Mean_Variance.php </a> </li>
+      <li class="bibl"> Arithmetic Brownian Motion SDE solution. (n.d.). In QuantPie. Retrieved from <a class="bibl" href="https://quantpie.co.uk/SDEs/Arithemtic_Brownian_Mean_Variance.php"> https://quantpie.co.uk/SDEs/Arithemtic_Brownian_Mean_Variance.php </a> </li>
+      <li class="bibl"> Geometric Brownian motion. (n.d.). In Wikipedia. Retrieved from <a class="bibl" href="https://en.wikipedia.org/wiki/Geometric_Brownian_motion"> https://en.wikipedia.org/wiki/Geometric_Brownian_motion </a> </li>
+      <li class="bibl"> Ornstein-Uhlenbeck process. (n.d.). In Wikipedia. Retrieved from <a class="bibl" href="https://en.wikipedia.org/wiki/Ornstein-Uhlenbeck_process"> https://en.wikipedia.org/wiki/Ornstein-Uhlenbeck_process </a> </li>
+      <li class="bibl"> Vasicek model. (n.d.). In Wikipedia. Retrieved from <a class="bibl" href="https://en.wikipedia.org/wiki/Black-Karasinski_model"> https://en.wikipedia.org/wiki/Vasicek_model </a> </li>
+      <li class="bibl"> Mean Reversion. (n.d.). In ScienceDirect. Retrieved from <a class="bibl" href="https://www.sciencedirect.com/topics/economics-econometrics-and-finance/mean-reversion"> https://www.sciencedirect.com/topics/economics-econometrics-and-finance/mean-reversion </a> </li>
+      <li class="bibl"> Hull-White model. (n.d.). In Wikipedia. Retrieved from <a class="bibl" href="https://en.wikipedia.org/wiki/Hull-White_model"> https://en.wikipedia.org/wiki/Hull-White_model </a> </li>
+      <li class="bibl"> Modeling Interest Rate Changes. (n.d.). In RiskPrep. Retrieved from <a class="bibl" href="https://riskprep.com/tutorials/modeling-interest-rate-changes"> https://riskprep.com/tutorials/modeling-interest-rate-changes </a> </li>
+      <li class="bibl"> Cox-Ingersoll-Ross model. (n.d.). In Wikipedia. Retrieved from <a class="bibl" href="https://en.wikipedia.org/wiki/Cox-Ingersoll-Ross_model"> https://en.wikipedia.org/wiki/Cox-Ingersoll-Ross_model </a> </li>
+      <li class="bibl"> Black-Karasinski model. (n.d.). In Wikipedia. Retrieved from <a class="bibl" href="https://en.wikipedia.org/wiki/Black-Karasinski_model"> https://en.wikipedia.org/wiki/Black-Karasinski_model </a> </li>
+      <li class="bibl"> Heston model. (n.d.). In Wikipedia. Retrieved from <a class="bibl" href="https://en.wikipedia.org/wiki/Heston_model"> https://en.wikipedia.org/wiki/Heston_model </a> </li>
+      <li class="bibl"> Li, F. (2021). Stochastic Methods in Optimization and Machine Learning. Columbia University. </li>
+      <li class="bibl"> Adomian, G. (1976). Nonlinear stochastic differential equations. Journal of Mathematical Analysis and Applications, 55(2), 441-452. </li>
+    </ol>
+
+    <p class="thesisSelector">
+      <a class="selector" href="/thesis/thesis12.html"> Previous Thesis </a>
+      <a class="selector" href="/"> Home </a>
+      <a class="selector" href="/thesis/thesis1.html"> Next thesis </a>
+    </p>
+  </body>
+</html>
