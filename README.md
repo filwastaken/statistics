@@ -136,3 +136,6 @@ Link to the eleventh thesis, about the Donsker's invariance principle [thesis11]
 # Statistic's thesis n.12
 ## Ito Integration and Calculus, Concept and Didactical Simulations
 Link to the twelfth thesis, about Ito integration and calculus [thesis12](/thesis/thesis12)
+
+# Final Thesis
+Link to the final thesis: [final thesis](/thesis/final_thesis.html)
