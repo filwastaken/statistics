@@ -49,7 +49,7 @@
       <p>
         Let's consider \( X_1 \), \( X_2 \) to \( X_n \), an infinite number of identically distributed random variables, that have all the same
         expected value.
-        The average is \( \overline{X_n} = \frac{1}{2} * \sum_{1}^{n}X_n \). Then, by the weak law, it must be true that
+        The average is \( \overline{X_n} = \frac{1}{n} * \sum_{1}^{n}X_i \). Then, by the weak law, it must be true that
         $$ \overline{X_n} \to E[X_1] = E[X_2] = ... \ for \ n\to+\infty $$
         Let's consider the Chebyshev's inequality proof, by considering a finite variance. Since all items are indipentent, then the variance of \( X_n \) must be
         $$ Var(\overline{X_n}) = Var(\frac{1}{n}(X_1 + ... + X_n)) = \frac{1}{n^2} Var(X_1 + ... + X_n) = \frac{n \sigma^2}{n^2} = \frac{\sigma^2}{n} $$
