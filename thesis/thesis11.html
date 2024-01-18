@@ -24,7 +24,7 @@
         The CTL asserts that \( W^{(n)}(1) \) converges in distribution to a <b> Gaussian random variable </b> \( W(1) \) as \( n \to \infty \). Donsker's invariance
         principle extends this convergence to the whole function:
         $$ W^{(n)} := (W^{(n)} (t))_{t \in [0, 1]} $$
-        More precisely, Donsker's invariance principle states that the random function \( W^{(n)} \) converges in distributino to a <b> standard Brownian motion </b>.
+        More precisely, Donsker's invariance principle states that the random function \( W^{(n)} \) converges in distribution to a <b> standard Brownian motion </b>.
       </p>
 
       <div style="display: flex; flex-wrap: wrap; align-content: center; align-items: center; flex-direction: column; margin-top: 50px">
@@ -34,10 +34,10 @@
 
       <h3> Proof </h3>
       <p>
-        Let's consider the proof for this theorem:
+        Let's consider the proof of this theorem:
         <br>
-        It is based on the idea that it's possible to embed the ranom variables in the same probability space as the Brownian motion. This ensures that the scaled partial
-        sums resembles the behaviour of a Brownian motion, given the correct scale.
+        It is based on the idea that it's possible to embed the random variables in the same probability space as the Brownian motion. This ensures that the scaled partial
+        sum resembles the behaviour of a Brownian motion, given the correct scale.
         We start with a Brownian motion \( Bm(t) \) and define a the stopping times \( T_n \). In these points, the brownian motion will intersect the
         horizontal inteher lines. Formally we consider the stopping times as the following:
         $$ T_1 = inf\{t: \| Bm(t) \| = 1 \} $$ $$ T_{i+1} = inf\{t > T_n : \| Bm(t) - Bm(T_n) \| = 1 \} $$
